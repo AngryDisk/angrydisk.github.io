@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>angrydisk.github.io/about/</loc>
+    <lastmod>2018-02-18T17:18:21+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>angrydisk.github.io/post/first-post/</loc>
+    <lastmod>2018-02-18T16:28:38+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>angrydisk.github.io/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>angrydisk.github.io/post/</loc>
+    <lastmod>2018-02-18T16:28:38+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>angrydisk.github.io/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>angrydisk.github.io/</loc>
+    <lastmod>2018-02-18T17:18:21+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>angrydisk.github.io/tags/%E9%9A%8F%E7%AC%94/</loc>
+    <lastmod>2018-02-18T16:28:38+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+</urlset>
