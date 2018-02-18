@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on ZhaoGaz&#39;s Blog</title>
-    <link>angrydisk.github.io/post/</link>
+    <link>/post/</link>
     <description>Recent content in Posts on ZhaoGaz&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sun, 18 Feb 2018 16:28:38 +0800</lastBuildDate>
     
-	<atom:link href="angrydisk.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>博客第一篇</title>
-      <link>angrydisk.github.io/post/first-post/</link>
+      <link>/post/first-post/</link>
       <pubDate>Sun, 18 Feb 2018 16:28:38 +0800</pubDate>
       
-      <guid>angrydisk.github.io/post/first-post/</guid>
+      <guid>/post/first-post/</guid>
       <description>最近手头记录了各种各样的东西，删掉觉得可惜，留着总感觉没用，因为事情已经过去了。
 我个人最开始的时候，在QQ空间发东西。后来表达的渠道转移到了微信朋友圈。等到工作之后，文章发表的渠道，转移到了CSDN。有时候也会在公众号发。
 有些内容，无论是CSDN，还是公众号，发到哪里我都感觉不合适。最后决定搞个博客来记录下这些东西，也就是说呢，这篇博客就会记录一些不止于技术相关的内容。凡是我花时间处理的事情，我尽量都会花时间整理出文章。方便后人查阅翻看。
