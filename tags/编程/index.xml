@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>编程 on ZhaoGaz&#39;s Blog</title>
+    <link>http://zhaogaz.com/tags/%E7%BC%96%E7%A8%8B/</link>
+    <description>Recent content in 编程 on ZhaoGaz&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 12 Dec 2018 00:21:13 +0800</lastBuildDate>
+    
+	<atom:link href="http://zhaogaz.com/tags/%E7%BC%96%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>设计模式的奥义</title>
+      <link>http://zhaogaz.com/post/2018/secret-of-design-pattern/</link>
+      <pubDate>Wed, 12 Dec 2018 00:21:13 +0800</pubDate>
+      
+      <guid>http://zhaogaz.com/post/2018/secret-of-design-pattern/</guid>
+      <description>2018.12.07 设计模式的奥义 给这个文章起标题之前，我还犹豫了一下，我觉得奥义还是准确的，我自认为已经理解了设计模式的精髓。 我在最开始接触设计模式的时候还</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -7,30 +7,15 @@
 <meta name="description" content="" />
 <meta name="keywords" content="" />
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="generator" content="Hugo 0.36.1" />
+<meta name="generator" content="Hugo 0.52" />
 
 <link rel="canonical" href="http://zhaogaz.com/post/2018/newbie-start-hugo-blog-2/">
 <base href="http://zhaogaz.com" />
 <meta property="og:title" content="新手搭建Hogo静态博客教程（二）:本地博客调整" />
 <meta property="og:description" content="本教程为系列文章，点击右下角的 #Hugo 可以查看全部。 在上一篇中，已经起了一个本地的博客，在本篇中，将会对博客进行细节的定制。 本篇内容不准备特别细致" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://zhaogaz.com/post/2018/newbie-start-hugo-blog-2/" />
-
-
-
-<meta property="article:published_time" content="2018-02-20T18:44:17&#43;08:00"/>
-
+<meta property="og:url" content="http://zhaogaz.com/post/2018/newbie-start-hugo-blog-2/" /><meta property="article:published_time" content="2018-02-20T18:44:17&#43;08:00"/>
 <meta property="article:modified_time" content="2018-02-20T18:44:17&#43;08:00"/>
-
-
-
-
-
-
-
-
-
-
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="新手搭建Hogo静态博客教程（二）:本地博客调整"/>
@@ -44,7 +29,7 @@
 
 <meta itemprop="datePublished" content="2018-02-20T18:44:17&#43;08:00" />
 <meta itemprop="dateModified" content="2018-02-20T18:44:17&#43;08:00" />
-<meta itemprop="wordCount" content="3260">
+<meta itemprop="wordCount" content="3322">
 
 
 
@@ -123,12 +108,16 @@ th {
 <script>hljs.initHighlightingOnLoad();</script>
 
 
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-114396712-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-114396712-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 <title>
@@ -270,7 +259,7 @@ pygmentsCodeFences = true
 
 <h3 id="删除顶部的超链接">删除顶部的超链接</h3>
 
-<p><img src="http://zhaogaz.com/img/posts/2018/newbie-start-hugo-blog-2/2018-02-20_172311.gif" alt="效果图" /></p>
+<p><img src="./assets/2018-02-20_172311-1544430190798-1544430191911.gif" alt="2018-02-20_172311" /></p>
 
 <p>图片中2个红框为重复的超链接，我只想保留下面一个，然后分析了一下，发现Blog渲染是通过下载的模版进行的，所以渲染出的页面，应该在模版中有控制，就在模版中找了一下，在<code>\themes\hugo-dusk\layouts\partials</code>这个目录中，找到了下面两个文件</p>
 
@@ -284,7 +273,7 @@ social-links-footer.html
 
 <p>我修改了下测试文章yyyyy.md，然后发现Blog把所有的内容都显示到摘要了，效果如图所示</p>
 
-<p><img src="http://zhaogaz.com/img/posts/2018/newbie-start-hugo-blog-2/2018-02-20_1723112.gif" alt="效果图2" /></p>
+<p><img src="./assets/2018-02-20_1723112-1544430245019-1544430246255.gif" alt="2018-02-20_1723112" /></p>
 
 <p>这明显是个bug，然后就开始找themes中到底是哪里控制出错了。</p>
 

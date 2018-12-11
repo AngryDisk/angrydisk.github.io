@@ -7,30 +7,15 @@
 <meta name="description" content="" />
 <meta name="keywords" content="" />
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="generator" content="Hugo 0.36.1" />
+<meta name="generator" content="Hugo 0.52" />
 
 <link rel="canonical" href="http://zhaogaz.com/post/2018/newbie_start_hugo_blog_1/">
 <base href="http://zhaogaz.com" />
 <meta property="og:title" content="新手搭建Hogo静态博客教程（一）:本地搭建运行" />
 <meta property="og:description" content="本教程为系列文章，点击右下角的 #Hugo 可以查看全部。 本教程，记录了我搭建博客过程中所遇到的所有的问题。有的问题很简单，有的问题很棘手，以至于不得不" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://zhaogaz.com/post/2018/newbie_start_hugo_blog_1/" />
-
-
-
-<meta property="article:published_time" content="2018-02-19T23:11:31&#43;08:00"/>
-
+<meta property="og:url" content="http://zhaogaz.com/post/2018/newbie_start_hugo_blog_1/" /><meta property="article:published_time" content="2018-02-19T23:11:31&#43;08:00"/>
 <meta property="article:modified_time" content="2018-02-19T23:11:31&#43;08:00"/>
-
-
-
-
-
-
-
-
-
-
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="新手搭建Hogo静态博客教程（一）:本地搭建运行"/>
@@ -44,7 +29,7 @@
 
 <meta itemprop="datePublished" content="2018-02-19T23:11:31&#43;08:00" />
 <meta itemprop="dateModified" content="2018-02-19T23:11:31&#43;08:00" />
-<meta itemprop="wordCount" content="2131">
+<meta itemprop="wordCount" content="2134">
 
 
 
@@ -123,12 +108,16 @@ th {
 <script>hljs.initHighlightingOnLoad();</script>
 
 
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-114396712-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-114396712-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 <title>
@@ -268,16 +257,17 @@ ga('send', 'pageview');
 <ol>
 <li>安装主题前，先安装一个git客户端，git早晚都要用的。客户端<a href="https://git-scm.com/downloads">下载链接</a></li>
 <li>由于目前是windows 7x64系统，下载windows版本的git，安装看不懂的话，一直点下一步安装就行。</li>
-
-<li><p>运行桌面的<code>Git Bash</code>，然后弹出一个黑色窗口，依次输入以下命令</p>
+<li>运行桌面的<code>Git Bash</code>，然后弹出一个黑色窗口，依次输入以下命令</li>
+</ol>
 
 <pre><code>cd C:\Hugo\Sites\xxxxxx\themes
 git clone https://github.com/gyorb/hugo-dusk
-</code></pre></li>
+</code></pre>
 
-<li><p>执行完成后，应该会在 themes 文件夹看到一个<code>hugo-dusk</code>文件夹</p></li>
-
-<li><p>在 xxxxxx 的根目录里面，能找到名为<code>config.toml</code>的文件，以文本形式打开，把以下内容覆盖进去。内容参考自<a href="https://themes.gohugo.io/hugo-dusk/">主题官网</a></p>
+<ol>
+<li>执行完成后，应该会在 themes 文件夹看到一个<code>hugo-dusk</code>文件夹</li>
+<li>在 xxxxxx 的根目录里面，能找到名为<code>config.toml</code>的文件，以文本形式打开，把以下内容覆盖进去。内容参考自<a href="https://themes.gohugo.io/hugo-dusk/">主题官网</a></li>
+</ol>
 
 <pre><code>baseurl = &quot;/&quot;
 title = &quot;My site.&quot;
@@ -286,52 +276,51 @@ canonifyurls = true
 languageCode = &quot;en-US&quot;
 paginate = 3
 theme = &quot;hugo-dusk&quot;
-    
+
 googleAnalytics = &quot;&quot;
 disqusShortname = &quot;&quot;
-    
+
 [author]
-  name = &quot;&quot;
-    
+name = &quot;&quot;
+
 SectionPagesMenu = &quot;main&quot;
-    
+
 # use Chroma for syntax highlight
 pygmentsStyle = &quot;native&quot; # other dark style options: vim, fruity, monokai
 # enable syntax highlight for code blocks
 pygmentsCodeFences = true
-    
+
 [[menu.main]]
-  name = &quot;Posts&quot;
-  weight = -120
-  identifier = &quot;post&quot;
-  url = &quot;/post/&quot;
-    
+name = &quot;Posts&quot;
+weight = -120
+identifier = &quot;post&quot;
+url = &quot;/post/&quot;
+
 [[menu.main]]
-  name = &quot;Tags&quot;
-  weight = -110
-  identifier = &quot;tag&quot;
-  url = &quot;/tags/&quot;
-    
+name = &quot;Tags&quot;
+weight = -110
+identifier = &quot;tag&quot;
+url = &quot;/tags/&quot;
+
 [params.meta]
-  keywords = &quot;blog, tech&quot;
-  description = &quot;Personal blog.&quot;
-    
+keywords = &quot;blog, tech&quot;
+description = &quot;Personal blog.&quot;
+
 [params]
-  github = &quot;github id&quot;
-  gitlab = &quot;gitlab id&quot;
-  twitter = &quot;twitter id&quot;
-  linkedin = &quot;linkedin id&quot;
-  email = &quot;myemail&quot;
-    
+github = &quot;github id&quot;
+gitlab = &quot;gitlab id&quot;
+twitter = &quot;twitter id&quot;
+linkedin = &quot;linkedin id&quot;
+email = &quot;myemail&quot;
+
 [params.colors]
-  # hugo-dusk colors
-  background = &quot;#101010&quot; # background color for the site
-  main = &quot;#99cc66&quot;
-  text = &quot;#dbdbdb&quot;
-  code-quote-bg = &quot;#1D1F21&quot; # background color for quotes and code blocks
-  copyright = &quot;#404040&quot; # copyright text color
-</code></pre></li>
-</ol>
+# hugo-dusk colors
+background = &quot;#101010&quot; # background color for the site
+main = &quot;#99cc66&quot;
+text = &quot;#dbdbdb&quot;
+code-quote-bg = &quot;#1D1F21&quot; # background color for quotes and code blocks
+copyright = &quot;#404040&quot; # copyright text color
+</code></pre>
 
 <p>至此，主题已经添加完成了。以上的命令含义就是 下载了一个主题到 theme 目录，然后把配置文件改一下。</p>
 
@@ -340,34 +329,38 @@ pygmentsCodeFences = true
 <p>作为一个博客来讲，一篇文章都没有就太废了吧，更何况这还是静态博客。参考<a href="https://gohugo.io/getting-started/quick-start/#step-4-add-some-content">官网教程</a></p>
 
 <ol>
-<li><p>以上一共出现了2个黑色的窗口，一个叫GitBash,一个叫cmd，用哪个都行，依次运行以下命令。</p>
+<li>以上一共出现了2个黑色的窗口，一个叫GitBash,一个叫cmd，用哪个都行，依次运行以下命令。</li>
+</ol>
 
 <pre><code>cd C:\Hugo\Site\xxxxxx
 hugo new post/yyyyy.md
-</code></pre></li>
-</ol>
+</code></pre>
 
 <p>以上命令的含义是，切换到网站的根目录，然后初始化一个名字叫yyyyy的文章</p>
 
 <h3 id="启动">启动！</h3>
 
 <ol>
-<li><p>接下来就是激动人心的启动环节了，依次输入以下命令</p>
+<li>接下来就是激动人心的启动环节了，依次输入以下命令</li>
+</ol>
 
 <pre><code>cd C:Huog\Site\xxxxxx
 hugo server -D
-</code></pre></li>
+</code></pre>
 
-<li><p>然后命令行界面显示的内容，会包含以下信息</p>
+<ol>
+<li>然后命令行界面显示的内容，会包含以下信息</li>
+</ol>
 
 <pre><code>Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
 Press Ctrl+C to stop
-</code></pre></li>
+</code></pre>
 
-<li><p>接下来要做的就是在浏览器中输入<code>http://localhost:1313/</code>链接就可以访问博客了。效果如下图所示。</p>
-
-<p><img src="http://zhaogaz.com/img/posts/2018/newbie_start_hugo_blog_1/2018-02-20_172311.png" alt="效果图" /></p></li>
+<ol>
+<li>接下来要做的就是在浏览器中输入<code>http://localhost:1313/</code>链接就可以访问博客了。效果如下图所示。</li>
 </ol>
+
+<p><img src="./assets/2018-02-20_172311-1544429963231-1544429967078.png" alt="2018-02-20_172311" /></p>
 
 <hr />
 

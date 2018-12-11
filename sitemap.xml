@@ -8,6 +8,11 @@
   </url>
   
   <url>
+    <loc>http://zhaogaz.com/post/2018/secret-of-design-pattern/</loc>
+    <lastmod>2018-12-12T00:21:13+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://zhaogaz.com/post/2018/what-i-prepare-to-do/</loc>
     <lastmod>2018-12-04T07:09:37+08:00</lastmod>
   </url>
@@ -86,7 +91,7 @@
   
   <url>
     <loc>http://zhaogaz.com/post/</loc>
-    <lastmod>2018-12-04T07:09:37+08:00</lastmod>
+    <lastmod>2018-12-12T00:21:13+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -115,8 +120,20 @@
   </url>
   
   <url>
+    <loc>http://zhaogaz.com/tags/%E7%BC%96%E7%A8%8B/</loc>
+    <lastmod>2018-12-12T00:21:13+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://zhaogaz.com/tags/%E8%A7%A3%E5%86%B3/</loc>
     <lastmod>2018-03-04T14:24:49+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://zhaogaz.com/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</loc>
+    <lastmod>2018-12-12T00:21:13+08:00</lastmod>
     <priority>0</priority>
   </url>
   
