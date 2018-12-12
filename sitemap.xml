@@ -8,6 +8,11 @@
   </url>
   
   <url>
+    <loc>http://zhaogaz.com/post/2018/when-i-do-100-leetcode/</loc>
+    <lastmod>2018-12-12T17:16:43+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://zhaogaz.com/post/2018/secret-of-design-pattern/</loc>
     <lastmod>2018-12-12T00:21:13+08:00</lastmod>
   </url>
@@ -91,7 +96,7 @@
   
   <url>
     <loc>http://zhaogaz.com/post/</loc>
-    <lastmod>2018-12-12T00:21:13+08:00</lastmod>
+    <lastmod>2018-12-12T17:16:43+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -116,6 +121,18 @@
   <url>
     <loc>http://zhaogaz.com/tags/%E5%8D%9A%E5%AE%A2/</loc>
     <lastmod>2018-03-04T14:34:37+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://zhaogaz.com/tags/%E6%84%9F%E6%82%9F/</loc>
+    <lastmod>2018-12-12T17:16:43+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://zhaogaz.com/tags/%E7%AE%97%E6%B3%95/</loc>
+    <lastmod>2018-12-12T17:16:43+08:00</lastmod>
     <priority>0</priority>
   </url>
   
