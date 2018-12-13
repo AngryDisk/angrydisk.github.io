@@ -8,6 +8,11 @@
   </url>
   
   <url>
+    <loc>http://zhaogaz.com/post/2018/thinking-about-tool/</loc>
+    <lastmod>2018-12-13T18:01:52+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://zhaogaz.com/post/2018/when-i-do-100-leetcode/</loc>
     <lastmod>2018-12-12T17:16:43+08:00</lastmod>
   </url>
@@ -96,7 +101,7 @@
   
   <url>
     <loc>http://zhaogaz.com/post/</loc>
-    <lastmod>2018-12-12T17:16:43+08:00</lastmod>
+    <lastmod>2018-12-13T18:01:52+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -121,6 +126,18 @@
   <url>
     <loc>http://zhaogaz.com/tags/%E5%8D%9A%E5%AE%A2/</loc>
     <lastmod>2018-03-04T14:34:37+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://zhaogaz.com/tags/%E5%B7%A5%E5%85%B7/</loc>
+    <lastmod>2018-12-13T18:01:52+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://zhaogaz.com/tags/%E6%80%9D%E8%80%83/</loc>
+    <lastmod>2018-12-13T18:01:52+08:00</lastmod>
     <priority>0</priority>
   </url>
   
