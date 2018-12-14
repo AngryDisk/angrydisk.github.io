@@ -21,6 +21,15 @@
     </item>
     
     <item>
+      <title>leetcode实战-99. Recover Binary Search Tree</title>
+      <link>http://zhaogaz.com/post/2018/leetcode-practice-1/</link>
+      <pubDate>Fri, 14 Dec 2018 13:58:02 +0800</pubDate>
+      
+      <guid>http://zhaogaz.com/post/2018/leetcode-practice-1/</guid>
+      <description>写这篇文章的目的很单纯，就是来炫耀的，或者说展示下自己写算法的思路。 题目 99. Recover Binary Search Tree Two elements of a binary search tree (BST) are swapped by mistake. Recover the tree without changing its structure. 代码块不贴了，简单解</description>
+    </item>
+    
+    <item>
       <title>关于程序员工具的思考</title>
       <link>http://zhaogaz.com/post/2018/thinking-about-tool/</link>
       <pubDate>Thu, 13 Dec 2018 18:01:52 +0800</pubDate>
