@@ -6,10 +6,19 @@
     <description>Recent content in Posts on ZhaoGaz&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 14 Dec 2018 13:58:02 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 19 Dec 2018 22:05:54 +0800</lastBuildDate>
     
 	<atom:link href="http://zhaogaz.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title> 看 Linux Shell 有感</title>
+      <link>http://zhaogaz.com/post/2018/thinking-in-linux-shell/</link>
+      <pubDate>Wed, 19 Dec 2018 22:05:54 +0800</pubDate>
+      
+      <guid>http://zhaogaz.com/post/2018/thinking-in-linux-shell/</guid>
+      <description>2018.12.19 看shell 有感 最近再看一本书，叫《Linux shell 脚本攻略》，英文名带cookbook，不知道算不算系列图书之一。 这篇文章，我无意把它写成笔</description>
+    </item>
     
     <item>
       <title>leetcode实战-99. Recover Binary Search Tree</title>
