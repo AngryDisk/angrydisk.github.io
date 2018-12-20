@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="zhaogaz" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.52" />
+
+<link rel="canonical" href="http://zhaogaz.com/post/2018/source-code-about-arraylist/">
+<base href="http://zhaogaz.com" />
+<meta property="og:title" content="ArrayList源码思考" />
+<meta property="og:description" content="其实这篇内容原本记于11月初，放了好久了，最近整理下发出来吧。 这篇文章，大体上写的是源码的阅读，实际上与其他人写的思路是完全不同的。写这篇文" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://zhaogaz.com/post/2018/source-code-about-arraylist/" /><meta property="article:published_time" content="2018-12-20T13:07:50&#43;08:00"/>
+<meta property="article:modified_time" content="2018-12-20T13:07:50&#43;08:00"/>
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="ArrayList源码思考"/>
+<meta name="twitter:description" content="其实这篇内容原本记于11月初，放了好久了，最近整理下发出来吧。 这篇文章，大体上写的是源码的阅读，实际上与其他人写的思路是完全不同的。写这篇文"/>
+
+
+
+<meta itemprop="name" content="ArrayList源码思考">
+<meta itemprop="description" content="其实这篇内容原本记于11月初，放了好久了，最近整理下发出来吧。 这篇文章，大体上写的是源码的阅读，实际上与其他人写的思路是完全不同的。写这篇文">
+
+
+<meta itemprop="datePublished" content="2018-12-20T13:07:50&#43;08:00" />
+<meta itemprop="dateModified" content="2018-12-20T13:07:50&#43;08:00" />
+<meta itemprop="wordCount" content="2525">
+
+
+
+<meta itemprop="keywords" content="源码,java,思考," />
+
+
+<link rel="stylesheet" href="css/layout.css" />
+<style type="text/css">
+body {
+  background-color: #FFFFFF;
+  color: #404040;
+}
+
+a { color: #404040; }
+
+pre {
+  background: #c3ffc3;
+  border: 1px solid #404040;
+  border-radius: 5px;
+}
+
+code {
+  background: #c3ffc3;
+}
+
+blockquote {
+  background: #c3ffc3;
+  border-left: 3px solid #404040;
+}
+
+table {
+  margin: 1em auto;
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: 1px solid #404040;
+}
+
+th {
+  background: #404040;
+  color: #FFFFFF;
+}
+
+.siteTitle a { color: #83ca3d; }
+
+.post .content h1{ color: #83ca3d; }
+.post .content h2{ color: #83ca3d; }
+.post .content h3{ color: #83ca3d; }
+.post .content h4{ color: #83ca3d; }
+.post .content h5{ color: #83ca3d; }
+.post .content h6{ color: #83ca3d; }
+.post .content a:hover { color: #83ca3d; }
+.social-link:hover { color: #83ca3d; }
+.nav-item-title:hover { color: #83ca3d; }
+.tag a:hover { color: #83ca3d; }
+.copyright { color: #404040 }
+.poweredby { color: #404040 }
+.poweredby a { color: #404040; }
+.post-preview .title a{ color: #83ca3d; }
+.content-item a:hover{
+  text-decoration: underline;
+  color: #83ca3d;
+}
+.post-list .title { color: #83ca3d; }
+.rmore { color: #83ca3d; }
+.terms .term a:hover {
+  text-decoration: underline;
+  color: #83ca3d;
+}
+
+</style>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-114396712-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<title>
+
+
+     ArrayList源码思考 
+
+</title>
+
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="http://zhaogaz.com">ZhaoGaz&#39;s Blog</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="http://zhaogaz.com/post/"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="http://zhaogaz.com/tags/"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item" href="http://zhaogaz.com/about/"><div class="nav-item-title">About</div></a>
+    
+
+  </nav>
+</div>
+
+  
+<div class="social-links-header">
+
+
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> ArrayList源码思考 </h1>
+    <div class="content"> 
+
+<p>其实这篇内容原本记于11月初，放了好久了，最近整理下发出来吧。</p>
+
+<p>这篇文章，大体上写的是源码的阅读，实际上与其他人写的思路是完全不同的。写这篇文章的目的并非让大家知道<code>ArrayList</code>是怎么实现的，而是找一些我不会的点。因此有些方法在<code>ArrayList</code>中可能是个核心的方法，但是我并不会详细写；有些可能是边边角角的东西，但是我会着重去说一下。</p>
+
+<p>现在这个时间点（大概就是1个半月之后）重新看下来这篇文章，感觉写的并不好。</p>
+
+<h1 id="概观">概观</h1>
+
+<h2 id="继承与实现">继承与实现</h2>
+
+<p><code>ArrayList</code>这个类继承了<code>AbstractList</code>抽象类，同时实现了<code>List</code>接口，其他就是一些标记接口什么的，如<code>cloneable</code>、<code>Serializable</code>、<code>RandomAccess</code>这些了。</p>
+
+<p>除了这些之外还有间接实现的接口如<code>Iterable</code>这类，这类接口一般都是内部类实现的，实现了隐藏内部类的真实实现，只向外暴露接口的效果。</p>
+
+<h2 id="static全局共享的变量">static全局共享的变量</h2>
+
+<ul>
+<li><code>default_capacity</code>  很好理解，默认初始化值</li>
+<li><code>empty_element data</code>  注释翻译过来是：共享的空array实例，为空对象创建？</li>
+</ul>
+
+<h2 id="构造器">构造器</h2>
+
+<p>初始化构造器有三种方式</p>
+
+<ul>
+<li>无参数构造器——把static 的 <code>DEFAULTCAPACITY_EMPTY_ELEMENTDATA</code>赋值给<code>element data</code></li>
+<li>int参数构造器——初始化的时候，指定一个值，指定<code>ArrayList</code>的<code>size</code>长度</li>
+<li><code>Collection</code>接口构造器——初始化的时候，给一个实现<code>Collection</code>接口的对象，这个类会被转为<code>object[]</code>类型的数组直接赋值给<code>element data</code>。如果这个对象是空的，那么跟第二个构造器是一样的。如果不为空，还会检查<code>element data</code>类型</li>
+</ul>
+
+<h2 id="内部方法">内部方法</h2>
+
+<h3 id="batchremove-collection-c-boolean-complement"><code>batchRemove(Collection&lt;?&gt; c, boolean complement)</code></h3>
+
+<p>这个方法内部实现了取交和取并两种操作，通过制定true和false来把控制需要的元素挪到前面，不需要的可能会被重置为null</p>
+
+<h3 id="void-writeobject-java-io-objectoutputstream-s"><code>void writeObject(java.io.ObjectOutputStream s)</code></h3>
+
+<p>序列化需要实现的method，不过这个东西没有写作接口？</p>
+
+<h2 id="内部类">内部类</h2>
+
+<h3 id="itr">Itr</h3>
+
+<p>在<code>arraylist</code>中有一个内部类，这个内部类实现了迭代器接口。即可以通过接口类型，获得内部类对象的引用。内部类是一个迭代器的实现。</p>
+
+<p>在这个内部类中，有两个值，一个是 <code>modCount</code>另一个是<code>expectedModCount</code>，只有接口中的<code>remove（）</code>和初始化实例的时候才能让这两个值相同，也就是说在使用<code>Iterator</code>迭代的时候，只能通过remove来安全移除数据，且不报错。其他的方式都不行。</p>
+
+<p>下面是内部类的一个工具方法，只要这两个值不同步，就会抛出异常。这个检查在<code>next()</code>和<code>hasNext（）</code>中都有</p>
+
+<pre><code class="language-java">final void checkForComodification() {
+    if (modCount != expectedModCount)
+        throw new ConcurrentModificationException();
+}
+</code></pre>
+
+<p>其中 <code>remove（）</code>是通过引用外部类直接修改的。而<code>next（）</code>方法每次执行都会获得整个object对象的引用，来获取下一个数据。获取的方式是通过迭代器的游标。在<code>next（）</code>中，还有一个游标<code>lastRef</code>，用来记录每次next的对象位置。所以<code>remove（）</code>的时候能够正确删除。</p>
+
+<h3 id="listitr-extends-itr-implements-listiterator-e"><code>ListItr extends Itr implements ListIterator&lt;E&gt;</code></h3>
+
+<p>另一个list专用的迭代器。不怎么常用，（懒得看了）。</p>
+
+<h3 id="sublist-extends-abstractlist-e-implements-randomaccess"><code>SubList extends AbstractList&lt;E&gt; implements RandomAccess</code></h3>
+
+<p>这个内部类主要的作用是为了给<code>List&lt;E&gt; subList(int fromIndex, int toIndex)</code>提供一个片段的预览。对返回的对象操作，会对应到原来的对象上面。</p>
+
+<p>官网doc 给出了一个习惯的用法是<code>list.subList(from, to).clear();</code>这样，能够清空指定位置的元素。</p>
+
+<p>这个内部类实现了大部分方法，甚至还实现了一个匿名的迭代器。</p>
+
+<h3 id="arraylistspliterator-e-implements-spliterator-e"><code>ArrayListSpliterator&lt;E&gt; implements Spliterator&lt;E&gt;</code></h3>
+
+<p>这个接口是一个为了实现并行的<code>stream</code>内部类。
+暂时不看，很少用。</p>
+
+<h2 id="辅助工具">辅助工具</h2>
+
+<h3 id="t-requirenonnull-t-obj"><code>T requireNonNull(T obj)</code></h3>
+
+<pre><code class="language-java">public static &lt;T&gt; T requireNonNull(T obj) {
+    if (obj == null)
+        throw new NullPointerException();
+    return obj;
+}
+</code></pre>
+
+<p><code>Object</code>对象提供的静态方法，用于检查对象值，是否为空，空的话抛出空指针</p>
+
+<h1 id="疑惑-有答案的">疑惑(有答案的)</h1>
+
+<h2 id="randomaccess-用途"><code>RandomAccess</code>用途</h2>
+
+<p>这是一个标记借口，从官方文档给的东西来看，仍然看不懂在做什么。猜测是这样的，底层虚拟机相关可能给这个接口的实现类做了一些优化，实现了这个借口的list对象，<strong>能够达到常数时间的随机访问效果</strong>。JVM有可能会给这里面的数组类型对象做一些优化。</p>
+
+<h2 id="又实现了一遍-list-接口">又实现了一遍<code>List</code>接口</h2>
+
+<p>以<code>ArrayList</code>为例，为什么这个类extend 的<code>AbstractList</code>实现了<code>list</code>接口，还要自己再实现一遍<code>list</code>接口？</p>
+
+<p>查了下，网上的解释是没啥用，主要是为了程序识别的，又实现了一下这个接口。场景是这样的：你想看这个类实现了什么接口，点击一下直接转调到接口定义。就是这个用途。<a href="https://stackoverflow.com/questions/4387419/why-does-arraylist-have-implements-list/" title="why-does-arraylist-have-implements-list">stof1</a></p>
+
+<h2 id="抽象类为什么要实现某些方法-并抛出异常">抽象类为什么要实现某些方法，并抛出异常？</h2>
+
+<p><code>AbstractList</code>这个抽象类为什么要实现某些方法，并抛出异常？</p>
+
+<p>查了一下是这个样子的。如果你的 <em>抽象类</em> 提供了一个抽象方法，子类必须要重写，才能实现。但是有 <em>方法</em> 可以不需要重写，所以可以通过这种默认跑出异常的方式解决，反正你要想用这个方法就必须要重写，不写就抛异常，你也用不了。</p>
+
+<h1 id="疑惑-没答案">疑惑（没答案）</h1>
+
+<ol>
+<li>static 中<code>empty_element data</code> 到底有什么用？为什么还要拆出来一个<code>DEFAULT CAPACITY_EMPTY_ELEMENT DATA</code>另作他用？</li>
+<li><code>batchRemove(Collection&lt;?&gt; c, boolean complement)</code>看不懂。为什么要判断<code>r!=size</code>?这个判断有什么意义？为什么这些循环要写到<code>finally</code>中？</li>
+<li>为什么<code>serialize</code>序列化那个接口是标记接口，但是还需要某些实现类实现<code>writeObjet()</code> 、<code>readObject()</code>方法？为什么不把这几个方法写在接口里面。</li>
+</ol>
+
+<h1 id="感悟">感悟</h1>
+
+<ol>
+<li><code>ArrayList</code>对象本质就是做了一堆<strong>脏活累活</strong>，利用系统提供的最基础的数组类型的，在此基础上做了很多自动扩容、封装移动、数据检查等操作，同时还提供了便捷的操作方法。</li>
+<li>某些方法尽可能的少用，因为这对一个<code>List</code>来说，操作成本还是比较高的。</li>
+<li>看了下<code>AbstractList</code>这个抽象类，也就是<code>ArrayList</code>这个类的直接父类。这个父类里面有3个<code>class</code>文件，其中只有最核心的是public class，其他的都是包内 class，这两个class位置跟内部类有点像（再一个.java中的类），但是并没有写到public class内部，也就是说不是内部类。然后我看了一下，里面完全没有任何需要用到内部类特性的东西。——也就是说，如果需要构造一个类，这个类和用的位置没有关联，那么我写在一个文件中就可以了。如果这个类需要调用到内部的某些东西，才需要把这个类写成内部类，利用内部类的特性来实现功能。</li>
+</ol>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="http://zhaogaz.com/tags/%E6%BA%90%E7%A0%81">#源码</a>
+      </div>
+    
+      <div class="tag">
+        <a href="http://zhaogaz.com/tags/java">#java</a>
+      </div>
+    
+      <div class="tag">
+        <a href="http://zhaogaz.com/tags/%E6%80%9D%E8%80%83">#思考</a>
+      </div>
+    
+</div>
+
+    <div class="date"> Dec 20, 2018 </div>
+  </div>
+
+</footer>
+
+
+  
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:zx12_zx12@126.com"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/angrydisk" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+
+  
+
+  <div class="social-link">
+  <a href="http://zhaogaz.com/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright">  </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+
