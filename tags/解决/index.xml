@@ -2,39 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>解决 on ZhaoGaz&#39;s Blog</title>
-    <link>http://zhaogaz.com/tags/%E8%A7%A3%E5%86%B3/</link>
+    <link>/tags/%E8%A7%A3%E5%86%B3/</link>
     <description>Recent content in 解决 on ZhaoGaz&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sun, 04 Mar 2018 14:24:49 +0800</lastBuildDate>
     
-	<atom:link href="http://zhaogaz.com/tags/%E8%A7%A3%E5%86%B3/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/%E8%A7%A3%E5%86%B3/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Windows 7 特效禁用</title>
-      <link>http://zhaogaz.com/post/2018/windows-7-up-up/</link>
+      <link>/post/2018/windows-7-up-up/</link>
       <pubDate>Sun, 04 Mar 2018 14:24:49 +0800</pubDate>
       
-      <guid>http://zhaogaz.com/post/2018/windows-7-up-up/</guid>
+      <guid>/post/2018/windows-7-up-up/</guid>
       <description>还是那个Windows 7的破笔记本，性能实在是不太够用，因为水平不太行，总是开着多个IDE参考其他人的项目，再加上打开不少网页查资料，8GB</description>
     </item>
     
     <item>
       <title>印象笔记问题与解决</title>
-      <link>http://zhaogaz.com/post/2018/evernote-problem-and-fix/</link>
+      <link>/post/2018/evernote-problem-and-fix/</link>
       <pubDate>Sun, 04 Mar 2018 13:06:56 +0800</pubDate>
       
-      <guid>http://zhaogaz.com/post/2018/evernote-problem-and-fix/</guid>
+      <guid>/post/2018/evernote-problem-and-fix/</guid>
       <description>最近用印象笔记的时候也出了一些问题，图片莫名其妙就被丢了，印象中也没有任何删除图片的操作。 而且我的内容是图片和文字混排的，中间的文字一点也没</description>
     </item>
     
     <item>
       <title>Windows 7 自动休眠设置关闭</title>
-      <link>http://zhaogaz.com/post/2018/windows-auto-hibernate-close/</link>
+      <link>/post/2018/windows-auto-hibernate-close/</link>
       <pubDate>Sun, 04 Mar 2018 12:35:15 +0800</pubDate>
       
-      <guid>http://zhaogaz.com/post/2018/windows-auto-hibernate-close/</guid>
+      <guid>/post/2018/windows-auto-hibernate-close/</guid>
       <description>最近春节回家，一直在用旧笔记本，上面是 Windows 7 系统。以前装过Windows 8.1 但是驱动之类的东西实在是不好搞，官网也没放出什么解决办法。就一直没有</description>
     </item>
     

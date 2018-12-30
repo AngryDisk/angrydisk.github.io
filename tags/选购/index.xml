@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>选购 on ZhaoGaz&#39;s Blog</title>
-    <link>http://zhaogaz.com/tags/%E9%80%89%E8%B4%AD/</link>
+    <link>/tags/%E9%80%89%E8%B4%AD/</link>
     <description>Recent content in 选购 on ZhaoGaz&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Mon, 19 Feb 2018 15:21:56 +0800</lastBuildDate>
     
-	<atom:link href="http://zhaogaz.com/tags/%E9%80%89%E8%B4%AD/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/%E9%80%89%E8%B4%AD/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>LED台灯选择策略</title>
-      <link>http://zhaogaz.com/post/2018/bulb-shopping-guide/</link>
+      <link>/post/2018/bulb-shopping-guide/</link>
       <pubDate>Mon, 19 Feb 2018 15:21:56 +0800</pubDate>
       
-      <guid>http://zhaogaz.com/post/2018/bulb-shopping-guide/</guid>
+      <guid>/post/2018/bulb-shopping-guide/</guid>
       <description>几日前，心血来潮，想看看什么样的台灯比较好用，就进行了一番查找，并得到了一个非常参数化的结论。 现在已经把博客搭建完成了，终于能把这些写出来了</description>
     </item>
     

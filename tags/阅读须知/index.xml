@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>阅读须知 on ZhaoGaz&#39;s Blog</title>
-    <link>http://zhaogaz.com/tags/%E9%98%85%E8%AF%BB%E9%A1%BB%E7%9F%A5/</link>
+    <link>/tags/%E9%98%85%E8%AF%BB%E9%A1%BB%E7%9F%A5/</link>
     <description>Recent content in 阅读须知 on ZhaoGaz&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Tue, 04 Dec 2018 07:09:37 +0800</lastBuildDate>
     
-	<atom:link href="http://zhaogaz.com/tags/%E9%98%85%E8%AF%BB%E9%A1%BB%E7%9F%A5/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/%E9%98%85%E8%AF%BB%E9%A1%BB%E7%9F%A5/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>阅读须知2018.11.27</title>
-      <link>http://zhaogaz.com/post/2018/what-i-prepare-to-do/</link>
+      <link>/post/2018/what-i-prepare-to-do/</link>
       <pubDate>Tue, 04 Dec 2018 07:09:37 +0800</pubDate>
       
-      <guid>http://zhaogaz.com/post/2018/what-i-prepare-to-do/</guid>
+      <guid>/post/2018/what-i-prepare-to-do/</guid>
       <description>这篇内容主要是说下我近期更新这个博客到底有什么目的,会写什么样的东西,总结来说就是写作的背景. 面向群体 博客没有做过推广,不知道谁来看,所以不</description>
     </item>
     
