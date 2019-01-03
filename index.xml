@@ -21,6 +21,15 @@
     </item>
     
     <item>
+      <title>如何正确看源码</title>
+      <link>http://zhaogaz.com/post/2019/how-to-read-source-code/</link>
+      <pubDate>Thu, 03 Jan 2019 22:38:05 +0800</pubDate>
+      
+      <guid>http://zhaogaz.com/post/2019/how-to-read-source-code/</guid>
+      <description>这篇文章主要是讨论题目这个问题的。 就我目前的观察来看，我看过不少人，上来就是一切都写在源码里，让你自己看。话这么说是没错，但实际上做起来很难</description>
+    </item>
+    
+    <item>
       <title>开发过程中的瞻前顾后</title>
       <link>http://zhaogaz.com/post/2018/work-carefully/</link>
       <pubDate>Wed, 26 Dec 2018 17:09:04 +0800</pubDate>
