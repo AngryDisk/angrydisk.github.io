@@ -8,6 +8,11 @@
   </url>
   
   <url>
+    <loc>http://zhaogaz.com/post/2019/good-and-bad-code/</loc>
+    <lastmod>2019-01-15T01:01:45+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://zhaogaz.com/post/2019/how-to-read-source-code/</loc>
     <lastmod>2019-01-03T22:38:05+08:00</lastmod>
   </url>
@@ -143,7 +148,7 @@
   
   <url>
     <loc>http://zhaogaz.com/post/</loc>
-    <lastmod>2019-01-03T22:38:05+08:00</lastmod>
+    <lastmod>2019-01-15T01:01:45+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -156,6 +161,12 @@
   <url>
     <loc>http://zhaogaz.com/tags/windows/</loc>
     <lastmod>2018-03-04T14:24:49+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://zhaogaz.com/tags/%E4%BB%A3%E7%A0%81/</loc>
+    <lastmod>2019-01-15T01:01:45+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -173,7 +184,7 @@
   
   <url>
     <loc>http://zhaogaz.com/tags/%E6%80%9D%E8%80%83/</loc>
-    <lastmod>2019-01-03T22:38:05+08:00</lastmod>
+    <lastmod>2019-01-15T01:01:45+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -197,7 +208,7 @@
   
   <url>
     <loc>http://zhaogaz.com/tags/%E7%BC%96%E7%A8%8B/</loc>
-    <lastmod>2019-01-03T22:38:05+08:00</lastmod>
+    <lastmod>2019-01-15T01:01:45+08:00</lastmod>
     <priority>0</priority>
   </url>
   
