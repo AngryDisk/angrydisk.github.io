@@ -8,6 +8,11 @@
   </url>
   
   <url>
+    <loc>http://zhaogaz.com/post/2019/source-code-about-hashmap/</loc>
+    <lastmod>2019-01-16T14:44:50+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://zhaogaz.com/post/2019/good-and-bad-code/</loc>
     <lastmod>2019-01-15T01:01:45+08:00</lastmod>
   </url>
@@ -142,13 +147,13 @@
   
   <url>
     <loc>http://zhaogaz.com/tags/java/</loc>
-    <lastmod>2018-12-20T13:07:50+08:00</lastmod>
+    <lastmod>2019-01-16T14:44:50+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://zhaogaz.com/post/</loc>
-    <lastmod>2019-01-15T01:01:45+08:00</lastmod>
+    <lastmod>2019-01-16T14:44:50+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -184,7 +189,7 @@
   
   <url>
     <loc>http://zhaogaz.com/tags/%E6%80%9D%E8%80%83/</loc>
-    <lastmod>2019-01-15T01:01:45+08:00</lastmod>
+    <lastmod>2019-01-16T14:44:50+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -196,7 +201,7 @@
   
   <url>
     <loc>http://zhaogaz.com/tags/%E6%BA%90%E7%A0%81/</loc>
-    <lastmod>2018-12-20T13:07:50+08:00</lastmod>
+    <lastmod>2019-01-16T14:44:50+08:00</lastmod>
     <priority>0</priority>
   </url>
   
