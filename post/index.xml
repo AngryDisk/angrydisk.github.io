@@ -6,10 +6,19 @@
     <description>Recent content in Posts on ZhaoGaz&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 16 Jan 2019 15:41:32 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 25 Jan 2019 12:12:40 +0800</lastBuildDate>
     
 	<atom:link href="http://zhaogaz.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>关于Java面试的想法与一次面试的吐槽</title>
+      <link>http://zhaogaz.com/post/2019/interview-thinking/</link>
+      <pubDate>Fri, 25 Jan 2019 12:12:40 +0800</pubDate>
+      
+      <guid>http://zhaogaz.com/post/2019/interview-thinking/</guid>
+      <description>关于Java面试的想法与一次面试的吐槽 今天这个事，我其实很不爽，这让我感觉很多人缺乏面试的能力。缺少面试思考。所以我先写一下我对面试的一些看</description>
+    </item>
     
     <item>
       <title>LinkedList源码思考</title>
