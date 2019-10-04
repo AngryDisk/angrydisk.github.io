@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>代码 on ZhaoGaz&#39;s Blog</title>
-    <link>https://blog.zhaogaz.com/tags/%E4%BB%A3%E7%A0%81.html</link>
+    <link>http://blog.zhaogaz.com/tags/%E4%BB%A3%E7%A0%81.html</link>
     <description>Recent content in 代码 on ZhaoGaz&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>请自由抄袭，无版权</copyright>
     <lastBuildDate>Tue, 15 Jan 2019 01:01:45 +0800</lastBuildDate>
     
-	<atom:link href="https://blog.zhaogaz.com/tags/%E4%BB%A3%E7%A0%81/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.zhaogaz.com/tags/%E4%BB%A3%E7%A0%81/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>好代码与烂代码</title>
-      <link>https://blog.zhaogaz.com/post/2019/good-and-bad-code.html</link>
+      <link>http://blog.zhaogaz.com/post/2019/good-and-bad-code.html</link>
       <pubDate>Tue, 15 Jan 2019 01:01:45 +0800</pubDate>
       
-      <guid>https://blog.zhaogaz.com/post/2019/good-and-bad-code.html</guid>
+      <guid>http://blog.zhaogaz.com/post/2019/good-and-bad-code.html</guid>
       <description>好代码与烂代码 看代码这个事情吧，大多数人的理解只停留在各有各的好层面上，然而他们不理解的是烂代码和好代码是有明显区别的。这种区分的标准，我理</description>
     </item>
     

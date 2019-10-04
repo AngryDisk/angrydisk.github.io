@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>算法 on ZhaoGaz&#39;s Blog</title>
-    <link>https://blog.zhaogaz.com/tags/%E7%AE%97%E6%B3%95.html</link>
+    <link>http://blog.zhaogaz.com/tags/%E7%AE%97%E6%B3%95.html</link>
     <description>Recent content in 算法 on ZhaoGaz&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>请自由抄袭，无版权</copyright>
     <lastBuildDate>Fri, 14 Dec 2018 13:58:02 +0800</lastBuildDate>
     
-	<atom:link href="https://blog.zhaogaz.com/tags/%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.zhaogaz.com/tags/%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>leetcode实战-99. Recover Binary Search Tree</title>
-      <link>https://blog.zhaogaz.com/post/2018/leetcode-practice-1.html</link>
+      <link>http://blog.zhaogaz.com/post/2018/leetcode-practice-1.html</link>
       <pubDate>Fri, 14 Dec 2018 13:58:02 +0800</pubDate>
       
-      <guid>https://blog.zhaogaz.com/post/2018/leetcode-practice-1.html</guid>
+      <guid>http://blog.zhaogaz.com/post/2018/leetcode-practice-1.html</guid>
       <description>写这篇文章的目的很单纯，就是来炫耀的，或者说展示下自己写算法的思路。 题目 99. Recover Binary Search Tree Two elements of a binary search tree (BST) are swapped by mistake. Recover the tree without changing its structure. 代码块不贴了，简单解</description>
     </item>
     
     <item>
       <title>我与算法——记于leetcode写了100道题</title>
-      <link>https://blog.zhaogaz.com/post/2018/when-i-do-100-leetcode.html</link>
+      <link>http://blog.zhaogaz.com/post/2018/when-i-do-100-leetcode.html</link>
       <pubDate>Wed, 12 Dec 2018 17:16:43 +0800</pubDate>
       
-      <guid>https://blog.zhaogaz.com/post/2018/when-i-do-100-leetcode.html</guid>
+      <guid>http://blog.zhaogaz.com/post/2018/when-i-do-100-leetcode.html</guid>
       <description>本文记于2018.11.22,不过当时好久没搞博客了,最近处理了下笔记,依次发出来. 我可以简单说说我做这些题的过程和我理解的算法，还有一些我</description>
     </item>
     

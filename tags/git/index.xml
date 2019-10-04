@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>git on ZhaoGaz&#39;s Blog</title>
-    <link>https://blog.zhaogaz.com/tags/git.html</link>
+    <link>http://blog.zhaogaz.com/tags/git.html</link>
     <description>Recent content in git on ZhaoGaz&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>请自由抄袭，无版权</copyright>
     <lastBuildDate>Thu, 03 Oct 2019 14:53:19 +0800</lastBuildDate>
     
-	<atom:link href="https://blog.zhaogaz.com/tags/git/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.zhaogaz.com/tags/git/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Git设计原理一瞥</title>
-      <link>https://blog.zhaogaz.com/post/2019/thinking-in-git-design.html</link>
+      <link>http://blog.zhaogaz.com/post/2019/thinking-in-git-design.html</link>
       <pubDate>Thu, 03 Oct 2019 14:53:19 +0800</pubDate>
       
-      <guid>https://blog.zhaogaz.com/post/2019/thinking-in-git-design.html</guid>
+      <guid>http://blog.zhaogaz.com/post/2019/thinking-in-git-design.html</guid>
       <description>Git设计原理一瞥 需求 最近公司业务那边提了一个需求。大概来说，就是实现一个类似git的功能，能够记录追踪所有文件的，追踪文件变化等功能。他们</description>
     </item>
     

@@ -2,67 +2,67 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>博客 on ZhaoGaz&#39;s Blog</title>
-    <link>https://blog.zhaogaz.com/tags/%E5%8D%9A%E5%AE%A2.html</link>
+    <link>http://blog.zhaogaz.com/tags/%E5%8D%9A%E5%AE%A2.html</link>
     <description>Recent content in 博客 on ZhaoGaz&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>请自由抄袭，无版权</copyright>
     <lastBuildDate>Sun, 04 Mar 2018 14:34:37 +0800</lastBuildDate>
     
-	<atom:link href="https://blog.zhaogaz.com/tags/%E5%8D%9A%E5%AE%A2/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.zhaogaz.com/tags/%E5%8D%9A%E5%AE%A2/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>我为什么只写些乱七八糟的事情</title>
-      <link>https://blog.zhaogaz.com/post/2018/why-i-do-not-write-coding.html</link>
+      <link>http://blog.zhaogaz.com/post/2018/why-i-do-not-write-coding.html</link>
       <pubDate>Sun, 04 Mar 2018 14:34:37 +0800</pubDate>
       
-      <guid>https://blog.zhaogaz.com/post/2018/why-i-do-not-write-coding.html</guid>
+      <guid>http://blog.zhaogaz.com/post/2018/why-i-do-not-write-coding.html</guid>
       <description>搭这个博客呢，其实不只是为了写这些破烂事，还有个更重要的目的是写技术相关的内容。 既然是文章，就有文章对应的阅读群体。不同类型的文章会针对不同</description>
     </item>
     
     <item>
       <title>新手搭建Hogo静态博客教程（五）:注意事项</title>
-      <link>https://blog.zhaogaz.com/post/2018/newbie-start-hugo-blog-5.html</link>
+      <link>http://blog.zhaogaz.com/post/2018/newbie-start-hugo-blog-5.html</link>
       <pubDate>Wed, 21 Feb 2018 16:05:56 +0800</pubDate>
       
-      <guid>https://blog.zhaogaz.com/post/2018/newbie-start-hugo-blog-5.html</guid>
+      <guid>http://blog.zhaogaz.com/post/2018/newbie-start-hugo-blog-5.html</guid>
       <description>本教程为系列文章，点击右下角的 #Hugo 可以查看全部。 这篇内容，会描述下我遇到的问题，和需要注意的点，希望能帮上大家。 Hugo 官网搜索问题 在Hugo官网搜</description>
     </item>
     
     <item>
       <title>新手搭建Hogo静态博客教程（四）:使用优化</title>
-      <link>https://blog.zhaogaz.com/post/2018/newbie-start-hugo-blog-4.html</link>
+      <link>http://blog.zhaogaz.com/post/2018/newbie-start-hugo-blog-4.html</link>
       <pubDate>Wed, 21 Feb 2018 12:47:20 +0800</pubDate>
       
-      <guid>https://blog.zhaogaz.com/post/2018/newbie-start-hugo-blog-4.html</guid>
+      <guid>http://blog.zhaogaz.com/post/2018/newbie-start-hugo-blog-4.html</guid>
       <description>本教程为系列文章，点击右下角的 #Hugo 可以查看全部。 在上一篇，我们已经将博客发布到了网络上，但是这只是个开始，我们每次写了新的文章之后，都要生成静</description>
     </item>
     
     <item>
       <title>新手搭建Hogo静态博客教程（三）:博客发布与个性化域名</title>
-      <link>https://blog.zhaogaz.com/post/2018/newbie-start-hugo-blog-3.html</link>
+      <link>http://blog.zhaogaz.com/post/2018/newbie-start-hugo-blog-3.html</link>
       <pubDate>Tue, 20 Feb 2018 23:59:02 +0800</pubDate>
       
-      <guid>https://blog.zhaogaz.com/post/2018/newbie-start-hugo-blog-3.html</guid>
+      <guid>http://blog.zhaogaz.com/post/2018/newbie-start-hugo-blog-3.html</guid>
       <description>本教程为系列文章，点击右下角的 #Hugo 可以查看全部。 在上一篇中，我们已经对博客进行了部分调整，实现了我们需要的功能，在这一篇中，我将会说一下如何把</description>
     </item>
     
     <item>
       <title>新手搭建Hogo静态博客教程（二）:本地博客调整</title>
-      <link>https://blog.zhaogaz.com/post/2018/newbie-start-hugo-blog-2.html</link>
+      <link>http://blog.zhaogaz.com/post/2018/newbie-start-hugo-blog-2.html</link>
       <pubDate>Tue, 20 Feb 2018 18:44:17 +0800</pubDate>
       
-      <guid>https://blog.zhaogaz.com/post/2018/newbie-start-hugo-blog-2.html</guid>
+      <guid>http://blog.zhaogaz.com/post/2018/newbie-start-hugo-blog-2.html</guid>
       <description>本教程为系列文章，点击右下角的 #Hugo 可以查看全部。 在上一篇中，已经起了一个本地的博客，在本篇中，将会对博客进行细节的定制。 本篇内容不准备特别细致</description>
     </item>
     
     <item>
       <title>新手搭建Hogo静态博客教程（一）:本地搭建运行</title>
-      <link>https://blog.zhaogaz.com/post/2018/newbie_start_hugo_blog_1.html</link>
+      <link>http://blog.zhaogaz.com/post/2018/newbie_start_hugo_blog_1.html</link>
       <pubDate>Mon, 19 Feb 2018 23:11:31 +0800</pubDate>
       
-      <guid>https://blog.zhaogaz.com/post/2018/newbie_start_hugo_blog_1.html</guid>
+      <guid>http://blog.zhaogaz.com/post/2018/newbie_start_hugo_blog_1.html</guid>
       <description>本教程为系列文章，点击右下角的 #Hugo 可以查看全部。 本教程，记录了我搭建博客过程中所遇到的所有的问题。有的问题很简单，有的问题很棘手，以至于不得不</description>
     </item>
     

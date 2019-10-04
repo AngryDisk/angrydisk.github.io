@@ -2,40 +2,40 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>编程 on ZhaoGaz&#39;s Blog</title>
-    <link>https://blog.zhaogaz.com/tags/%E7%BC%96%E7%A8%8B.html</link>
+    <link>http://blog.zhaogaz.com/tags/%E7%BC%96%E7%A8%8B.html</link>
     <description>Recent content in 编程 on ZhaoGaz&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>请自由抄袭，无版权</copyright>
     <lastBuildDate>Tue, 15 Jan 2019 01:01:45 +0800</lastBuildDate>
     
-	<atom:link href="https://blog.zhaogaz.com/tags/%E7%BC%96%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.zhaogaz.com/tags/%E7%BC%96%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>好代码与烂代码</title>
-      <link>https://blog.zhaogaz.com/post/2019/good-and-bad-code.html</link>
+      <link>http://blog.zhaogaz.com/post/2019/good-and-bad-code.html</link>
       <pubDate>Tue, 15 Jan 2019 01:01:45 +0800</pubDate>
       
-      <guid>https://blog.zhaogaz.com/post/2019/good-and-bad-code.html</guid>
+      <guid>http://blog.zhaogaz.com/post/2019/good-and-bad-code.html</guid>
       <description>好代码与烂代码 看代码这个事情吧，大多数人的理解只停留在各有各的好层面上，然而他们不理解的是烂代码和好代码是有明显区别的。这种区分的标准，我理</description>
     </item>
     
     <item>
       <title>如何正确看源码</title>
-      <link>https://blog.zhaogaz.com/post/2019/how-to-read-source-code.html</link>
+      <link>http://blog.zhaogaz.com/post/2019/how-to-read-source-code.html</link>
       <pubDate>Thu, 03 Jan 2019 22:38:05 +0800</pubDate>
       
-      <guid>https://blog.zhaogaz.com/post/2019/how-to-read-source-code.html</guid>
+      <guid>http://blog.zhaogaz.com/post/2019/how-to-read-source-code.html</guid>
       <description>这篇文章主要是讨论题目这个问题的。 就我目前的观察来看，我看过不少人，上来就是一切都写在源码里，让你自己看。话这么说是没错，但实际上做起来很难</description>
     </item>
     
     <item>
       <title>设计模式的奥义</title>
-      <link>https://blog.zhaogaz.com/post/2018/secret-of-design-pattern.html</link>
+      <link>http://blog.zhaogaz.com/post/2018/secret-of-design-pattern.html</link>
       <pubDate>Wed, 12 Dec 2018 00:21:13 +0800</pubDate>
       
-      <guid>https://blog.zhaogaz.com/post/2018/secret-of-design-pattern.html</guid>
+      <guid>http://blog.zhaogaz.com/post/2018/secret-of-design-pattern.html</guid>
       <description>2018.12.07 设计模式的奥义 给这个文章起标题之前，我还犹豫了一下，我觉得奥义还是准确的，我自认为已经理解了设计模式的精髓。 我在最开始接触设计模式的时候还</description>
     </item>
     
