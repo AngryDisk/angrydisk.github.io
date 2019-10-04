@@ -1,3 +1,3 @@
 User-agent: *
 
-Sitemap: http://zhaogaz.com/sitemap.xml
+Sitemap: https://blog.zhaogaz.com/sitemap.xml

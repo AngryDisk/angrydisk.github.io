@@ -2,40 +2,40 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>java on ZhaoGaz&#39;s Blog</title>
-    <link>http://zhaogaz.com/tags/java.html</link>
+    <link>https://blog.zhaogaz.com/tags/java.html</link>
     <description>Recent content in java on ZhaoGaz&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>请自由抄袭，无版权</copyright>
     <lastBuildDate>Wed, 16 Jan 2019 15:41:32 +0800</lastBuildDate>
     
-	<atom:link href="http://zhaogaz.com/tags/java/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.zhaogaz.com/tags/java/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>LinkedList源码思考</title>
-      <link>http://zhaogaz.com/post/2019/source-code-about-linkedlist.html</link>
+      <link>https://blog.zhaogaz.com/post/2019/source-code-about-linkedlist.html</link>
       <pubDate>Wed, 16 Jan 2019 15:41:32 +0800</pubDate>
       
-      <guid>http://zhaogaz.com/post/2019/source-code-about-linkedlist.html</guid>
+      <guid>https://blog.zhaogaz.com/post/2019/source-code-about-linkedlist.html</guid>
       <description>LinkedList源码阅读 这篇文章原本记于2018.11.30日,现整理一下发出来. 疑问 为什么Queue这个接口要给两组,(一组是抛出异常</description>
     </item>
     
     <item>
       <title>HashMap源码思考</title>
-      <link>http://zhaogaz.com/post/2019/source-code-about-hashmap.html</link>
+      <link>https://blog.zhaogaz.com/post/2019/source-code-about-hashmap.html</link>
       <pubDate>Wed, 16 Jan 2019 14:44:50 +0800</pubDate>
       
-      <guid>http://zhaogaz.com/post/2019/source-code-about-hashmap.html</guid>
+      <guid>https://blog.zhaogaz.com/post/2019/source-code-about-hashmap.html</guid>
       <description>HashMap源码阅读 本篇内容原本写于12月3日.现在整理了一下,发出来. 文档内容 看了下官方提供的文档,因为本身就经常用,常见的特性都知道.</description>
     </item>
     
     <item>
       <title>ArrayList源码思考</title>
-      <link>http://zhaogaz.com/post/2018/source-code-about-arraylist.html</link>
+      <link>https://blog.zhaogaz.com/post/2018/source-code-about-arraylist.html</link>
       <pubDate>Thu, 20 Dec 2018 13:07:50 +0800</pubDate>
       
-      <guid>http://zhaogaz.com/post/2018/source-code-about-arraylist.html</guid>
+      <guid>https://blog.zhaogaz.com/post/2018/source-code-about-arraylist.html</guid>
       <description>其实这篇内容原本记于11月初，放了好久了，最近整理下发出来吧。 这篇文章，大体上写的是源码的阅读，实际上与其他人写的思路是完全不同的。写这篇文</description>
     </item>
     

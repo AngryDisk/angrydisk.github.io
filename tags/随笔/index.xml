@@ -2,40 +2,40 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>随笔 on ZhaoGaz&#39;s Blog</title>
-    <link>http://zhaogaz.com/tags/%E9%9A%8F%E7%AC%94.html</link>
+    <link>https://blog.zhaogaz.com/tags/%E9%9A%8F%E7%AC%94.html</link>
     <description>Recent content in 随笔 on ZhaoGaz&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>请自由抄袭，无版权</copyright>
     <lastBuildDate>Tue, 04 Dec 2018 07:09:37 +0800</lastBuildDate>
     
-	<atom:link href="http://zhaogaz.com/tags/%E9%9A%8F%E7%AC%94/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.zhaogaz.com/tags/%E9%9A%8F%E7%AC%94/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>阅读须知2018.11.27</title>
-      <link>http://zhaogaz.com/post/2018/what-i-prepare-to-do.html</link>
+      <link>https://blog.zhaogaz.com/post/2018/what-i-prepare-to-do.html</link>
       <pubDate>Tue, 04 Dec 2018 07:09:37 +0800</pubDate>
       
-      <guid>http://zhaogaz.com/post/2018/what-i-prepare-to-do.html</guid>
+      <guid>https://blog.zhaogaz.com/post/2018/what-i-prepare-to-do.html</guid>
       <description>这篇内容主要是说下我近期更新这个博客到底有什么目的,会写什么样的东西,总结来说就是写作的背景. 面向群体 博客没有做过推广,不知道谁来看,所以不</description>
     </item>
     
     <item>
       <title>我为什么只写些乱七八糟的事情</title>
-      <link>http://zhaogaz.com/post/2018/why-i-do-not-write-coding.html</link>
+      <link>https://blog.zhaogaz.com/post/2018/why-i-do-not-write-coding.html</link>
       <pubDate>Sun, 04 Mar 2018 14:34:37 +0800</pubDate>
       
-      <guid>http://zhaogaz.com/post/2018/why-i-do-not-write-coding.html</guid>
+      <guid>https://blog.zhaogaz.com/post/2018/why-i-do-not-write-coding.html</guid>
       <description>搭这个博客呢，其实不只是为了写这些破烂事，还有个更重要的目的是写技术相关的内容。 既然是文章，就有文章对应的阅读群体。不同类型的文章会针对不同</description>
     </item>
     
     <item>
       <title>博客第一篇</title>
-      <link>http://zhaogaz.com/post/2018/first-post.html</link>
+      <link>https://blog.zhaogaz.com/post/2018/first-post.html</link>
       <pubDate>Sun, 18 Feb 2018 16:28:38 +0800</pubDate>
       
-      <guid>http://zhaogaz.com/post/2018/first-post.html</guid>
+      <guid>https://blog.zhaogaz.com/post/2018/first-post.html</guid>
       <description>最近手头记录了各种各样的东西，删掉觉得可惜，留着总感觉没用，因为事情已经过去了。 我个人最开始的时候，在QQ空间发东西。后来表达的渠道转移到了</description>
     </item>
     

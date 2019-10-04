@@ -2,238 +2,238 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on ZhaoGaz&#39;s Blog</title>
-    <link>http://zhaogaz.com/post.html</link>
+    <link>https://blog.zhaogaz.com/post.html</link>
     <description>Recent content in Posts on ZhaoGaz&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>请自由抄袭，无版权</copyright>
     <lastBuildDate>Thu, 03 Oct 2019 14:53:19 +0800</lastBuildDate>
     
-	<atom:link href="http://zhaogaz.com/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.zhaogaz.com/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Git设计原理一瞥</title>
-      <link>http://zhaogaz.com/post/2019/thinking-in-git-design.html</link>
+      <link>https://blog.zhaogaz.com/post/2019/thinking-in-git-design.html</link>
       <pubDate>Thu, 03 Oct 2019 14:53:19 +0800</pubDate>
       
-      <guid>http://zhaogaz.com/post/2019/thinking-in-git-design.html</guid>
+      <guid>https://blog.zhaogaz.com/post/2019/thinking-in-git-design.html</guid>
       <description>Git设计原理一瞥 需求 最近公司业务那边提了一个需求。大概来说，就是实现一个类似git的功能，能够记录追踪所有文件的，追踪文件变化等功能。他们</description>
     </item>
     
     <item>
       <title>关于Java面试的想法与一次面试的吐槽</title>
-      <link>http://zhaogaz.com/post/2019/interview-thinking.html</link>
+      <link>https://blog.zhaogaz.com/post/2019/interview-thinking.html</link>
       <pubDate>Fri, 25 Jan 2019 12:12:40 +0800</pubDate>
       
-      <guid>http://zhaogaz.com/post/2019/interview-thinking.html</guid>
+      <guid>https://blog.zhaogaz.com/post/2019/interview-thinking.html</guid>
       <description>关于Java面试的想法与一次面试的吐槽 今天这个事，我其实很不爽，这让我感觉很多人缺乏面试的能力。缺少面试思考。所以我先写一下我对面试的一些看</description>
     </item>
     
     <item>
       <title>LinkedList源码思考</title>
-      <link>http://zhaogaz.com/post/2019/source-code-about-linkedlist.html</link>
+      <link>https://blog.zhaogaz.com/post/2019/source-code-about-linkedlist.html</link>
       <pubDate>Wed, 16 Jan 2019 15:41:32 +0800</pubDate>
       
-      <guid>http://zhaogaz.com/post/2019/source-code-about-linkedlist.html</guid>
+      <guid>https://blog.zhaogaz.com/post/2019/source-code-about-linkedlist.html</guid>
       <description>LinkedList源码阅读 这篇文章原本记于2018.11.30日,现整理一下发出来. 疑问 为什么Queue这个接口要给两组,(一组是抛出异常</description>
     </item>
     
     <item>
       <title>HashMap源码思考</title>
-      <link>http://zhaogaz.com/post/2019/source-code-about-hashmap.html</link>
+      <link>https://blog.zhaogaz.com/post/2019/source-code-about-hashmap.html</link>
       <pubDate>Wed, 16 Jan 2019 14:44:50 +0800</pubDate>
       
-      <guid>http://zhaogaz.com/post/2019/source-code-about-hashmap.html</guid>
+      <guid>https://blog.zhaogaz.com/post/2019/source-code-about-hashmap.html</guid>
       <description>HashMap源码阅读 本篇内容原本写于12月3日.现在整理了一下,发出来. 文档内容 看了下官方提供的文档,因为本身就经常用,常见的特性都知道.</description>
     </item>
     
     <item>
       <title>好代码与烂代码</title>
-      <link>http://zhaogaz.com/post/2019/good-and-bad-code.html</link>
+      <link>https://blog.zhaogaz.com/post/2019/good-and-bad-code.html</link>
       <pubDate>Tue, 15 Jan 2019 01:01:45 +0800</pubDate>
       
-      <guid>http://zhaogaz.com/post/2019/good-and-bad-code.html</guid>
+      <guid>https://blog.zhaogaz.com/post/2019/good-and-bad-code.html</guid>
       <description>好代码与烂代码 看代码这个事情吧，大多数人的理解只停留在各有各的好层面上，然而他们不理解的是烂代码和好代码是有明显区别的。这种区分的标准，我理</description>
     </item>
     
     <item>
       <title>如何正确看源码</title>
-      <link>http://zhaogaz.com/post/2019/how-to-read-source-code.html</link>
+      <link>https://blog.zhaogaz.com/post/2019/how-to-read-source-code.html</link>
       <pubDate>Thu, 03 Jan 2019 22:38:05 +0800</pubDate>
       
-      <guid>http://zhaogaz.com/post/2019/how-to-read-source-code.html</guid>
+      <guid>https://blog.zhaogaz.com/post/2019/how-to-read-source-code.html</guid>
       <description>这篇文章主要是讨论题目这个问题的。 就我目前的观察来看，我看过不少人，上来就是一切都写在源码里，让你自己看。话这么说是没错，但实际上做起来很难</description>
     </item>
     
     <item>
       <title>开发过程中的瞻前顾后</title>
-      <link>http://zhaogaz.com/post/2018/work-carefully.html</link>
+      <link>https://blog.zhaogaz.com/post/2018/work-carefully.html</link>
       <pubDate>Wed, 26 Dec 2018 17:09:04 +0800</pubDate>
       
-      <guid>http://zhaogaz.com/post/2018/work-carefully.html</guid>
+      <guid>https://blog.zhaogaz.com/post/2018/work-carefully.html</guid>
       <description>开发过程中的瞻前顾后 因为最近一两年转行做研发。从底层往上爬的过程还是比较累的，遇到了很多糟心事。具体的内容我就不说了，我对以上的不爽的行为做</description>
     </item>
     
     <item>
       <title>ArrayList源码思考</title>
-      <link>http://zhaogaz.com/post/2018/source-code-about-arraylist.html</link>
+      <link>https://blog.zhaogaz.com/post/2018/source-code-about-arraylist.html</link>
       <pubDate>Thu, 20 Dec 2018 13:07:50 +0800</pubDate>
       
-      <guid>http://zhaogaz.com/post/2018/source-code-about-arraylist.html</guid>
+      <guid>https://blog.zhaogaz.com/post/2018/source-code-about-arraylist.html</guid>
       <description>其实这篇内容原本记于11月初，放了好久了，最近整理下发出来吧。 这篇文章，大体上写的是源码的阅读，实际上与其他人写的思路是完全不同的。写这篇文</description>
     </item>
     
     <item>
       <title> 看 Linux Shell 有感</title>
-      <link>http://zhaogaz.com/post/2018/thinking-in-linux-shell.html</link>
+      <link>https://blog.zhaogaz.com/post/2018/thinking-in-linux-shell.html</link>
       <pubDate>Wed, 19 Dec 2018 22:05:54 +0800</pubDate>
       
-      <guid>http://zhaogaz.com/post/2018/thinking-in-linux-shell.html</guid>
+      <guid>https://blog.zhaogaz.com/post/2018/thinking-in-linux-shell.html</guid>
       <description>2018.12.19 看shell 有感 最近再看一本书，叫《Linux shell 脚本攻略》，英文名带cookbook，不知道算不算系列图书之一。 这篇文章，我无意把它写成笔</description>
     </item>
     
     <item>
       <title>leetcode实战-99. Recover Binary Search Tree</title>
-      <link>http://zhaogaz.com/post/2018/leetcode-practice-1.html</link>
+      <link>https://blog.zhaogaz.com/post/2018/leetcode-practice-1.html</link>
       <pubDate>Fri, 14 Dec 2018 13:58:02 +0800</pubDate>
       
-      <guid>http://zhaogaz.com/post/2018/leetcode-practice-1.html</guid>
+      <guid>https://blog.zhaogaz.com/post/2018/leetcode-practice-1.html</guid>
       <description>写这篇文章的目的很单纯，就是来炫耀的，或者说展示下自己写算法的思路。 题目 99. Recover Binary Search Tree Two elements of a binary search tree (BST) are swapped by mistake. Recover the tree without changing its structure. 代码块不贴了，简单解</description>
     </item>
     
     <item>
       <title>关于程序员工具的思考</title>
-      <link>http://zhaogaz.com/post/2018/thinking-about-tool.html</link>
+      <link>https://blog.zhaogaz.com/post/2018/thinking-about-tool.html</link>
       <pubDate>Thu, 13 Dec 2018 18:01:52 +0800</pubDate>
       
-      <guid>http://zhaogaz.com/post/2018/thinking-about-tool.html</guid>
+      <guid>https://blog.zhaogaz.com/post/2018/thinking-about-tool.html</guid>
       <description>关于程序员工具的思考 2018.12.13这篇内容存在的原因是，我之前记过很多的个人想法。最近回顾笔记的时候，发现重新看这种东西没啥用，就整理</description>
     </item>
     
     <item>
       <title>我与算法——记于leetcode写了100道题</title>
-      <link>http://zhaogaz.com/post/2018/when-i-do-100-leetcode.html</link>
+      <link>https://blog.zhaogaz.com/post/2018/when-i-do-100-leetcode.html</link>
       <pubDate>Wed, 12 Dec 2018 17:16:43 +0800</pubDate>
       
-      <guid>http://zhaogaz.com/post/2018/when-i-do-100-leetcode.html</guid>
+      <guid>https://blog.zhaogaz.com/post/2018/when-i-do-100-leetcode.html</guid>
       <description>本文记于2018.11.22,不过当时好久没搞博客了,最近处理了下笔记,依次发出来. 我可以简单说说我做这些题的过程和我理解的算法，还有一些我</description>
     </item>
     
     <item>
       <title>设计模式的奥义</title>
-      <link>http://zhaogaz.com/post/2018/secret-of-design-pattern.html</link>
+      <link>https://blog.zhaogaz.com/post/2018/secret-of-design-pattern.html</link>
       <pubDate>Wed, 12 Dec 2018 00:21:13 +0800</pubDate>
       
-      <guid>http://zhaogaz.com/post/2018/secret-of-design-pattern.html</guid>
+      <guid>https://blog.zhaogaz.com/post/2018/secret-of-design-pattern.html</guid>
       <description>2018.12.07 设计模式的奥义 给这个文章起标题之前，我还犹豫了一下，我觉得奥义还是准确的，我自认为已经理解了设计模式的精髓。 我在最开始接触设计模式的时候还</description>
     </item>
     
     <item>
       <title>阅读须知2018.11.27</title>
-      <link>http://zhaogaz.com/post/2018/what-i-prepare-to-do.html</link>
+      <link>https://blog.zhaogaz.com/post/2018/what-i-prepare-to-do.html</link>
       <pubDate>Tue, 04 Dec 2018 07:09:37 +0800</pubDate>
       
-      <guid>http://zhaogaz.com/post/2018/what-i-prepare-to-do.html</guid>
+      <guid>https://blog.zhaogaz.com/post/2018/what-i-prepare-to-do.html</guid>
       <description>这篇内容主要是说下我近期更新这个博客到底有什么目的,会写什么样的东西,总结来说就是写作的背景. 面向群体 博客没有做过推广,不知道谁来看,所以不</description>
     </item>
     
     <item>
       <title>我为什么只写些乱七八糟的事情</title>
-      <link>http://zhaogaz.com/post/2018/why-i-do-not-write-coding.html</link>
+      <link>https://blog.zhaogaz.com/post/2018/why-i-do-not-write-coding.html</link>
       <pubDate>Sun, 04 Mar 2018 14:34:37 +0800</pubDate>
       
-      <guid>http://zhaogaz.com/post/2018/why-i-do-not-write-coding.html</guid>
+      <guid>https://blog.zhaogaz.com/post/2018/why-i-do-not-write-coding.html</guid>
       <description>搭这个博客呢，其实不只是为了写这些破烂事，还有个更重要的目的是写技术相关的内容。 既然是文章，就有文章对应的阅读群体。不同类型的文章会针对不同</description>
     </item>
     
     <item>
       <title>Windows 7 特效禁用</title>
-      <link>http://zhaogaz.com/post/2018/windows-7-up-up.html</link>
+      <link>https://blog.zhaogaz.com/post/2018/windows-7-up-up.html</link>
       <pubDate>Sun, 04 Mar 2018 14:24:49 +0800</pubDate>
       
-      <guid>http://zhaogaz.com/post/2018/windows-7-up-up.html</guid>
+      <guid>https://blog.zhaogaz.com/post/2018/windows-7-up-up.html</guid>
       <description>还是那个Windows 7的破笔记本，性能实在是不太够用，因为水平不太行，总是开着多个IDE参考其他人的项目，再加上打开不少网页查资料，8GB</description>
     </item>
     
     <item>
       <title>印象笔记问题与解决</title>
-      <link>http://zhaogaz.com/post/2018/evernote-problem-and-fix.html</link>
+      <link>https://blog.zhaogaz.com/post/2018/evernote-problem-and-fix.html</link>
       <pubDate>Sun, 04 Mar 2018 13:06:56 +0800</pubDate>
       
-      <guid>http://zhaogaz.com/post/2018/evernote-problem-and-fix.html</guid>
+      <guid>https://blog.zhaogaz.com/post/2018/evernote-problem-and-fix.html</guid>
       <description>最近用印象笔记的时候也出了一些问题，图片莫名其妙就被丢了，印象中也没有任何删除图片的操作。 而且我的内容是图片和文字混排的，中间的文字一点也没</description>
     </item>
     
     <item>
       <title>Windows 7 自动休眠设置关闭</title>
-      <link>http://zhaogaz.com/post/2018/windows-auto-hibernate-close.html</link>
+      <link>https://blog.zhaogaz.com/post/2018/windows-auto-hibernate-close.html</link>
       <pubDate>Sun, 04 Mar 2018 12:35:15 +0800</pubDate>
       
-      <guid>http://zhaogaz.com/post/2018/windows-auto-hibernate-close.html</guid>
+      <guid>https://blog.zhaogaz.com/post/2018/windows-auto-hibernate-close.html</guid>
       <description>最近春节回家，一直在用旧笔记本，上面是 Windows 7 系统。以前装过Windows 8.1 但是驱动之类的东西实在是不好搞，官网也没放出什么解决办法。就一直没有</description>
     </item>
     
     <item>
       <title>新手搭建Hogo静态博客教程（五）:注意事项</title>
-      <link>http://zhaogaz.com/post/2018/newbie-start-hugo-blog-5.html</link>
+      <link>https://blog.zhaogaz.com/post/2018/newbie-start-hugo-blog-5.html</link>
       <pubDate>Wed, 21 Feb 2018 16:05:56 +0800</pubDate>
       
-      <guid>http://zhaogaz.com/post/2018/newbie-start-hugo-blog-5.html</guid>
+      <guid>https://blog.zhaogaz.com/post/2018/newbie-start-hugo-blog-5.html</guid>
       <description>本教程为系列文章，点击右下角的 #Hugo 可以查看全部。 这篇内容，会描述下我遇到的问题，和需要注意的点，希望能帮上大家。 Hugo 官网搜索问题 在Hugo官网搜</description>
     </item>
     
     <item>
       <title>新手搭建Hogo静态博客教程（四）:使用优化</title>
-      <link>http://zhaogaz.com/post/2018/newbie-start-hugo-blog-4.html</link>
+      <link>https://blog.zhaogaz.com/post/2018/newbie-start-hugo-blog-4.html</link>
       <pubDate>Wed, 21 Feb 2018 12:47:20 +0800</pubDate>
       
-      <guid>http://zhaogaz.com/post/2018/newbie-start-hugo-blog-4.html</guid>
+      <guid>https://blog.zhaogaz.com/post/2018/newbie-start-hugo-blog-4.html</guid>
       <description>本教程为系列文章，点击右下角的 #Hugo 可以查看全部。 在上一篇，我们已经将博客发布到了网络上，但是这只是个开始，我们每次写了新的文章之后，都要生成静</description>
     </item>
     
     <item>
       <title>新手搭建Hogo静态博客教程（三）:博客发布与个性化域名</title>
-      <link>http://zhaogaz.com/post/2018/newbie-start-hugo-blog-3.html</link>
+      <link>https://blog.zhaogaz.com/post/2018/newbie-start-hugo-blog-3.html</link>
       <pubDate>Tue, 20 Feb 2018 23:59:02 +0800</pubDate>
       
-      <guid>http://zhaogaz.com/post/2018/newbie-start-hugo-blog-3.html</guid>
+      <guid>https://blog.zhaogaz.com/post/2018/newbie-start-hugo-blog-3.html</guid>
       <description>本教程为系列文章，点击右下角的 #Hugo 可以查看全部。 在上一篇中，我们已经对博客进行了部分调整，实现了我们需要的功能，在这一篇中，我将会说一下如何把</description>
     </item>
     
     <item>
       <title>新手搭建Hogo静态博客教程（二）:本地博客调整</title>
-      <link>http://zhaogaz.com/post/2018/newbie-start-hugo-blog-2.html</link>
+      <link>https://blog.zhaogaz.com/post/2018/newbie-start-hugo-blog-2.html</link>
       <pubDate>Tue, 20 Feb 2018 18:44:17 +0800</pubDate>
       
-      <guid>http://zhaogaz.com/post/2018/newbie-start-hugo-blog-2.html</guid>
+      <guid>https://blog.zhaogaz.com/post/2018/newbie-start-hugo-blog-2.html</guid>
       <description>本教程为系列文章，点击右下角的 #Hugo 可以查看全部。 在上一篇中，已经起了一个本地的博客，在本篇中，将会对博客进行细节的定制。 本篇内容不准备特别细致</description>
     </item>
     
     <item>
       <title>新手搭建Hogo静态博客教程（一）:本地搭建运行</title>
-      <link>http://zhaogaz.com/post/2018/newbie_start_hugo_blog_1.html</link>
+      <link>https://blog.zhaogaz.com/post/2018/newbie_start_hugo_blog_1.html</link>
       <pubDate>Mon, 19 Feb 2018 23:11:31 +0800</pubDate>
       
-      <guid>http://zhaogaz.com/post/2018/newbie_start_hugo_blog_1.html</guid>
+      <guid>https://blog.zhaogaz.com/post/2018/newbie_start_hugo_blog_1.html</guid>
       <description>本教程为系列文章，点击右下角的 #Hugo 可以查看全部。 本教程，记录了我搭建博客过程中所遇到的所有的问题。有的问题很简单，有的问题很棘手，以至于不得不</description>
     </item>
     
     <item>
       <title>LED台灯选择策略</title>
-      <link>http://zhaogaz.com/post/2018/bulb-shopping-guide.html</link>
+      <link>https://blog.zhaogaz.com/post/2018/bulb-shopping-guide.html</link>
       <pubDate>Mon, 19 Feb 2018 15:21:56 +0800</pubDate>
       
-      <guid>http://zhaogaz.com/post/2018/bulb-shopping-guide.html</guid>
+      <guid>https://blog.zhaogaz.com/post/2018/bulb-shopping-guide.html</guid>
       <description>几日前，心血来潮，想看看什么样的台灯比较好用，就进行了一番查找，并得到了一个非常参数化的结论。 现在已经把博客搭建完成了，终于能把这些写出来了</description>
     </item>
     
     <item>
       <title>博客第一篇</title>
-      <link>http://zhaogaz.com/post/2018/first-post.html</link>
+      <link>https://blog.zhaogaz.com/post/2018/first-post.html</link>
       <pubDate>Sun, 18 Feb 2018 16:28:38 +0800</pubDate>
       
-      <guid>http://zhaogaz.com/post/2018/first-post.html</guid>
+      <guid>https://blog.zhaogaz.com/post/2018/first-post.html</guid>
       <description>最近手头记录了各种各样的东西，删掉觉得可惜，留着总感觉没用，因为事情已经过去了。 我个人最开始的时候，在QQ空间发东西。后来表达的渠道转移到了</description>
     </item>
     
