@@ -2,10 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>面试 on ZhaoGaz&#39;s Blog</title>
-    <link>http://zhaogaz.com/tags/%E9%9D%A2%E8%AF%95/</link>
+    <link>http://zhaogaz.com/tags/%E9%9D%A2%E8%AF%95.html</link>
     <description>Recent content in 面试 on ZhaoGaz&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
+    <copyright>请自由抄袭，无版权</copyright>
     <lastBuildDate>Fri, 25 Jan 2019 12:12:40 +0800</lastBuildDate>
     
 	<atom:link href="http://zhaogaz.com/tags/%E9%9D%A2%E8%AF%95/index.xml" rel="self" type="application/rss+xml" />
@@ -13,10 +14,10 @@
     
     <item>
       <title>关于Java面试的想法与一次面试的吐槽</title>
-      <link>http://zhaogaz.com/post/2019/interview-thinking/</link>
+      <link>http://zhaogaz.com/post/2019/interview-thinking.html</link>
       <pubDate>Fri, 25 Jan 2019 12:12:40 +0800</pubDate>
       
-      <guid>http://zhaogaz.com/post/2019/interview-thinking/</guid>
+      <guid>http://zhaogaz.com/post/2019/interview-thinking.html</guid>
       <description>关于Java面试的想法与一次面试的吐槽 今天这个事，我其实很不爽，这让我感觉很多人缺乏面试的能力。缺少面试思考。所以我先写一下我对面试的一些看</description>
     </item>
     

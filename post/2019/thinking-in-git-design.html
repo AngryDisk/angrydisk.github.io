@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="zhaogaz" />
+<meta name="description" content="" />
+<meta name="keywords" content=" personal blog" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.58.3" />
+
+<link rel="canonical" href="http://zhaogaz.com/post/2019/thinking-in-git-design.html">
+<meta property="og:title" content="Git设计原理一瞥" />
+<meta property="og:description" content="Git设计原理一瞥 需求 最近公司业务那边提了一个需求。大概来说，就是实现一个类似git的功能，能够记录追踪所有文件的，追踪文件变化等功能。他们" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://zhaogaz.com/post/2019/thinking-in-git-design.html" />
+<meta property="article:published_time" content="2019-10-03T14:53:19+08:00" />
+<meta property="article:modified_time" content="2019-10-03T14:53:19+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Git设计原理一瞥"/>
+<meta name="twitter:description" content="Git设计原理一瞥 需求 最近公司业务那边提了一个需求。大概来说，就是实现一个类似git的功能，能够记录追踪所有文件的，追踪文件变化等功能。他们"/>
+
+
+<meta itemprop="name" content="Git设计原理一瞥">
+<meta itemprop="description" content="Git设计原理一瞥 需求 最近公司业务那边提了一个需求。大概来说，就是实现一个类似git的功能，能够记录追踪所有文件的，追踪文件变化等功能。他们">
+
+
+<meta itemprop="datePublished" content="2019-10-03T14:53:19&#43;08:00" />
+<meta itemprop="dateModified" content="2019-10-03T14:53:19&#43;08:00" />
+<meta itemprop="wordCount" content="2348">
+
+
+
+<meta itemprop="keywords" content="git,思考," />
+
+
+<link rel="stylesheet" href="/css/layout.css" />
+
+
+<link rel="stylesheet" href="/css/default-dark.css" />
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-114396712-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/atom-one-dark-reasonable.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<title>
+
+
+     Git设计原理一瞥 
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="http://zhaogaz.com">ZhaoGaz&#39;s Blog</a>
+    </div> 
+  
+    
+    
+    <a class="nav-item" href="/post.html"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="/tags.html"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item" href="/about.html"><div class="nav-item-title">About</div></a>
+    
+
+  </nav>
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> Git设计原理一瞥 </h1>
+    <div class="content"> 
+
+<h1 id="git设计原理一瞥">Git设计原理一瞥</h1>
+
+<h2 id="需求">需求</h2>
+
+<p>最近公司业务那边提了一个需求。大概来说，就是实现一个类似<code>git</code>的功能，能够记录追踪所有文件的，追踪文件变化等功能。他们那边没有特意设计这方面的东西，我这边，觉得套用<code>git</code>的设计模型还是非常合适的，所以就仔细看了一下git的设计。</p>
+
+<h2 id="查阅">查阅</h2>
+
+<p>整体来说，讲的最好的还是官方的文档（就是git文档的最后一章），那篇文章是讲的非常完整的。</p>
+
+<p>这里我用我的语言描述下怎么回事，然后再说下我的理解，最后说下从中获得的其他的思想。</p>
+
+<h3 id="结构">结构</h3>
+
+<p>整个git 就是维护了文件树，然后通过指针来追踪commit。一共有3种类型的文件commit，tree，object。</p>
+
+<p>先说后两个，后两个组成的就是文件树。tree等价于文件目录，一个tree对应一个目录，每个目录里面的所有文件、目录都记录在tree中。object 等价于实际的文件。这两个东西，就足够能把所有的文件都索引起来了。也就是说，后两者组成了文件系统。</p>
+
+<p>再说commit，每次提交都会出现一个commit，它指向根目录的tree，如果之前还有commit，还会指向上一个commit，如果之前有merge，那就指向2个commit。commit 中还有 email、name和 commit 的注释等等内容，就是git 配置全局的那个东西。</p>
+
+<p>以上就是这3个对象的数据结构简述。</p>
+
+<p>git除了追踪文件之外，还有tag、branch等等功能。这些事情就是通过ref（指向commit的引用）来实现的，比方说最常见的master分支，就是指向commit的一个ref。而head是指向master的一个ref。branch的实现就是2个commit指向一个commit，分支的tag的ref指向另一个的commit。所以说，有了文件树和commit之后，追踪多个不同的branch就不难了。</p>
+
+<h3 id="结构生成">结构生成</h3>
+
+<p>了解了基础结构之后，我还是比较好奇这些文件是什么时候生成的，所以查了一下。</p>
+
+<p>tree 和 object 对象都是 add 之后就会生成的，git add 命令之后，会把提交的文件放到一个暂存区（有可能就是那个 tree 和 object）</p>
+
+<p>在使用 git commit 的时候，会把 暂存区的文件 生成以上的tree 和object 数据结构，然后再同时生成 commit，也就是说把暂存区的东西拷贝出来，变成实际的git 数据。大概就是以上这样的一个过程。（也有可能是错的，懒得考证了）</p>
+
+<p>当然还有很多细节，比方说hooks就是可以在git触发的时候调用啊，还有config 啊，就是全局的配置什么的，还有object存储的具体细节啊等等。</p>
+
+<h2 id="领悟">领悟</h2>
+
+<ol>
+<li><p>git 从设计角度讲，确实就是一个文件系统，一个非常简化的文件系统，类unix的文件系统，用object 和tree 这两个对象，就已经足够表示文件系统中的内容了，剩下的内容就是各种ref，无论是commit还是head，本质上都是ref引用。</p></li>
+
+<li><p>我这边由于理解了git基础的结构设计，想了一下，如果文件修改了文件名，同时修改了内容，git是不是就无法追踪了，然后实验了一下，再加上网上查找，确实得出了相应的结论。</p></li>
+</ol>
+
+<p>这里面分两种情况说一下。
+&gt; 如果文件只改了文件名，对应在git的数据结构修改tree文件对应object的文件名，而object 的hash并没有变，所以git完全就能追踪到rename的行为。我这里测试的时候，commit也会提示rename。
+&gt;
+&gt; 除了修改文件名之外，还修改了内部内容，commit之后，git就提示 delete 和 create 两个文件，也就是说，不能标记出是一个文件了。</p>
+
+<p>我是感觉git应该提供了某些底层命令实现这些功能，然后搜了下发现网上有人说：git 应对，<code>rename+改内容</code>的方式，有一个相似度的比较，大约在50%以上一样，就判定为<code>rename</code>。</p>
+
+<p>然后我这边又测试了一下，first这个文件，只有一行，然后后面追加了一个字母。又试了一下，发现并没有出现他说的50%相似度。后来思考了一下，感觉git判断文件相似的方法，应该是用<code>行</code>比较来进行的。因为测试文件本身只有一行，所以改了就完全不行了，这是一个推测。当然，这个推测也能从另一个方向证明。github比较内容都是行，git比较内容也是行。</p>
+
+<p>也就是说，如果要进行修改文件名的操作的话，最好是尽快commit，不然很难实现追踪一个文件history的过程。重命名会让object的索引断掉。</p>
+
+<ol>
+<li>文件的三个状态（未提交，暂存，已提交），属于人为定义的另一个东西，跟整个数据结构设计不是一个层面的，</li>
+<li>追踪应该都是用sha1进行的，这个就相当于主键了。换别的没有任何问题。</li>
+<li>如果嫌弃git 内容比较大，可以用 git gc 的命令来进行文件压缩，方便传输。</li>
+<li>官方手册给了很多如何修复的功能，大体的逻辑就是，根据文件内容，和低级指令去修复索引关系。也就是说，把原来丢失掉的索引关系，手动建立起来。还有一种情况就是，移除大文件，某某次提交了一个巨大的文件，之后无论谁更新都必须带着这个大文件，这很烦，可以通过手动的处理，来删除这个大文件存在的历史。从而达到压缩仓库大小的目的。</li>
+</ol>
+
+<h2 id="学到的思想">学到的思想</h2>
+
+<ol>
+<li>要关注核心问题，不要先把细枝末节考虑进去，影响大局。比如说不要先考虑文件对比的内容，整个git的设计过程中，目的是文件树的版本管理，像对比文件、<code>仅存储diff</code> 的一部分内容算做优化，而非核心的功能。就像<code>仅存储diff</code>以压缩文件大小，也是一种优化。这种功能多一点，少一点不影响核心目的。这个思想确实是非常关键的。 而且主要是从 <code>in tek</code> <a href="https://zhuanlan.zhihu.com/p/38245039">这篇文章</a>中看到的。（不过他这篇文章，有很多东西不好看懂，几遍都看不懂，只适合已经懂得人看。）</li>
+<li>git的设计思路，确实是非常简单的，因为核心的东西就是那么简单，剩下的无非决定这个程序方不方便。</li>
+</ol>
+
+<h2 id="后记">后记</h2>
+
+<p>本篇内容实际是在2018年年底的时候学的，简单整理了一下思路。文章在电脑里很久都没有发出来。后续经过了多次的阅读和修订，成果如上。</p>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+      
+    
+<div class="tags">
+    
+      <div class="tag">
+          
+        <a href="/tags/git.html">#git</a>
+      </div>
+    
+      <div class="tag">
+          
+        <a href="/tags/%E6%80%9D%E8%80%83.html">#思考</a>
+      </div>
+    
+</div>
+
+    <div class="date"> 3 Oct 2019 </div>
+  </div>
+
+</footer>
+
+
+  
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:zx12_zx12@126.com"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/angrydisk" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+
+  
+
+  <div class="social-link">
+  <a href="http://zhaogaz.com/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> 请自由抄袭，无版权 </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+

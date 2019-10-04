@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Bash on ZhaoGaz&#39;s Blog</title>
-    <link>http://zhaogaz.com/tags/bash/</link>
-    <description>Recent content in Bash on ZhaoGaz&#39;s Blog</description>
+    <title>bash on ZhaoGaz&#39;s Blog</title>
+    <link>http://zhaogaz.com/tags/bash.html</link>
+    <description>Recent content in bash on ZhaoGaz&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
+    <copyright>请自由抄袭，无版权</copyright>
     <lastBuildDate>Wed, 19 Dec 2018 22:05:54 +0800</lastBuildDate>
     
 	<atom:link href="http://zhaogaz.com/tags/bash/index.xml" rel="self" type="application/rss+xml" />
@@ -13,10 +14,10 @@
     
     <item>
       <title> 看 Linux Shell 有感</title>
-      <link>http://zhaogaz.com/post/2018/thinking-in-linux-shell/</link>
+      <link>http://zhaogaz.com/post/2018/thinking-in-linux-shell.html</link>
       <pubDate>Wed, 19 Dec 2018 22:05:54 +0800</pubDate>
       
-      <guid>http://zhaogaz.com/post/2018/thinking-in-linux-shell/</guid>
+      <guid>http://zhaogaz.com/post/2018/thinking-in-linux-shell.html</guid>
       <description>2018.12.19 看shell 有感 最近再看一本书，叫《Linux shell 脚本攻略》，英文名带cookbook，不知道算不算系列图书之一。 这篇文章，我无意把它写成笔</description>
     </item>
     

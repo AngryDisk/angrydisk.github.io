@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="zhaogaz" />
+<meta name="description" content="" />
+<meta name="keywords" content=" personal blog" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.58.3" />
+
+<link rel="canonical" href="http://zhaogaz.com/post/2018/thinking-in-linux-shell.html">
+<meta property="og:title" content=" 看 Linux Shell 有感" />
+<meta property="og:description" content="2018.12.19 看shell 有感 最近再看一本书，叫《Linux shell 脚本攻略》，英文名带cookbook，不知道算不算系列图书之一。 这篇文章，我无意把它写成笔" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://zhaogaz.com/post/2018/thinking-in-linux-shell.html" />
+<meta property="article:published_time" content="2018-12-19T22:05:54+08:00" />
+<meta property="article:modified_time" content="2018-12-19T22:05:54+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=" 看 Linux Shell 有感"/>
+<meta name="twitter:description" content="2018.12.19 看shell 有感 最近再看一本书，叫《Linux shell 脚本攻略》，英文名带cookbook，不知道算不算系列图书之一。 这篇文章，我无意把它写成笔"/>
+
+
+<meta itemprop="name" content=" 看 Linux Shell 有感">
+<meta itemprop="description" content="2018.12.19 看shell 有感 最近再看一本书，叫《Linux shell 脚本攻略》，英文名带cookbook，不知道算不算系列图书之一。 这篇文章，我无意把它写成笔">
+
+
+<meta itemprop="datePublished" content="2018-12-19T22:05:54&#43;08:00" />
+<meta itemprop="dateModified" content="2018-12-19T22:05:54&#43;08:00" />
+<meta itemprop="wordCount" content="2248">
+
+
+
+<meta itemprop="keywords" content="思考,bash," />
+
+
+<link rel="stylesheet" href="/css/layout.css" />
+
+
+<link rel="stylesheet" href="/css/default-dark.css" />
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-114396712-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/atom-one-dark-reasonable.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<title>
+
+
+      看 Linux Shell 有感 
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="http://zhaogaz.com">ZhaoGaz&#39;s Blog</a>
+    </div> 
+  
+    
+    
+    <a class="nav-item" href="/post.html"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="/tags.html"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item" href="/about.html"><div class="nav-item-title">About</div></a>
+    
+
+  </nav>
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title">  看 Linux Shell 有感 </h1>
+    <div class="content"> 
+
+<h1 id="2018-12-19-看shell-有感">2018.12.19 看shell 有感</h1>
+
+<p>最近再看一本书，叫《Linux shell 脚本攻略》，英文名带cookbook，不知道算不算系列图书之一。</p>
+
+<p>这篇文章，我无意把它写成笔记，也无意总结成方法论，只是说说自己的想法。</p>
+
+<h2 id="语言学习">语言学习</h2>
+
+<p>我在早期看过一部分鸟哥的书，整体看下来，有点用，但是废话也有点多。而且基本都忘了。</p>
+
+<p>最近感觉自己要用脚本了，每当自己想写总是觉得有些东西不是很清楚。最终还是决定补充下脚本的基础概念。就找书看了下。</p>
+
+<p>我个人有个习惯，学一种语言，首先要了解语言产生的历史背景与演变规律，诞生是为了做什么事，解决什么问题。每个时间段发生了什么事，语言特性变成了什么样。最终演变成了什么样，大家都怎么用。</p>
+
+<p>当然不会像上面说的那么全吧，主要针对的是自己不懂的点，这些点多半都是历史遗留的结果。了解了这些背景才会清楚是怎么回事。</p>
+
+<p>然后再去了解语法特性，了解最基础的规则是怎么回事。有了以上的最基础的概念之后，才能有学的感觉。如果不看看shell的书，没有人能够明确的跟你说，哪个是入参，哪个是返回值。man手册只是命令的说明，完全没有说理论，也就是没有<code>tutorial</code>，<strong>初学就推荐看man的人都不太行</strong>。</p>
+
+<p>再接下来就是看基础类库，看常规的操作中都提供了什么功能。这些功能也代表着语言的设计思路。比方说java提供了多种不同的map，适用于各种场景。每个场景都有自己的使用思路。这是类库设计中蕴含的东西。说白了就是作者希望你怎么用。</p>
+
+<p>当然除了这些之外，其中有一个非常让人误会的东西就是<code>bash</code>和shell，还需要区分shell和bash所指的东西。类UNIX系统用的交互都是shell，其中linux默认用的是<code>bash</code>，当然有兴趣的话还可以换成别的shell，如<code>oh my zsh</code>。反正就是简称为<code>xxsh</code>的各种东西。在wiki中第一句话也是这么写的</p>
+
+<blockquote>
+<p>Bash is a Unix shell</p>
+</blockquote>
+
+<h2 id="学习感悟">学习感悟</h2>
+
+<p>从目前学习了两章的内容来看，bash完全就是一个处理字符串的东西。运算有，不强，麻烦。剩下的就是各种操作系统的功能性的东西了。</p>
+
+<p>bash确实就是个脚本，体现在规则很松散，各种定义部分不是很明确，几种不同的字符串。就像rename命令还融合了prel 的语法，设计就非常的随便。一旦变得随意起来，就不健壮了，很容易用出问题，很难重用。（美刀+转义+各种引号，层级一多就晕，比递归还难理解）</p>
+
+<p>它的模型就是一个，命令端交互的命令，打的字或者是其他什么作为输入，然后用command调用命令，命令运算，然后输出到当前的控制台或者是别的地方。输入被称作stdin，还有些特殊的需要<code>xargs</code>（还没太看懂）或者<code>exec</code>。</p>
+
+<p>我一直有一个这样的感觉（并没有深挖历史去找证明），感觉这个<code>shell</code>在设计的时候，应该带有很多个人随意的东西，然后流行起来之后，缺点会逐渐放大，没有经过精心设计的东西，会出很多问题（鬼知道有多少人在给这个东西擦屁股）。</p>
+
+<p>在<code>bash</code>的相等之类的命令中看到了<code>eq</code>和<code>-eq</code>之类的还有大于小于的文字，感觉<code>jsp</code>这类东西就是从这里面抄的。他们背后的思路是一样的，用代码来处理文本，对文本进行替换格式化操作。可能是因为已经有类似的了，就直接拿过来 <em>借鉴</em> 了</p>
+
+<p>类似的还有<code>eval</code>，从我记忆的时间线上看，<code>JS</code>也有类似的，应该就是从<code>bash</code>抄的吧，又或者是有共同的祖先。</p>
+
+<h2 id="bash-的用途"><code>bash</code>的用途</h2>
+
+<p>linux普及度这么高，各种各样的发行版，上面默认搭载的东西，一时半会换不了的，所以<code>bash</code>在某种意义上讲，是很难死的。当然也不是说它有多烂，毕竟前辈都铺了这么多的路了。再来一个也不好做。</p>
+
+<p>所以需要明确的是什么时候应该用<code>shell</code></p>
+
+<ol>
+<li>只能用这个，不能用别的（进系统操作啊，查状态啊，没图形界面那就只能用这个）</li>
+<li>只有用这个方便，用其他的脚本不方便的时候</li>
+</ol>
+
+<p>当然，<code>shell</code>这种东西，并不是一无是处了，算个md5啊，在windows上面，多半要找软件来解决，bash一句话的事。筛筛文本啊，也很容易做。</p>
+
+<pre><code class="language-bash">md5sum xxxxx
+</code></pre>
+
+<p>总结来说，就是要了解什么东西适合shell干，什么东西不适合shell干。在现在这个时代，很多东西都有替代品，不过仅仅是能替代，但是能做到什么程度就不好说了。每种语言都有擅长的部分。</p>
+
+<h2 id="为什么网上总有人写一点点-bash">为什么网上总有人写一点点<code>bash</code></h2>
+
+<p>很多程序员不太会操作<code>linux</code>，也不懂<code>bash</code>的设计，他们只是会照着敲命令，然后把敲的命令总结下来，备查。</p>
+
+<p>我一直觉得这是十分可怜的行为。在我学了接近2年编程的时候，我似乎领悟到了这样的一点。<strong>现代编程需要的能力是领悟设计的模型的理解力</strong>，某些人设计出这个东西，按照什么模型设计的，希望使用者如何使用，如何扩展。模型中的对象之间如何交互。这些东西才是程序员应该了解的。</p>
+
+<p>一旦理解了<strong>模型</strong>的设计，那么使用起来就会非常的游刃有余。错误的使用不是不可以，可以，但是结果不会好。就像用水管也能盖出来房子，但是不会让人舒服的。</p>
+
+<p>再一点，很多模型的设计是非常常规的，用了很多常用的概念。任何一个称职的程序员看到都懂。</p>
+
+<p>模型的背后其实是常规的通用的做法，也就是所谓的<strong>道</strong>，换个字说叫<strong>渔</strong>。</p>
+
+<h2 id="顺便吐槽个前辈">顺便吐槽个前辈</h2>
+
+<p>这本书，说实话，并不厚，但是内容不少（至少前两章是），很多命令都要想想才会明白怎么回事。比代码书看着要费劲。因为脚本嘛，设计目标是随手用，很多时候尽可能的短，短到不知道怎么回事。</p>
+
+<p>我就找前辈问问，哪些可以先略过。结果他tmd说，他基本都用过，建议我都看一下，我tm。我事后才反应过来，我问的问题是那些常用，哪些不常用。它的回答却是那些用过，那些没用过。都一样经常用怎么可能呢？没多少人一直在做java的图形界面。</p>
+
+<p>这个工作十来年的前辈也不是个明白人啊。（叹～</p>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+      
+    
+<div class="tags">
+    
+      <div class="tag">
+          
+        <a href="/tags/%E6%80%9D%E8%80%83.html">#思考</a>
+      </div>
+    
+      <div class="tag">
+          
+        <a href="/tags/bash.html">#bash</a>
+      </div>
+    
+</div>
+
+    <div class="date"> 19 Dec 2018 </div>
+  </div>
+
+</footer>
+
+
+  
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:zx12_zx12@126.com"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/angrydisk" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+
+  
+
+  <div class="social-link">
+  <a href="http://zhaogaz.com/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> 请自由抄袭，无版权 </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+

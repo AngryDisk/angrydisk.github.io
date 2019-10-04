@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="zhaogaz" />
+<meta name="description" content="" />
+<meta name="keywords" content=" personal blog" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.58.3" />
+
+<link rel="canonical" href="http://zhaogaz.com/post/2019/source-code-about-linkedlist.html">
+<meta property="og:title" content="LinkedList源码思考" />
+<meta property="og:description" content="LinkedList源码阅读 这篇文章原本记于2018.11.30日,现整理一下发出来. 疑问 为什么Queue这个接口要给两组,(一组是抛出异常" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://zhaogaz.com/post/2019/source-code-about-linkedlist.html" />
+<meta property="article:published_time" content="2019-01-16T15:41:32+08:00" />
+<meta property="article:modified_time" content="2019-01-16T15:41:32+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="LinkedList源码思考"/>
+<meta name="twitter:description" content="LinkedList源码阅读 这篇文章原本记于2018.11.30日,现整理一下发出来. 疑问 为什么Queue这个接口要给两组,(一组是抛出异常"/>
+
+
+<meta itemprop="name" content="LinkedList源码思考">
+<meta itemprop="description" content="LinkedList源码阅读 这篇文章原本记于2018.11.30日,现整理一下发出来. 疑问 为什么Queue这个接口要给两组,(一组是抛出异常">
+
+
+<meta itemprop="datePublished" content="2019-01-16T15:41:32&#43;08:00" />
+<meta itemprop="dateModified" content="2019-01-16T15:41:32&#43;08:00" />
+<meta itemprop="wordCount" content="2258">
+
+
+
+<meta itemprop="keywords" content="java,源码,思考," />
+
+
+<link rel="stylesheet" href="/css/layout.css" />
+
+
+<link rel="stylesheet" href="/css/default-dark.css" />
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-114396712-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/atom-one-dark-reasonable.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<title>
+
+
+     LinkedList源码思考 
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="http://zhaogaz.com">ZhaoGaz&#39;s Blog</a>
+    </div> 
+  
+    
+    
+    <a class="nav-item" href="/post.html"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="/tags.html"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item" href="/about.html"><div class="nav-item-title">About</div></a>
+    
+
+  </nav>
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> LinkedList源码思考 </h1>
+    <div class="content"> 
+
+<h1 id="linkedlist源码阅读">LinkedList源码阅读</h1>
+
+<blockquote>
+<p>这篇文章原本记于2018.11.30日,现整理一下发出来.</p>
+</blockquote>
+
+<h2 id="疑问">疑问</h2>
+
+<ol>
+<li>为什么<code>Queue</code>这个接口要给两组,(一组是抛出异常,另一组是返回特殊值)为什么这么设计?</li>
+<li><code>Deque</code>这个接口,继承<code>Queue</code>这个接口的时候,为什么还要把方法重新写一遍?如<code>add</code>定义完全一样为什么要写一遍?</li>
+<li>抛出异常的那一组接口,为什么在定义的时候没有写上要抛出的异常?</li>
+</ol>
+
+<p>以上内容我简单查了一下,没找到相关的内容.</p>
+
+<h2 id="概览">概览</h2>
+
+<p>有了<code>ArrayList</code>,<code>LinkedList</code>就有很多都知道了,有些重复的内容也不会说了,只会说一些比较疑惑的.</p>
+
+<p>先来看下整体的结构</p>
+
+<p><img src="./assets/linkedlist_1543552579_880180373.png" alt="linkedlist_1543552579_880180373" /></p>
+
+<h2 id="实现的接口">实现的接口</h2>
+
+<p>这个类相比<code>ArrayList</code>多了一层东西,还多了额外的一个<code>Quere</code>队列的接口.</p>
+
+<p>看了下<code>Quere</code>接口的实现,核心只有三个接口,但是一共提供了6个,一组是可以抛出异常的,另一组只会返回0,null之类的</p>
+
+<p>继承的<code>Deque</code>接口全名为 <code>double ends queue</code> 叫做双端队列.读作<code>deck</code>提供了两倍于<code>Queue</code>接口的方法,也提供了栈操作的方法.</p>
+
+<p>从文档上来看,大部分操作功能是完全重叠的,只不过在命名上面有些差异.</p>
+
+<h2 id="文档">文档</h2>
+
+<ul>
+<li>看了下<code>java</code>提供的文档说明,上面写到这个<code>LinkedList</code>是一个双端链表,<code>Doubly-linked list</code>可以接受null值.</li>
+<li>查找的时候会查找最接近的元素.</li>
+<li>不是同步方法,如果需要同步的话,需要用<code>Collections.syschronizedList()</code>方法来包装这个链表</li>
+<li>迭代的时候,只有迭代器的<code>add</code> 和<code>remove</code>方法可以修改,其他的任何修改都会抛出一个叫做<code>ConcurrentModificationException</code>的异常,这个特性叫做<code>fail-fast</code></li>
+</ul>
+
+<h2 id="node">Node</h2>
+
+<p>和我猜测的一样,我寻思着,这个双端列表,应该会有一个内部类吧,封装双端链表的指针.什么的.</p>
+
+<p><code>LinkedList</code>提供了一个Node类型的内部类,是个<code>static</code>类型的class对象,可以不依赖于外部类进行实例化.</p>
+
+<h2 id="初始化">初始化</h2>
+
+<p>这个类在初始化的时候没有什么初始数组分配,所以不存在负载因子和初始容量什么的初始化方式,所以初始化方法就只有两个,一个是空构造器,另一种初始化方式内部调用了<code>addAll()</code>方法.很简单</p>
+
+<h2 id="内部参数">内部参数</h2>
+
+<p>在<code>LinkedList</code>链表中有3个特有的参数,分别是头节点,尾节点,和size,很简单</p>
+
+<h2 id="内部的操作方法">内部的操作方法</h2>
+
+<h3 id="linkfirst-linklast">linkFirst linkLast</h3>
+
+<p>添加第一个节点</p>
+
+<p>由于是双端列表嘛,初始化的时候,新节点直接指向后一个,</p>
+
+<p>然后再把后一个节点的prev指针指向前一个.</p>
+
+<p>节点可以为null</p>
+
+<p>同时会修改modCount 和 size值.</p>
+
+<p>另一个linkLast 同理</p>
+
+<h3 id="linkbefore">linkBefore</h3>
+
+<p>在某些中间位置插入一个节点,操作也很简单,就是把前后节点拿出来,指针操作下</p>
+
+<h3 id="unlinkxxxx">unlinkxxxx</h3>
+
+<p>这一堆我都视为工具方法,他们只是做了一些工具类应该做的操作,移除不同类型节点的操作.</p>
+
+<p>而对链表的查找什么的,都在外层的其他方法里,没有写到这些工具方法中.</p>
+
+<h3 id="addall">addAll</h3>
+
+<p>这个方法有点意思,在collections框架中,这种addAll都是使用的<code>toArray</code>方式处理各种东西的.可能是因为对象数组效率比较高?</p>
+
+<p>这个类最终的做法是可以在任意位置,插入任意多数据,</p>
+
+<p>所以有一个关于开始位置和结束为止的查找方法.</p>
+
+<p>然后就是一个循环,把集合中所有的内容都挂成链表的节点,</p>
+
+<p>最后处理一下尾部的节点. 记录下操作次数,重新生成长度什么的.</p>
+
+<h3 id="node-int-index">node(int index)</h3>
+
+<p>这个方法是用于返回检索内容的,他先判断东西在前一半还是后一半,前一半的话,就从前面查找,后一半的话就从后一半查找.</p>
+
+<h3 id="其他">其他</h3>
+
+<p>其他的感觉没什么可说的,就是封装了一些检查操作,各种操作之前先检查,然后再获取相关的值</p>
+
+<p>还有一堆重载,内部都是一样的东西,就是那些东西</p>
+
+<h3 id="检查方法">检查方法</h3>
+
+<pre><code class="language-java">    /**
+     * Tells if the argument is the index of an existing element.
+     */
+    private boolean isElementIndex(int index) {
+        return index &gt;= 0 &amp;&amp; index &lt; size;
+    }
+    
+    /**
+     * Tells if the argument is the index of a valid position for an
+     * iterator or an add operation.
+     */
+    private boolean isPositionIndex(int index) {
+        return index &gt;= 0 &amp;&amp; index &lt;= size;
+    }
+</code></pre>
+
+<p>检查方法很有意思,一个是判断插入的位置是否可行,另一个是判断是否是当前元素的位置.</p>
+
+<p>这两个唯一的差别就是最后一个等号. 这个封装策略有点意思.</p>
+
+<h3 id="object-定位">object 定位</h3>
+
+<p>定位有两个方法一个是从前搜,一个是从后搜,</p>
+
+<p>主要的区别在于由于<code>LinkedList</code>是可以容纳空的,所以分成了两个不同的判断循环,(感觉可以把这个抽成lamda表达式)</p>
+
+<h3 id="迭代器">迭代器</h3>
+
+<p><code>LinkedList</code> 内部提供的迭代器很有意思,一共有3个,分别是正向的,逆向的,并行的(<code>Spliterator</code>) 三个迭代器.</p>
+
+<p>双端队列嘛,提供一个逆向的迭代器很正常的.</p>
+
+<h4 id="正序iterator">正序iterator</h4>
+
+<p>正常顺序的迭代器,操作很常规,和 <code>ArrayList</code> 差不多,只不过再操作链表.</p>
+
+<p>大体逻辑就是,检查,操作,内部类包含有上一个元素什么的,就是最基础的那套</p>
+
+<h4 id="逆序iterator">逆序iterator</h4>
+
+<p>我觉得他们这个逆序偷了个懒,直接初始化了一个正序的内容,然后进行反向的遍历(这种偷懒可还行)</p>
+
+<h4 id="并行">并行</h4>
+
+<p>暂时不看</p>
+
+<h2 id="结论">结论</h2>
+
+<p>感觉很无聊,唯一知道的是双端链表,其他操作都是脏活累活,</p>
+
+<p>还有很多技巧在 <code>ArrayList</code> 里面都用过了,大体的操作逻辑都是一样的.尤其是某些特殊的特性上面,</p>
+
+<p>就像<code>ArrayList</code>的文档我没有看,估计看了文档上面也会说,迭代器是<code>fail-fast</code>的. 因为内部的逻辑是一样的.</p>
+
+<h2 id="使用技巧">使用技巧</h2>
+
+<p>对于一个链表来说,在头尾的操作是最节省时间的,其他的无论在哪个位置,都需要一步步挪过去,然后再进行插入修改删除操作.</p>
+
+<p>批量操作节点的时候,<code>LinkedList</code>效率比<code>ArrayList</code>要低一点,因为要一个一个把所有的节点连起来,不像<code>ArrayList</code>会直接初始化足够长的位置.</p>
+
+<p>换句话说操作单个元素的时间复杂度没啥区别.</p>
+
+<p>在有序,且操作头尾附近的节点的时候才可能会考虑<code>LinkedList</code>,也就是使用<code>双端链表</code>的特性的时候,其他时候也没啥必要用这个吧.</p>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+      
+    
+<div class="tags">
+    
+      <div class="tag">
+          
+        <a href="/tags/java.html">#java</a>
+      </div>
+    
+      <div class="tag">
+          
+        <a href="/tags/%E6%BA%90%E7%A0%81.html">#源码</a>
+      </div>
+    
+      <div class="tag">
+          
+        <a href="/tags/%E6%80%9D%E8%80%83.html">#思考</a>
+      </div>
+    
+</div>
+
+    <div class="date"> 16 Jan 2019 </div>
+  </div>
+
+</footer>
+
+
+  
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:zx12_zx12@126.com"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/angrydisk" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+
+  
+
+  <div class="social-link">
+  <a href="http://zhaogaz.com/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> 请自由抄袭，无版权 </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+

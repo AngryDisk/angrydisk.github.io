@@ -1,0 +1,3 @@
+User-agent: *
+
+Sitemap: http://zhaogaz.com/sitemap.xml

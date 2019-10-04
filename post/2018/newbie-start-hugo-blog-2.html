@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="zhaogaz" />
+<meta name="description" content="" />
+<meta name="keywords" content=" personal blog" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.58.3" />
+
+<link rel="canonical" href="http://zhaogaz.com/post/2018/newbie-start-hugo-blog-2.html">
+<meta property="og:title" content="新手搭建Hogo静态博客教程（二）:本地博客调整" />
+<meta property="og:description" content="本教程为系列文章，点击右下角的 #Hugo 可以查看全部。 在上一篇中，已经起了一个本地的博客，在本篇中，将会对博客进行细节的定制。 本篇内容不准备特别细致" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://zhaogaz.com/post/2018/newbie-start-hugo-blog-2.html" />
+<meta property="article:published_time" content="2018-02-20T18:44:17+08:00" />
+<meta property="article:modified_time" content="2018-02-20T18:44:17+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="新手搭建Hogo静态博客教程（二）:本地博客调整"/>
+<meta name="twitter:description" content="本教程为系列文章，点击右下角的 #Hugo 可以查看全部。 在上一篇中，已经起了一个本地的博客，在本篇中，将会对博客进行细节的定制。 本篇内容不准备特别细致"/>
+
+
+<meta itemprop="name" content="新手搭建Hogo静态博客教程（二）:本地博客调整">
+<meta itemprop="description" content="本教程为系列文章，点击右下角的 #Hugo 可以查看全部。 在上一篇中，已经起了一个本地的博客，在本篇中，将会对博客进行细节的定制。 本篇内容不准备特别细致">
+
+
+<meta itemprop="datePublished" content="2018-02-20T18:44:17&#43;08:00" />
+<meta itemprop="dateModified" content="2018-02-20T18:44:17&#43;08:00" />
+<meta itemprop="wordCount" content="3322">
+
+
+
+<meta itemprop="keywords" content="Hugo,博客," />
+
+
+<link rel="stylesheet" href="/css/layout.css" />
+
+
+<link rel="stylesheet" href="/css/default-dark.css" />
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-114396712-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/atom-one-dark-reasonable.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<title>
+
+
+     新手搭建Hogo静态博客教程（二）:本地博客调整 
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="http://zhaogaz.com">ZhaoGaz&#39;s Blog</a>
+    </div> 
+  
+    
+    
+    <a class="nav-item" href="/post.html"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="/tags.html"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item" href="/about.html"><div class="nav-item-title">About</div></a>
+    
+
+  </nav>
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> 新手搭建Hogo静态博客教程（二）:本地博客调整 </h1>
+    <div class="content"> 
+
+<p>本教程为系列文章，点击右下角的 <a href="/tags/hugo.html">#Hugo</a> 可以查看全部。</p>
+
+<p>在上一篇中，已经起了一个本地的博客，在本篇中，将会对博客进行细节的定制。</p>
+
+<p>本篇内容不准备特别细致的讲解，因为涉及了代码相关的东西，需要部分html基础。如果没有这个基础，解释起来非常吃力，按照自己的想法定制博客也很吃力。</p>
+
+<p>如果阅读者有快速学习的能力，希望读者能够补充toml配置文件语法、markdown语法、html部分基础、基础英语这部分内容。</p>
+
+<p>下面，我按照我的做法，把相关的内容进行了配置，并对改变做出说明。</p>
+
+<h3 id="配置文件">配置文件</h3>
+
+<p>配置文件是xxxxxx根目录中的 <code>config.toml</code> ，这是Blog最核心的配置文件。按照toml的语法写的，toml语法请参考<a href="https://github.com/toml-lang/toml">这里</a>。</p>
+
+<p>下面给出本博客目前的配置信息（涉及隐私的内容已经删除）</p>
+
+<pre><code>baseurl = &quot;http://zhaogaz.com&quot;    #&lt;head&gt;里面的baseurl信息。
+title = &quot;ZhaoGaz's Blog&quot;              #浏览器的标题
+copyright = &quot;&quot;                        #版权说明
+canonifyurls = true                   #？？？
+languageCode = &quot;zh-CN&quot;               #blog 主体语言
+paginate = 5                       #每页显示文章数
+theme = &quot;hugo-dusk&quot;                #使用主题
+
+googleAnalytics = &quot;&quot;      				#ga统计id
+disqusShortname = &quot;&quot;                  #评论帐号id
+
+[author]
+  name = &quot;zhaogaz&quot;   #作者名字
+
+SectionPagesMenu = &quot;main&quot;   #？？？？
+
+# use Chroma for syntax highlight 说是代码高亮什么的，没看出什么区别
+pygmentsStyle = &quot;native&quot;       # other dark style options: vim, fruity, monokai
+# enable syntax highlight for code blocks
+pygmentsCodeFences = true
+
+#？？？
+[[menu.main]]
+  name = &quot;Posts&quot;   
+  weight = -120
+  identifier = &quot;post&quot;
+  url = &quot;/post/&quot;
+
+[[menu.main]]
+  name = &quot;Tags&quot;
+  weight = -110
+  identifier = &quot;tag&quot;
+  url = &quot;/tags/&quot;
+
+#暂时不知道这两个有什么用途
+[params.meta]
+  #keywords = &quot;&quot;
+  #description = &quot;都是好事儿&quot;
+
+  
+  #下面是各种帐号ID
+[params]
+  github = &quot;angrydisk&quot;    
+  #gitlab = &quot;gitlab id&quot;
+  #twitter = &quot;twitter id&quot;
+  #linkedin = &quot;linkedin id&quot; 
+  email = &quot;zx12_zx12@126.com&quot;
+
+[params.colors]
+  # hugo-dusk colors
+  background = &quot;#FFFFFF&quot; # background color for the site  背景颜色
+  main = &quot;#83ca3d&quot;     # 修饰的绿色
+  text = &quot;#404040&quot;     # 文字颜色
+  code-quote-bg = &quot;#c3ffc3&quot; # background color for quotes and code blocks 代码块的背景色
+  copyright = &quot;#404040&quot; # copyright text color 
+</code></pre>
+
+<p>以上内容要是真正的研究起来，需要编程的背景，才能知道怎么用的。还有一部分我也不知道做什么的内容也标注出来了。</p>
+
+<p>官网给出的参考在<a href="https://gohugo.io/getting-started/configuration/">这里</a> ，如果有特殊需求，请参考官网进行定制。</p>
+
+<hr />
+
+<p>注意：</p>
+
+<ul>
+<li>修改config文件的时候，需要重启hugo server才能看到效果。</li>
+<li>不用懂所有配置选项，如果出了问题，按图索骥的找就好了。</li>
+</ul>
+
+<hr />
+
+<h3 id="删除顶部的超链接">删除顶部的超链接</h3>
+
+<p><img src="./assets/2018-02-20_172311.gif" alt="2018-02-20_172311" /></p>
+
+<p>图片中2个红框为重复的超链接，我只想保留下面一个，然后分析了一下，发现Blog渲染是通过下载的模版进行的，所以渲染出的页面，应该在模版中有控制，就在模版中找了一下，在<code>\themes\hugo-dusk\layouts\partials</code>这个目录中，找到了下面两个文件</p>
+
+<pre><code>social-links.html
+social-links-footer.html
+</code></pre>
+
+<p>2个social对应的应该就是图片中2个位置的代码，然后打开<code>social-links.html</code>，把div中的内容删除，重启 hugo server 发现顶部的social link消失了，问题解决。</p>
+
+<h3 id="中文字符支持-摘要失效问题">中文字符支持/摘要失效问题</h3>
+
+<p>我修改了下测试文章yyyyy.md，然后发现Blog把所有的内容都显示到摘要了，效果如图所示</p>
+
+<p><img src="./assets/2018-02-20_1723112.gif" alt="2018-02-20_1723112" /></p>
+
+<p>这明显是个bug，然后就开始找themes中到底是哪里控制出错了。</p>
+
+<p>最后在如下位置找到了对应的模版</p>
+
+<pre><code>themes\hugo-dusk\layouts\_default\summary.html
+</code></pre>
+
+<p>summary中的代码如下</p>
+
+<pre><code>&lt;article class=&quot;post-preview&quot;&gt;
+
+  &lt;header&gt;
+    &lt;h2 class=&quot;title&quot;&gt; &lt;a href='{{ .Permalink }}'&gt; {{ .Title }}&lt;/a&gt; &lt;/h2&gt;
+    &lt;div class=&quot;meta&quot;&gt;
+      {{ .Date.Format &quot;Jan 2, 2006&quot; }} - {{ .ReadingTime }} minutes
+    &lt;/div&gt;
+    {{ partial &quot;tags.html&quot; . }}
+  &lt;/header&gt;
+
+  &lt;div class=&quot;summary&quot;&gt;
+    {{ .Summary }}
+    &lt;a href='{{ .Permalink }}' class=&quot;rmore&quot;&gt;Read more ...&lt;/a&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;rmore&quot;&gt;
+  &lt;/div&gt;
+
+&lt;/article&gt;
+</code></pre>
+
+<p>也就是说，模版的作者，直接引用了hugo提供的<code>summary</code>变量，然后在hugo官网搜索查询summary，找到<a href="https://gohugo.io/content-management/summaries/#summary-splitting-options">这个页面</a></p>
+
+<p>这个说明中，提到了一个事</p>
+
+<blockquote>
+<p>The Hugo-defined summaries are set to use word count calculated by splitting the text by one or more consecutive white space characters. If you are creating content in a CJK language and want to use Hugo’s automatic summary splitting, set hasCJKLanguage to true in you site configuration.</p>
+</blockquote>
+
+<p>这段文字的大意是什么呢？summary是按照空格来进行分割的，如果包含中日韩字符，就需要在配置文件中做一个设置。</p>
+
+<p>回到config文件中，添加如下代码</p>
+
+<pre><code>hasCJKLanguage = true
+</code></pre>
+
+<p>重启hugo server，summary就生效了。问题解决。</p>
+
+<h3 id="添加一个关于页面">添加一个关于页面</h3>
+
+<p>测试的时候，发现没有关于/about页面，然后去官网查这个主题的demo，发现有about页面啊，找了找，发现主题中，有个<code>exampleSite</code>文件夹，这个文件夹就是官网demo的原始文件。</p>
+
+<p>按照这个demo，在<code>content</code>文件夹中新建一个about.md,然后把demo中的 front matter 头复制过来，复制内容如下，更多内容请参考hugo 官网关于front matter 的内容。</p>
+
+<pre><code>---
+title: &quot;About&quot;
+date: 2018-02-18T17:18:21+08:00
+menu: &quot;main&quot;
+draft: false
+weight: 100
+---
+</code></pre>
+
+<p>about中，比较核心的语句是<code>menu:&quot;main&quot;</code></p>
+
+<p>然后补充了about中的内容，重启，生效，问题解决。</p>
+
+<p>至于为什么这样，没查（划掉）</p>
+
+<h3 id="优化hugo代码高亮">优化Hugo代码高亮</h3>
+
+<p>由于这个博客之后可能会出现大量的，不同类型的代码，我测试了一下不同类型的代码，发现显示效果不尽人意。</p>
+
+<p>在配置文件中，看到了部分关于代码高亮的设置，改了改发现没有任何变化，故寻求第三方解决方案。</p>
+
+<p>网上说引入一段js就能实现比较优秀的代码高亮，这段js会自动识别代码块中的内容，然后对此进行颜色渲染。</p>
+
+<p>所以，我又去themes找相关的模版代码了，在如下的目录里，找到了一个head.html文件</p>
+
+<pre><code>themes\hugo-dusk\layouts\partials
+</code></pre>
+
+<p>在head中，添加如下3行代码</p>
+
+<pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai.min.css&quot;&gt;
+&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;hljs.initHighlightingOnLoad();&lt;/script&gt;
+</code></pre>
+
+<p>即，从cloudflare的 cdn引入highlight的js和css，并启用。</p>
+
+<p>保存，重启hugo server 打开测试的页面，发现代码高亮生效。</p>
+
+<p>highlight官网还提供了更多的配色，<a href="https://highlightjs.org/static/demo/">链接在此</a>，只要引入对应的css即可修改配色。</p>
+
+<h3 id="部分歧义调整">部分歧义调整</h3>
+
+<p>回看一下本博客的第二张图片，文章标题下的日期部分，后面有一个1 minutes，这个内容很容易在浏览的时候产生歧义，没有人能在日期后面想到阅读需要时间，需要一点调整。</p>
+
+<p>调整的做法依旧是修改主题的模版代码，修改的文件仍然在 summary中，把下面的代码</p>
+
+<pre><code>{{ .Date.Format &quot;Jan 2, 2006&quot; }} - {{ .ReadingTime }} minutes
+</code></pre>
+
+<p>改成</p>
+
+<pre><code>{{ .Date.Format &quot;Jan 2, 2006&quot; }} - (Reading Required {{ .ReadingTime }} min)
+</code></pre>
+
+<p>保存，重启hugo server 就能看到相关内容改变了。</p>
+
+<p>写过代码的人，基本都能凭感觉修改出来，即便没有使用过任何go语言，因为程序之间的做法都是类似的。</p>
+
+<h3 id="网站的图标调整">网站的图标调整</h3>
+
+<p>每一个成熟的网站，都会有一个自己的标识，显示在浏览器页签的左侧，我们现在新建的这个Blog没有，看起来很难受。查了一下实现的办法。</p>
+
+<ol>
+<li>首先需要一个ico格式的图片，网上有专门的格式转换的网站，能把png/jpg转成ico格式。</li>
+<li>需要把这个ico文件，重命名为favicon.ico 扔到静态网站的根目录下，由于hugo博客中，静态资源都需要放到static中，所以把ico文件放到static根目录中就可以了。</li>
+
+<li><p>还需要做的事情是，在head中添加ico文件的引用，按照添加代码高亮的方式，在head中添加如下代码，即可实现网站的标识配置。</p>
+
+<pre><code>&lt;link rel=&quot;shortcut icon&quot; href=&quot;favicon.ico&quot; type=&quot;image/x-icon&quot; /&gt;
+</code></pre></li>
+</ol>
+
+<p>注意：在实际测试的过程中，ico可能受各方面的影响比较多，有时候会持续没有效果，但是换个浏览器就好使了。</p>
+
+<h3 id="图片的发布">图片的发布</h3>
+
+<p>关于图片的问题，是我一直以来的疑惑，所以我也专门去找人问了问，也去查了下资料。</p>
+
+<p>先说下github的政策，参考<a href="https://help.github.com/articles/what-is-github-pages/#usage-limits">这里</a>,简单翻译一下</p>
+
+<ul>
+<li>git仓库最大1g，构建的网站别超过1g，翻译过来就是，网站的页面别超过1g</li>
+<li>每个月流量限制在100g以下</li>
+<li>每小时最多构建10次</li>
+</ul>
+
+<p>也就是说，在不借助cdn的情况下，每个月就100g为止了。如果借助图片cdn的话，流量和网站存储的消耗也会大幅降低，作为一个新站来讲，这些参数绰绰有余了。</p>
+
+<p>使用cdn（外链）的方式也可以，不过我个人感觉做起来比较麻烦。</p>
+
+<p>图片是属于静态资源，在hugo的处理中，扔到static中就可以了。</p>
+
+<p>问题是，如何在markdown语法中引用这个链接。</p>
+
+<p>经过测试，有了这样的结论</p>
+
+<pre><code>图片位置：static/abc.png
+引用链接：![abc](/abc.png)
+图片位置：static/img/posts/2018/zzzz/c.jpg
+引用链接：![c](/img/posts/2018/zzzz/c.jpg)
+</code></pre>
+
+<p>hugo在渲染html静态页面的时候，会把static中所有的资源文件放到静态博客中,所以在markdown语法中，直接引用资源的相对链接就可以了。</p>
+
+<p>如果用markdown引用外链就更简单了，绝对链接就行。</p>
+
+<hr />
+
+<p>好，到目前为止，我已经把所有我觉得不太舒服的问题都解决了。
+需要优化的部分问题，也解决了。</p>
+
+<p>本篇的内容对应于官网的 Content Management——Variables 中的大部分内容，官网的文档相当于api文档一般的存在。</p>
+
+<p>其实定制的工作本身是需要用户自身实现的，但是嫌弃麻烦，也没多少时间，就是用官方提供的themes来进行修改了。</p>
+
+<p>config中的内容没详细说，因为现在理解不了，之后才需要再次配置。</p>
+
+<p>本地能做的事情，基本都做完了。下一篇将会将如何生成发布博客。</p>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+      
+    
+<div class="tags">
+    
+      <div class="tag">
+          
+        <a href="/tags/hugo.html">#Hugo</a>
+      </div>
+    
+      <div class="tag">
+          
+        <a href="/tags/%E5%8D%9A%E5%AE%A2.html">#博客</a>
+      </div>
+    
+</div>
+
+    <div class="date"> 20 Feb 2018 </div>
+  </div>
+
+</footer>
+
+
+  
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:zx12_zx12@126.com"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/angrydisk" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+
+  
+
+  <div class="social-link">
+  <a href="http://zhaogaz.com/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> 请自由抄袭，无版权 </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="zhaogaz" />
+<meta name="description" content="" />
+<meta name="keywords" content=" personal blog" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.58.3" />
+
+<link rel="canonical" href="http://zhaogaz.com/post/2019/how-to-read-source-code.html">
+<meta property="og:title" content="如何正确看源码" />
+<meta property="og:description" content="这篇文章主要是讨论题目这个问题的。 就我目前的观察来看，我看过不少人，上来就是一切都写在源码里，让你自己看。话这么说是没错，但实际上做起来很难" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://zhaogaz.com/post/2019/how-to-read-source-code.html" />
+<meta property="article:published_time" content="2019-01-03T22:38:05+08:00" />
+<meta property="article:modified_time" content="2019-01-03T22:38:05+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="如何正确看源码"/>
+<meta name="twitter:description" content="这篇文章主要是讨论题目这个问题的。 就我目前的观察来看，我看过不少人，上来就是一切都写在源码里，让你自己看。话这么说是没错，但实际上做起来很难"/>
+
+
+<meta itemprop="name" content="如何正确看源码">
+<meta itemprop="description" content="这篇文章主要是讨论题目这个问题的。 就我目前的观察来看，我看过不少人，上来就是一切都写在源码里，让你自己看。话这么说是没错，但实际上做起来很难">
+
+
+<meta itemprop="datePublished" content="2019-01-03T22:38:05&#43;08:00" />
+<meta itemprop="dateModified" content="2019-01-03T22:38:05&#43;08:00" />
+<meta itemprop="wordCount" content="1668">
+
+
+
+<meta itemprop="keywords" content="编程,思考," />
+
+
+<link rel="stylesheet" href="/css/layout.css" />
+
+
+<link rel="stylesheet" href="/css/default-dark.css" />
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-114396712-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/atom-one-dark-reasonable.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<title>
+
+
+     如何正确看源码 
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="http://zhaogaz.com">ZhaoGaz&#39;s Blog</a>
+    </div> 
+  
+    
+    
+    <a class="nav-item" href="/post.html"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="/tags.html"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item" href="/about.html"><div class="nav-item-title">About</div></a>
+    
+
+  </nav>
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> 如何正确看源码 </h1>
+    <div class="content"> 
+
+<p>这篇文章主要是讨论题目这个问题的。</p>
+
+<p>就我目前的观察来看，我看过不少人，上来就是一切都写在源码里，让你自己看。话这么说是没错，但实际上做起来很难。当你能摸清一个源码核心脉络的时候，时间上可能过去了很久很久。大部分现实情况是不允许这么清闲的。如果有人说这句话，那就是句没毛病的话，但是并不应该照着做。</p>
+
+<p>我作为初学者的时候，对这个问题非常困惑，查了不少资料。各方面说法不一，也没能得到一致的结论。不管如何我还是忍着看了一部分源码。</p>
+
+<p>没什么办法，开始硬着头皮看，总共看了3个java工具类（<code>ArrayList</code>、<code>LinkedList</code>、<code>HashMap</code>）还有一部分<code>MyBatis</code>的源码。我这里说是硬着头皮，其实指的是，下决定要看，是硬着头皮。但实际看的过程是非常爽快的。却又很浪费时间。</p>
+
+<p>不过之后我就开窍了，然后不再继续看源码了。不过说来也简单，其实看源码的正确态度是带着问题去看。</p>
+
+<h2 id="如何带着问题看">如何带着问题看</h2>
+
+<p>这句话听起来很简单，实际上还是很难的，因为正确的提出一个问题是很难的。</p>
+
+<p>比方说，我最开始的问题是：<code>ArrayList</code>是如何设计的? 这个问题根本没有解，要看源码的话需要把所有的东西都看一遍，才能知道是如何设计的，时间成本在这个类上体会不明显。如果你要看某一个大的项目，比方说<code>Spring</code>是如何设计的？这种问题就很尴尬了，一个月全职时间都看不完。</p>
+
+<p>再一点，多数设计，是经过多次版本迭代的，这些所有的东西最终形成了现在你看到的源代码。你看到的只是一个最终的版本，没有时间概念上的直观感受。你花时间，把所有的源代码都看了一遍，很可能会有一些问题，无论如何都不知道怎么回事。有些是错误的遗留，有些是错误的修正。实际上最终的结果就是，你想看xx是如何设计的，看不懂。</p>
+
+<p>其实呢，这两段话，想表达的是：提问的内容必须要足够的具体，不要很模糊。模糊的问题受各方面影响，以初学者的实力并不能轻易的解决。</p>
+
+<h2 id="如何提一个具体问题">如何提一个具体问题</h2>
+
+<p>如何提一个具体的问题呢？这里我可以给大家举个我个人的例子。我在使用<code>Mybatis</code>的时候看到了一个这样的特性在<code>xml</code>中保存了很多的sql。有一些是可以实现动态拼接的，就是<code>&lt;where&gt;</code>包几个<code>&lt;if&gt;</code>，类似的还有<code>&lt;set&gt;</code>。在这几种情况下，<code>mybatis</code>能够自动帮我们去掉多余的逗号的。</p>
+
+<p>这个功能是非常有意思的，我当时是非常好奇这个功能如何实现。这是我去查看<code>mybatis</code>源码的源动力。后来看到最后，终于把这个功能的实现看懂了，确实很有意思的设计，<code>mybatis</code>整体的源码还有一大部分，但是却再也没有看下去的动力了。</p>
+
+<p>好，现在我已经举了一个例子，一个非常具体的问题。那么我们可以在深入一点，如何才能提出一个具体的问题？</p>
+
+<p>其实从例子中也能看出来，核心就是使用过，并对其中的一些东西很困惑，这样才能提出具体问题。使用的时候，知道它的特点，知道使用的结果，但是如何设计实现的呢？不知道。直到有这样的问题提出之后，对应的源码才值得一看。</p>
+
+<h2 id="总结">总结</h2>
+
+<p>总结下，看源码的正确思路。首先要使用过。然后对其中某某具体的东西非常想知道。然后再带着这样的问题去看。这样操作下来既节省时间，又高效。比漫无目的看要强得多了。绝大多数的人只回答了第一层的问题，然而初学者实际面临的是更多的更具体的问题。以上是针对看源码目标的讲解。主要解决的是为标题中的<strong>正确</strong></p>
+
+<p>具体的操作过程，比方说用IDE debug 方式看，还是用别的方式，这都是有形的操作过程了，这些对于真正要看源码的人来说并不重要。Java这边随便拿个功能正常的IDE都能看。工具是次要的。反正都决定要看了，只要IDE功能正常，基本都能看。</p>
+
+<h2 id="额外的注意">额外的注意</h2>
+
+<p>总的来说就是这些了，其他的建议，我也都说一下。</p>
+
+<ol>
+<li>大部分人写的代码都是垃圾，少数知名的项目才是精品。（也不是说垃圾代码不能看，看了你就知道哪里垃圾了。对比很明显的）</li>
+<li>如果弄不清楚可以考虑画图。</li>
+<li>可以先看看官方的文档。</li>
+<li>反编译<code>UML</code>类图就算了。（关于这点我解释一下，<code>UML</code>类图的初衷是设计时候用来简化模型的，实际完成编码之后，类中会有很多其他的东西，<code>UML</code>很难参考，用工具自动简化，又不知道对不对）</li>
+</ol>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+      
+    
+<div class="tags">
+    
+      <div class="tag">
+          
+        <a href="/tags/%E7%BC%96%E7%A8%8B.html">#编程</a>
+      </div>
+    
+      <div class="tag">
+          
+        <a href="/tags/%E6%80%9D%E8%80%83.html">#思考</a>
+      </div>
+    
+</div>
+
+    <div class="date"> 3 Jan 2019 </div>
+  </div>
+
+</footer>
+
+
+  
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:zx12_zx12@126.com"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/angrydisk" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+
+  
+
+  <div class="social-link">
+  <a href="http://zhaogaz.com/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> 请自由抄袭，无版权 </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+

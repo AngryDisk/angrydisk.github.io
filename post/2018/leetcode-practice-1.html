@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="zhaogaz" />
+<meta name="description" content="" />
+<meta name="keywords" content=" personal blog" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.58.3" />
+
+<link rel="canonical" href="http://zhaogaz.com/post/2018/leetcode-practice-1.html">
+<meta property="og:title" content="leetcode实战-99. Recover Binary Search Tree" />
+<meta property="og:description" content="写这篇文章的目的很单纯，就是来炫耀的，或者说展示下自己写算法的思路。 题目 99. Recover Binary Search Tree Two elements of a binary search tree (BST) are swapped by mistake. Recover the tree without changing its structure. 代码块不贴了，简单解" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://zhaogaz.com/post/2018/leetcode-practice-1.html" />
+<meta property="article:published_time" content="2018-12-14T13:58:02+08:00" />
+<meta property="article:modified_time" content="2018-12-14T13:58:02+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="leetcode实战-99. Recover Binary Search Tree"/>
+<meta name="twitter:description" content="写这篇文章的目的很单纯，就是来炫耀的，或者说展示下自己写算法的思路。 题目 99. Recover Binary Search Tree Two elements of a binary search tree (BST) are swapped by mistake. Recover the tree without changing its structure. 代码块不贴了，简单解"/>
+
+
+<meta itemprop="name" content="leetcode实战-99. Recover Binary Search Tree">
+<meta itemprop="description" content="写这篇文章的目的很单纯，就是来炫耀的，或者说展示下自己写算法的思路。 题目 99. Recover Binary Search Tree Two elements of a binary search tree (BST) are swapped by mistake. Recover the tree without changing its structure. 代码块不贴了，简单解">
+
+
+<meta itemprop="datePublished" content="2018-12-14T13:58:02&#43;08:00" />
+<meta itemprop="dateModified" content="2018-12-14T13:58:02&#43;08:00" />
+<meta itemprop="wordCount" content="1403">
+
+
+
+<meta itemprop="keywords" content="算法,思考," />
+
+
+<link rel="stylesheet" href="/css/layout.css" />
+
+
+<link rel="stylesheet" href="/css/default-dark.css" />
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-114396712-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/atom-one-dark-reasonable.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<title>
+
+
+     leetcode实战-99. Recover Binary Search Tree 
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="http://zhaogaz.com">ZhaoGaz&#39;s Blog</a>
+    </div> 
+  
+    
+    
+    <a class="nav-item" href="/post.html"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="/tags.html"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item" href="/about.html"><div class="nav-item-title">About</div></a>
+    
+
+  </nav>
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> leetcode实战-99. Recover Binary Search Tree </h1>
+    <div class="content"> 
+
+<p>写这篇文章的目的很单纯，就是来炫耀的，或者说展示下自己写算法的思路。</p>
+
+<h2 id="题目">题目</h2>
+
+<blockquote>
+<h2 id="99-recover-binary-search-tree">99. Recover Binary Search Tree</h2>
+
+<p>Two elements of a binary search tree (BST) are swapped by mistake.</p>
+
+<p>Recover the tree without changing its structure.</p>
+</blockquote>
+
+<p>代码块不贴了，简单解释下。</p>
+
+<p>找出这个二叉搜索树 中顺序错误的两个，不要改变树的结构。</p>
+
+<p>这种<code>BST</code>按照中序遍历就能得到正确的大小顺序，如果有错误的，那么结果很容易得到了。</p>
+
+<p>换句话说，中序遍历跑一边，交换一下错误的两个节点val就可以了。</p>
+
+<p>所以问题就转换成了怎么找出2个顺序错误的节点。</p>
+
+<p>下面就用代码说明问题是如何解决的。请按代码中1234的顺序查看</p>
+
+<pre><code class="language-java">    public void recoverTree(TreeNode root) {
+//        8.所以就如同设计，正向遍历找到第一个，反向遍历找到第二个，做交换。
+        TreeNode first = recoverTreeHelper(root, new LinkedList&lt;&gt;(), true);
+        TreeNode last = recoverTreeHelper(root, new LinkedList&lt;&gt;(), false);
+        int temp = first.val;
+        first.val = last.val;
+        last.val = temp;
+    }
+
+    /*
+    1.辅助方法，实现一个标准的中序遍历，见==部分,逻辑为递归左树，处理节点，递归右树
+     */
+    public TreeNode recoverTreeHelper(TreeNode root, LinkedList&lt;TreeNode&gt; sort, Boolean order) {
+        /*
+        4.这里我做了一个处理，order==true的时候是正向遍历，order==false的时候是反向遍历。
+        原因是这样的，正向遍历，第一个顺序错误的绝对是要交换的值，反向遍历，第一个顺序错误的绝对是要交换的值。
+        也就是说，只要找到一个顺序错误的，就直接跳出循环。
+        这种处理的原因是：考虑【3,2,1】和【1,3,2,4】两个错误的BST，正向遍历，第一个点很好找（查找条件是错误排序的第一个点）。而【3，2,1】中第二个点不好找（有好几个错误的排序点），利用正向查第一个，反相查第一个可以很好的屏蔽这个问题。
+         */
+        TreeNode firstNode;
+        TreeNode lastNode;
+        if (order) {
+            firstNode = root.left;
+            lastNode = root.right;
+        } else {
+            firstNode = root.right;
+            lastNode = root.left;
+        }
+        //==================================
+        if (firstNode != null) {
+            //5.所以我在这里，做了一个处理，直接利用辅助方法的返回值，只要找到了非空，即找到了一个顺序错误的treenode
+            // ，就直接会把非空值一层一层传播到第一个调用的函数
+            TreeNode left;
+            if ((left = recoverTreeHelper(firstNode, sort, order)) != null) {
+                return left;
+            }
+        }
+        //===================================
+        /*
+         2.利用一个链表，缓存遍历的数据，即用这种入参的链表，拿到深层递归过程中的返回值。
+         由于当前的函数，既要拿到顺序错误的节点，又要临时缓存几个排序的内容，所以选择一个list作为临时的变量。
+         选择LinkedList而非List的原因是：我只需要比较当前节点和上一个节点 2个节点就行了，链表的API方便一点
+         */
+        sort.add(root);
+        //3.所以我在这个位置移除掉多余的节点，保持链表只有2个，因为之前的顺序都是正确的，没有任何利用的价值。我需要的只是最近两个错误排序的节点
+        if (sort.size() == 3) {
+            sort.removeFirst();
+        }
+        if (sort.size() == 2) {
+            //6.从前往后查，和从后往前查，需要比较的内容是不一样的，这里边就利用order做了一个判断，
+            // 再加上链表中肯定只有2个值，做了个比较，返回错误的节点。由此开始传播return的内容。
+            if (order &amp;&amp; sort.getFirst().val &gt; sort.getLast().val) {
+                //7.考虑到要做val的交换，所以选择了返回TreeNode，所以在链表中也直接缓存了TreeNode，没有只记录val
+                return sort.getFirst();
+            } else if (!order &amp;&amp; sort.getFirst().val &lt; sort.getLast().val) {
+                return sort.getFirst();
+            }
+        }
+        //====================================
+        if (lastNode != null) {
+            TreeNode right;
+            if ((right = recoverTreeHelper(lastNode, sort, order)) != null) {
+                return right;
+            }
+        }
+        //====================================
+        return null;
+    }
+</code></pre>
+
+<p>代码的思路就是这样，还是非常清晰的。用到了一些之前学到的技巧。如：</p>
+
+<ul>
+<li>中序遍历</li>
+<li>在条件判断中，递归方法，并把返回值传递出去，从而终止后续的递归过程</li>
+<li>链表的FIFO队列</li>
+<li>在条件判断中赋值——从<code>HashMap</code>源码学的小技巧</li>
+</ul>
+
+<p>虽然提交了之后，虽然一遍通过，但速度并不是最快的。一些优化的思路还是知道的，但是没有做。</p>
+
+<ul>
+<li>比方说，链表可以用 <code>TreeNode[2]</code>替代，手动实现下链表中的内容，速度应该会更快一些。</li>
+<li>像其他人那样直接用全局变量做缓存也是可以的，只不过没想这么做。</li>
+</ul>
+
+<p>希望这种做法能给大家带来一些启发。</p>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+      
+    
+<div class="tags">
+    
+      <div class="tag">
+          
+        <a href="/tags/%E7%AE%97%E6%B3%95.html">#算法</a>
+      </div>
+    
+      <div class="tag">
+          
+        <a href="/tags/%E6%80%9D%E8%80%83.html">#思考</a>
+      </div>
+    
+</div>
+
+    <div class="date"> 14 Dec 2018 </div>
+  </div>
+
+</footer>
+
+
+  
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:zx12_zx12@126.com"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/angrydisk" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+
+  
+
+  <div class="social-link">
+  <a href="http://zhaogaz.com/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> 请自由抄袭，无版权 </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+

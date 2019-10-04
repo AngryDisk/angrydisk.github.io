@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="zhaogaz" />
+<meta name="description" content="" />
+<meta name="keywords" content=" personal blog" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.58.3" />
+
+<link rel="canonical" href="http://zhaogaz.com/post/2019/good-and-bad-code.html">
+<meta property="og:title" content="好代码与烂代码" />
+<meta property="og:description" content="好代码与烂代码 看代码这个事情吧，大多数人的理解只停留在各有各的好层面上，然而他们不理解的是烂代码和好代码是有明显区别的。这种区分的标准，我理" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://zhaogaz.com/post/2019/good-and-bad-code.html" />
+<meta property="article:published_time" content="2019-01-15T01:01:45+08:00" />
+<meta property="article:modified_time" content="2019-01-15T01:01:45+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="好代码与烂代码"/>
+<meta name="twitter:description" content="好代码与烂代码 看代码这个事情吧，大多数人的理解只停留在各有各的好层面上，然而他们不理解的是烂代码和好代码是有明显区别的。这种区分的标准，我理"/>
+
+
+<meta itemprop="name" content="好代码与烂代码">
+<meta itemprop="description" content="好代码与烂代码 看代码这个事情吧，大多数人的理解只停留在各有各的好层面上，然而他们不理解的是烂代码和好代码是有明显区别的。这种区分的标准，我理">
+
+
+<meta itemprop="datePublished" content="2019-01-15T01:01:45&#43;08:00" />
+<meta itemprop="dateModified" content="2019-01-15T01:01:45&#43;08:00" />
+<meta itemprop="wordCount" content="2346">
+
+
+
+<meta itemprop="keywords" content="思考,编程,代码," />
+
+
+<link rel="stylesheet" href="/css/layout.css" />
+
+
+<link rel="stylesheet" href="/css/default-dark.css" />
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-114396712-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/atom-one-dark-reasonable.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<title>
+
+
+     好代码与烂代码 
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="http://zhaogaz.com">ZhaoGaz&#39;s Blog</a>
+    </div> 
+  
+    
+    
+    <a class="nav-item" href="/post.html"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="/tags.html"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item" href="/about.html"><div class="nav-item-title">About</div></a>
+    
+
+  </nav>
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> 好代码与烂代码 </h1>
+    <div class="content"> 
+
+<h1 id="好代码与烂代码">好代码与烂代码</h1>
+
+<p>看代码这个事情吧，大多数人的理解只停留在各有各的好层面上，然而他们不理解的是烂代码和好代码是有明显区别的。这种区分的标准，我理解和艺术赏析的类似的，是有共同标准的。</p>
+
+<p>所以这篇文章想说的并不是一千个人有一千个哈姆雷特。而是一种规律上的统一，我理解的好代码应该有什么样的特征，应该做什么，我会挑些能总结的点，着重说一下。</p>
+
+<h2 id="完善的思路">完善的思路</h2>
+
+<p>这一点，从 <a href="http://www.yinwang.org/blog-cn/2015/11/21/programming-philosophy">王垠 无懈可击代码</a> 博客中翻到的，他说了这样的一个事，大意在写<code>if</code>条件的时候尽量要写上<code>else</code>。这个思考角度主要出发于，如果代码没有按照我想象中的来，程序应该做什么。</p>
+
+<p>这个思路背后的对应的是一种思维模式。普通人做事的时候，仅考虑正确应该怎么样，最多多一点可能会有几种情况，每种情况怎么办。但是程序员这边面对的是代码，代码是非常死板，不会像人一样会处理各种意外，所以必须由程序员来用代码写清楚错误该怎么办。所以程序员在这一点上面做得比普通人强很多。这种思维方式对整个人生的思考其实是有利的。</p>
+
+<p>单单这一点，其实很多人做不到的。所以说，王垠提出的这个建议真的非常好，而且是实际可操作的。这个建议是可以让做不到的人，用<code>if else</code>这种模板来做到。</p>
+
+<h2 id="清晰的逻辑线">清晰的逻辑线</h2>
+
+<p>整个代码，先干什么，后干什么，每一步在处理什么东西。事情分了几个步骤。好的代码一看，你就知道它在做什么事情。</p>
+
+<p>这种代码写出来，能够一定程度的替代注释了。搭眼一看就懂。</p>
+
+<p>如果写出这种代码，可以说一本书了，就像《clean code》、《敏捷软件开发》都说的是这种。</p>
+
+<h2 id="统一的命名风格与历史沿袭">统一的命名风格与历史沿袭</h2>
+
+<p>这里说的命名风格指的是，驼峰，匈牙利这些命名风格。大体风格的一致性。用<code>Java</code> 语言就用java的风格，用<code>JS</code>就用JS的风格来写。这是其一。</p>
+
+<p>另外一侧命名风格，指的是项目上面的习惯。比方说，一个项目习惯用<code>xxxDao</code>那就一直沿用下去。比方说所有<code>xxxFactory</code>，指的都是<code>xxx工厂</code>，这时就不要用<code>xxxWorkshop</code>或者是其他什么单词了。</p>
+
+<h2 id="基础元素的使用">基础元素的使用</h2>
+
+<p>这个东西是有具体场景的，而且这东西背后是有深度思考在的。</p>
+
+<p>举个例子，Java Web开发的时候，经常会写一些特殊的header，或者是一些字符编码。有些人会用类库中给的东西，有些人会自己写字符串。我指得就是<code>content-type</code>中的<code>application/json</code>，或者是<code>utf-8</code>这个字符串。有的人喜欢自己新建全局静态变量，有的人喜欢写字符串，还有人喜欢用类库。</p>
+
+<p>使用类库的思考过程是什么样呢？</p>
+
+<ol>
+<li>这个字符串是规范性的东西，因为大家都要用的。</li>
+<li>这个东西在Web框架中肯定存在。</li>
+</ol>
+
+<p>有了这样的思考过程后，我就会去框架中找，结果就是显然的。</p>
+
+<p>当然如果再进一步讲，如果你对框架了解非常深刻，与设计者思路达成一致的话，你思考的问题，框架开发者多半也思考过（做没做是另一说了）</p>
+
+<p>这背后其实体现的是代码编写人，对大局的掌握程度。明确的旁征博引方式写代码，说明编写者对各方面都有了解。</p>
+
+<h2 id="合理的注释量">合理的注释量</h2>
+
+<p>有人说代码即是注释，我觉得不行。有些代码，谁来看都难受，所以就把它们封装起来，写上注释，补充说明下怎么回事，这种注释是必不可少的。代码即注释根本达不到这种效果。</p>
+
+<p>有人可能会想，那让这段代码不那么难受不就得了。对不起，做不来。因为抽象就是这么复杂。复杂性是必须面对的，不管如何抽象，现实中的复杂性一直存在。</p>
+
+<p>合理指的是在最有必要的时候，才会考虑写注释，其余时候都不考虑写的。注释写多了会出现这样一个问题：修改的时候来不及，总是遗漏。</p>
+
+<p>一般来说大量注释都是新手写的，老员工之前都有过这样的阶段，写了一堆注释，后来发现有问题。改改改，最后总是漏。后来才意识到，注释不应该这么写。（我以前就是这样）</p>
+
+<h2 id="目的">目的</h2>
+
+<p>其实最重要的是，要了解这段代码的目的，而目的有的写到了注释里面，有的写到了<code>reference</code>里面，有的写到了<code>manual</code>里面。</p>
+
+<p>上面的小标题提到的都是非常常见的，但是很多时候也要打破这些东西才能实现。比方说，循环展开或某些极端优化的算法。这些极端的代码优化，会破坏代码逻辑上的流畅性。再比方说，有些类库要求不用第三方的工具，那样的话只能自己封装一部分常用类库了。毕竟目的就是为了不适用第三方类库。再比方说，完整的思路这点，有些位置的代码无论如何都不用管，地球爆炸了该怎么办？天塌了该怎么办？思考太多负担太重。</p>
+
+<p>明确了目的之后，即便设计上打破上面总结的规则，也不能说它不是好代码。因为现实并不是非黑即白。总结的内容也不是公理一样绝对正确。经验的总结和语法是非常类似的，有一些习惯上的做法，但是总会有一些特例。</p>
+
+<h2 id="总结">总结</h2>
+
+<p>这篇文章，本身就是一个抽象，尝试抽象出好代码应该是什么样子。尽量的忽略一些麻烦的细节，解决大部分通用的情况。正反各打50打板的方式是无比正确的，但是没有什么用。因为无论怎么样都会优缺点。简单的方案，做起来方便操作容易，但是更复杂的场景没法处理。复杂的方案，啥都行，就是贵，复杂。无论怎么样都有不让人满意的方面，完美是不可能的。优缺点最好要有倾向。</p>
+
+<p>我这种划分方式和<code>JVM</code>新生代，老年代的划分方法非常接近。基本上就是经验的总结与统计，而非明确的计算。</p>
+
+<h2 id="其他补充">其他补充</h2>
+
+<p>其实我一直有这样一个例子。工人盖房子，非承重墙，墙里埋个轮胎，不影响任何管线和承重。有问题么？从功能上讲，没有任何问题。但是这种设计是不合适的。</p>
+
+<p>软件设计其实也是一样的。很多人都说功能实现了就行，管别的呢？其实也不是这样的。你在软件工程中，今天埋个轮胎，明天藏个发动机。过几天说不定又藏了点啥。这些东西把实际功能都巧妙的绕了过去。你说功能都实现了，但是实际上打开看一看，代码千疮百孔。</p>
+
+<p>上面举的例子就是就是国内<code>软件工程</code>的现状。这些程序员，从来没想过，代码实现A功能，应该设计成什么样。</p>
+
+<p>当然我个人的想法就是，希望这篇文章能影响一些人。至少是提高一些人的编程质量。</p>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+      
+    
+<div class="tags">
+    
+      <div class="tag">
+          
+        <a href="/tags/%E6%80%9D%E8%80%83.html">#思考</a>
+      </div>
+    
+      <div class="tag">
+          
+        <a href="/tags/%E7%BC%96%E7%A8%8B.html">#编程</a>
+      </div>
+    
+      <div class="tag">
+          
+        <a href="/tags/%E4%BB%A3%E7%A0%81.html">#代码</a>
+      </div>
+    
+</div>
+
+    <div class="date"> 15 Jan 2019 </div>
+  </div>
+
+</footer>
+
+
+  
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:zx12_zx12@126.com"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/angrydisk" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+
+  
+
+  <div class="social-link">
+  <a href="http://zhaogaz.com/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> 请自由抄袭，无版权 </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+

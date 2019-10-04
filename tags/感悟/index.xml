@@ -2,10 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>感悟 on ZhaoGaz&#39;s Blog</title>
-    <link>http://zhaogaz.com/tags/%E6%84%9F%E6%82%9F/</link>
+    <link>http://zhaogaz.com/tags/%E6%84%9F%E6%82%9F.html</link>
     <description>Recent content in 感悟 on ZhaoGaz&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
+    <copyright>请自由抄袭，无版权</copyright>
     <lastBuildDate>Wed, 26 Dec 2018 17:09:04 +0800</lastBuildDate>
     
 	<atom:link href="http://zhaogaz.com/tags/%E6%84%9F%E6%82%9F/index.xml" rel="self" type="application/rss+xml" />
@@ -13,19 +14,19 @@
     
     <item>
       <title>开发过程中的瞻前顾后</title>
-      <link>http://zhaogaz.com/post/2018/work-carefully/</link>
+      <link>http://zhaogaz.com/post/2018/work-carefully.html</link>
       <pubDate>Wed, 26 Dec 2018 17:09:04 +0800</pubDate>
       
-      <guid>http://zhaogaz.com/post/2018/work-carefully/</guid>
+      <guid>http://zhaogaz.com/post/2018/work-carefully.html</guid>
       <description>开发过程中的瞻前顾后 因为最近一两年转行做研发。从底层往上爬的过程还是比较累的，遇到了很多糟心事。具体的内容我就不说了，我对以上的不爽的行为做</description>
     </item>
     
     <item>
       <title>我与算法——记于leetcode写了100道题</title>
-      <link>http://zhaogaz.com/post/2018/when-i-do-100-leetcode/</link>
+      <link>http://zhaogaz.com/post/2018/when-i-do-100-leetcode.html</link>
       <pubDate>Wed, 12 Dec 2018 17:16:43 +0800</pubDate>
       
-      <guid>http://zhaogaz.com/post/2018/when-i-do-100-leetcode/</guid>
+      <guid>http://zhaogaz.com/post/2018/when-i-do-100-leetcode.html</guid>
       <description>本文记于2018.11.22,不过当时好久没搞博客了,最近处理了下笔记,依次发出来. 我可以简单说说我做这些题的过程和我理解的算法，还有一些我</description>
     </item>
     
