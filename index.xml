@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>请自由抄袭，无版权</copyright>
-    <lastBuildDate>Sat, 05 Oct 2019 17:37:28 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 05 Oct 2019 20:45:04 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.zhaogaz.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>我在这家公司犯的错</title>
+      <link>https://blog.zhaogaz.com/post/2019/what-i-did-wrong.html</link>
+      <pubDate>Sat, 05 Oct 2019 20:45:04 +0800</pubDate>
+      
+      <guid>https://blog.zhaogaz.com/post/2019/what-i-did-wrong.html</guid>
+      <description>其实这篇文章的提纲内容，我早就写了。我在写自己简历的时候，就总结出了我这一年来做过的东西，也顺便写出了我这一年犯过的所有错误。现在总结下来，</description>
+    </item>
     
     <item>
       <title>原来CSDN的东西到底迁不迁过来？</title>
