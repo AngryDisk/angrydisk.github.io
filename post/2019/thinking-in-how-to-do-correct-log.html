@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="zhaogaz" />
+<meta name="description" content="" />
+<meta name="keywords" content=" personal blog" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.58.3" />
+
+<link rel="canonical" href="https://blog.zhaogaz.com/post/2019/thinking-in-how-to-do-correct-log.html">
+<meta property="og:title" content="关于日志的一些考虑" />
+<meta property="og:description" content="前几天晚上，又对这个问题产生了一些思考，然后做了一些记录，最近博客弄好了，整理一下发出来。 在很早前，我有一次感觉需要日志了，然后就找日志框架" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.zhaogaz.com/post/2019/thinking-in-how-to-do-correct-log.html" />
+<meta property="article:published_time" content="2019-10-05T21:17:10+08:00" />
+<meta property="article:modified_time" content="2019-10-05T21:17:10+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="关于日志的一些考虑"/>
+<meta name="twitter:description" content="前几天晚上，又对这个问题产生了一些思考，然后做了一些记录，最近博客弄好了，整理一下发出来。 在很早前，我有一次感觉需要日志了，然后就找日志框架"/>
+
+
+<meta itemprop="name" content="关于日志的一些考虑">
+<meta itemprop="description" content="前几天晚上，又对这个问题产生了一些思考，然后做了一些记录，最近博客弄好了，整理一下发出来。 在很早前，我有一次感觉需要日志了，然后就找日志框架">
+
+
+<meta itemprop="datePublished" content="2019-10-05T21:17:10&#43;08:00" />
+<meta itemprop="dateModified" content="2019-10-05T21:17:10&#43;08:00" />
+<meta itemprop="wordCount" content="1493">
+
+
+
+<meta itemprop="keywords" content="日志,思考," />
+
+
+<link rel="stylesheet" href="/css/layout.css" />
+
+
+<link rel="stylesheet" href="/css/default-dark.css" />
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-114396712-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/atom-one-dark-reasonable.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<title>
+
+
+     关于日志的一些考虑 
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="https://blog.zhaogaz.com">ZhaoGaz&#39;s Blog</a>
+    </div> 
+  
+    
+    
+    <a class="nav-item" href="/post.html"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="/tags.html"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item" href="/about.html"><div class="nav-item-title">About</div></a>
+    
+
+  </nav>
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> 关于日志的一些考虑 </h1>
+    <div class="content"> 
+
+<blockquote>
+<p>前几天晚上，又对这个问题产生了一些思考，然后做了一些记录，最近博客弄好了，整理一下发出来。</p>
+</blockquote>
+
+<p>在很早前，我有一次感觉需要日志了，然后就找日志框架(log4j2)，看文档怎么回事。当时很痛苦，总觉得差了一些东西，后来就放下了。</p>
+
+<p>最近重新思考了下，日志这个东西，某种意义上和代码注释差不多，要写的话，就只记录核心的东西就可以了。</p>
+
+<p>我之前看这个就麻爪的原因一个是因为我没有使用过，再一个就是当时感到恐怖的核心问题是*日志到底该输入什么样子pattern*，而非*应该输出什么内容*。</p>
+
+<p>不过就目前的阅读+自己的思考来看想要一次性的实现日志整体的内容是不可能的，可能需要多次的迭代修改。即便我对自己的智力与能力非常自信，我能做的扩展只是针对现阶段的自己的眼界，这和大公司的某些人的视角是比不了的。</p>
+
+<p>下面就按照自己现有的经历做一下梳理吧。</p>
+
+<h2 id="目标">目标</h2>
+
+<p>首先要明确目标：我用日志来做什么？</p>
+
+<ol>
+<li>记录出现的bug（1.系统报错，2.应用行为异常，如某些特别缓慢）</li>
+<li>行为某些用户行为（用户的主要操作）</li>
+<li>业务需求记录的东西？</li>
+</ol>
+
+<h2 id="谁来用">谁来用</h2>
+
+<p>有运维的公司可能是运维来用，没有的可能是开发在用。（我现在）</p>
+
+<h2 id="日志该记录什么">日志该记录什么</h2>
+
+<p>我有了这样的目标，那么日志应该记录什么东西呢？</p>
+
+<ol>
+<li>能够定位bug的东西，即谁登录（如果有的话），哪个代码，什么错误，时间。</li>
+<li>想监控的东西，比方说方法执行了多长时间</li>
+<li>哪个id的用户，做了什么东西</li>
+</ol>
+
+<h2 id="如何处理日志的等级">如何处理日志的等级？</h2>
+
+<ol>
+<li>自己随便打桩的自测，用<code>debug</code></li>
+<li><code>info</code>就是正常的输出，比方说某些游戏可以自动执行，然后就会不停地刷新输出日志，某些日志就是必须要输出的，即便是不需要任何人做操作。</li>
+<li>某些危险的行为<code>warn</code>，如登录验证错误，————本来写的登录验证错误</li>
+<li>系统出问题，需要人干预的，那就需要<code>error</code>级别了。</li>
+</ol>
+
+<h3 id="大公司的分级">大公司的分级</h3>
+
+<p>看了别人的日志分级文章，有了不同的想法，像我这种是一种分级思路，这种分级对没运维项目来说是恰当的。因为我们这个项目，即便是我设置为<code>error</code>的问题也不需要马上看。</p>
+
+<p>而别人说的分级思路是这样的，是否紧急到需要别人操作，或者是是否紧急到需要修复。比方说某些错误必须要马上通知运维操作，这种日志就需要<code>error</code>，而且要极力避免<code>狼来了</code>的反复情况。</p>
+
+<h2 id="总结下能做的东西">总结下能做的东西</h2>
+
+<ol>
+<li>使用aop统计每个接口的执行时间，记录缓慢的行为（）</li>
+<li>每一个手动抛出异常的位置，记录下异常原因和位置。</li>
+<li>一些自认为不可能的东西，如if的另一半，要打日志记录下。</li>
+<li>尽量把日志写成可定为问题的样子，即把自己假定为刚看这个日志的人，从这个日志中能知道问题是啥。就像类的命名那种，不要模糊</li>
+</ol>
+
+<h2 id="总结">总结</h2>
+
+<p>坦诚讲，我这边就是按照自己的业务需求设计的log部分。后来查到了一些<a href="https://zhuanlan.zhihu.com/p/27363484">文章</a>，发现别人写的真是好。大公司员工做的事和我们这种真的不一样，不但要考虑部门之间的协作，而且实际遇到的问题也多，总结也到位。</p>
+
+<h2 id="后记">后记</h2>
+
+<p>本篇内容原记于2019.02.11，放了好久也没有发出来。现在整理一下，发出来。</p>
+
+<p>重新看了下，其实当时困扰我的问题在新公司依然做的不是很好。不过考虑下java原生啊、很多java写的框架啊、包括apt、git之类的工具。在我们初次使用这些东西的时候，它们即便把错误原因输出出来，我也不知道怎么办。我只能去查，然后才能懂怎么回事。查的过程本身就是了解apt、git的过程。换句话说，如果不懂这个软件在干嘛怎么干，日志输出啥都没用。换句话说，能看懂日志的前提是知道软件怎么做事。换句话说，让运维看懂日志很难，最后出问题还是写代码的人来查。在换句话说，日志只需要记录到能让程序员自己看懂就行了。换句话说，以上考虑的点都没啥意义，有意义的是被真实场景推动的改变。</p>
+
+<p>之后有可能会结合<code>架构是最低成本</code>写一篇文章，这篇先这样。</p>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+      
+    
+<div class="tags">
+    
+      <div class="tag">
+          
+        <a href="/tags/%E6%97%A5%E5%BF%97.html">#日志</a>
+      </div>
+    
+      <div class="tag">
+          
+        <a href="/tags/%E6%80%9D%E8%80%83.html">#思考</a>
+      </div>
+    
+</div>
+
+    <div class="date"> 5 Oct 2019 </div>
+  </div>
+
+</footer>
+
+
+  
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:zx12_zx12@126.com"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/angrydisk" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+
+  
+
+  <div class="social-link">
+  <a href="https://blog.zhaogaz.com/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> 请自由抄袭，无版权 </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+

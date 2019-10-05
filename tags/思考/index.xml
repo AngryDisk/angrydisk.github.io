@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>请自由抄袭，无版权</copyright>
-    <lastBuildDate>Sat, 05 Oct 2019 20:45:04 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 05 Oct 2019 21:17:10 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.zhaogaz.com/tags/%E6%80%9D%E8%80%83/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>关于日志的一些考虑</title>
+      <link>https://blog.zhaogaz.com/post/2019/thinking-in-how-to-do-correct-log.html</link>
+      <pubDate>Sat, 05 Oct 2019 21:17:10 +0800</pubDate>
+      
+      <guid>https://blog.zhaogaz.com/post/2019/thinking-in-how-to-do-correct-log.html</guid>
+      <description>前几天晚上，又对这个问题产生了一些思考，然后做了一些记录，最近博客弄好了，整理一下发出来。 在很早前，我有一次感觉需要日志了，然后就找日志框架</description>
+    </item>
     
     <item>
       <title>我在这家公司犯的错</title>
