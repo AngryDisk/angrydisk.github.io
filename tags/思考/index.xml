@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>请自由抄袭，无版权</copyright>
-    <lastBuildDate>Thu, 03 Oct 2019 14:53:19 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 05 Oct 2019 17:37:28 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.zhaogaz.com/tags/%E6%80%9D%E8%80%83/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>原来CSDN的东西到底迁不迁过来？</title>
+      <link>https://blog.zhaogaz.com/post/2019/why-not-move-csdn-to-here.html</link>
+      <pubDate>Sat, 05 Oct 2019 17:37:28 +0800</pubDate>
+      
+      <guid>https://blog.zhaogaz.com/post/2019/why-not-move-csdn-to-here.html</guid>
+      <description>标题的问题我想了一会，到底该怎么做？ 要不要把文章都复制过来？ 旧的文章要不要删掉？ 新发的文章日期改怎么改，要不要跟旧的同步？ 在当前blog的基</description>
+    </item>
     
     <item>
       <title>Git设计原理一瞥</title>

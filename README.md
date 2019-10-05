@@ -1,3 +1,3 @@
-my static blog repo
+my blog
 
-http://zhaogaz.com
+https://blog.zhaogaz.com
