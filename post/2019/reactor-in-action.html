@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="zhaogaz" />
+<meta name="description" content="" />
+<meta name="keywords" content=" personal blog" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.58.3" />
+
+<link rel="canonical" href="https://blog.zhaogaz.com/post/2019/reactor-in-action.html">
+<meta property="og:title" content="Reactor 3一瞥" />
+<meta property="og:description" content="文章的 reactor 是java的reactor 不是js的reactor。 本篇内容，主要写的是，使用 reactor 的一些感受和要点。大体会说一下，写 reactor 是什么感觉、理念" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.zhaogaz.com/post/2019/reactor-in-action.html" />
+<meta property="article:published_time" content="2019-10-06T13:12:15+08:00" />
+<meta property="article:modified_time" content="2019-10-06T13:12:15+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Reactor 3一瞥"/>
+<meta name="twitter:description" content="文章的 reactor 是java的reactor 不是js的reactor。 本篇内容，主要写的是，使用 reactor 的一些感受和要点。大体会说一下，写 reactor 是什么感觉、理念"/>
+
+
+<meta itemprop="name" content="Reactor 3一瞥">
+<meta itemprop="description" content="文章的 reactor 是java的reactor 不是js的reactor。 本篇内容，主要写的是，使用 reactor 的一些感受和要点。大体会说一下，写 reactor 是什么感觉、理念">
+
+
+<meta itemprop="datePublished" content="2019-10-06T13:12:15&#43;08:00" />
+<meta itemprop="dateModified" content="2019-10-06T13:12:15&#43;08:00" />
+<meta itemprop="wordCount" content="3032">
+
+
+
+<meta itemprop="keywords" content="java,reactor," />
+
+
+<link rel="stylesheet" href="/css/layout.css" />
+
+
+<link rel="stylesheet" href="/css/default-dark.css" />
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-114396712-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/atom-one-dark-reasonable.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<title>
+
+
+     Reactor 3一瞥 
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="https://blog.zhaogaz.com">ZhaoGaz&#39;s Blog</a>
+    </div> 
+  
+    
+    
+    <a class="nav-item" href="/post.html"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="/tags.html"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item" href="/about.html"><div class="nav-item-title">About</div></a>
+    
+
+  </nav>
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> Reactor 3一瞥 </h1>
+    <div class="content"> 
+
+<blockquote>
+<p>文章的 reactor 是java的<a href="https://projectreactor.io/">reactor</a> 不是js的reactor。</p>
+</blockquote>
+
+<p>本篇内容，主要写的是，使用 reactor 的一些感受和要点。大体会说一下，写 reactor 是什么感觉、理念与实操的感觉和一些比较细节的点。因为时间一长，感觉会被遗忘，还是记下来更合适一些，供其他使用者参考。</p>
+
+<p>除此之外，还会涉及一些<code>spring webflux</code>、<code>spring boot</code>、<code>spring cloud gateway</code>。这里我就假设读者知道<code>reactor</code>最基础的内容，不说最基础的部分了。</p>
+
+<p>我们公司是因为要用 gateway 才会接触这些东西。要不然自己引个 reactor 的包还不知道怎么玩呢。</p>
+
+<h2 id="mono-和-flux-和使用感觉"><code>Mono</code>和<code>Flux</code>和使用感觉</h2>
+
+<p>这两个对象是实际操作中，最常接触的东西。构造出来的<code>Mono</code>和<code>Flux</code>对象等价于一个马上要执行的代码块。这句话很重要。</p>
+
+<p>多数开篇教程会这样教你，给你一个迭代器。给你一个<code>flux</code>作为对比。然后说明<code>next()</code>方法是谁执行的。</p>
+
+<p>换个例子可能更容易理解一些。正常的线性流程是这样的，我去找警察办事，我把事情说清楚，警察就去办事了，这时我正在等着，等警察办完了，会跟我说，然后我去做其他事情。而<code>reactor</code>不是这样的。<code>reactor</code>的感觉是，警察突然打电话找我，让我过来把xx事情结果拿一下。这也就是所谓的非阻塞 <code>non-blocking</code>。</p>
+
+<p>因为这种完全不同的思考方式，产生了一些常规方式难以理解的抽象与模型，但是这些模型对于实现是有帮助的。为了实现这种，<em>我叫你，你再动的事情</em> ，就有了 <code>publisher</code> 和 <code>subscriber</code> 这样的接口。在实际使用的过程中，使用者操作都是 <code>publisher</code>，即程序员只需要想办法生产出恰当的内容。致于后续如何 <code>subscribe</code> 就是框架做的事情了。换另一种方式讲，我们只需要把对应的代码块生产出来，后续自然会执行内部的东西。</p>
+
+<h2 id="想象与现实">想象与现实</h2>
+
+<p>初衷确实是很好，但是写起来会面临很多问题。下面我会列举一下我觉得比较麻烦的点。</p>
+
+<h3 id="可读性">可读性</h3>
+
+<p>你以为代码写出来就和网上显示的这些代码块差不多么？下面这段代码是我从<a href="https://www.infoq.cn/article/reactor-by-example">这里</a>copy过来的一个看起来比较 <strong>像真实</strong> 的例子。</p>
+
+<pre><code class="language-java">
+@RequestMapping(value = &quot;heyMister&quot;, method = RequestMethod.POST)
+@ResponseBody
+public Flux&lt;String&gt; hey(@RequestBody Mono&lt;Sir&gt; body) {
+    return Mono.just(&quot;Hey mister &quot;)
+        .concatWith(body
+                .flatMap(sir -&gt; Flux.fromArray(sir.getLastName().split(&quot;&quot;)))
+                .map(String::toUpperCase)
+                .take(1)
+        ).concatWith(Mono.just(&quot;. how are you?&quot;));
+}
+
+</code></pre>
+
+<p>实际情况总不像上面想象的一样。下面这段是我在公司写的代码，包含了实际的业务代码，我这里就不打码了，反正一般人也看不懂。</p>
+
+<pre><code class="language-java">
+    private Mono&lt;TimerConfig&lt;TimerJob&gt;&gt; upsertTimerConfig(
+        final String tenantId,
+        final String appInstanceId,
+        final TimerConfig&lt;TimerJob&gt; config,
+        final boolean updateTimerJob
+    ) throws NotFoundException, ConflictException, BadArgumentException, GrpcException {
+        final String fakeNameAndCode = String.valueOf(System.currentTimeMillis());
+        Map&lt;String, ConnectionConfig&gt; connectionConfigMap = new HashMap&lt;&gt;();
+        for (String ccId : config.getConnectionConfigIds()) {
+            connectionConfigMap.put(ccId, connectionGrpcServiceClient.configRead(ccId, tenantId));
+        }
+        return workflowApi.getWorkflow(tenantId, appInstanceId)
+            .flatMap(wf -&gt; {
+                if (wf.getId() == null) {
+                    WorkFlow newWorkflow = WorkFlow.newInstance()
+                        .setCode(appInstanceId)
+                        .setName(fakeNameAndCode)
+                        .setConfig(WorkFlow.WorkFlowConfiguration.newInstance().setTasks(listOf()))
+                        .setStatus(ACTIVE)
+                        .setTenantId(tenantId);
+                    return workflowApi.createWorkflow(tenantId, newWorkflow);
+                } else {
+                    return Mono.just(wf);
+                }
+            })
+            .flatMap(wf -&gt; workflowApi.getTaskId(tenantId)
+                .flatMap(taskId -&gt; {
+                    final List&lt;Mono&lt;String&gt;&gt; newWtIds = new ArrayList&lt;&gt;();
+                    return getConnectionConfigIds(
+                        tenantId,
+                        wf.getConfig().getTasks()
+                    ).flatMap(ccIdMap -&gt; {
+                        for (String ccIdFromInput : config.getConnectionConfigIds()) {
+                            if (!ccIdMap.contains(ccIdFromInput)) {
+                                newWtIds.add(
+                                    workflowApi.createTaskInstance(
+                                        tenantId,
+                                        connectionConfigMap.get(ccIdFromInput),
+                                        taskId
+                                    ).map(TaskInstance::getId)
+                                );
+                            } else {
+                                newWtIds.add(Mono.just(wf.getConfig().getTasks().get(ccIdMap.indexOf(ccIdFromInput))));
+                            }
+                        }
+                        return Flux.fromIterable(newWtIds).flatMap(x -&gt; x).collectList();
+                    });
+                })
+                .map(tiIds -&gt; wf.setConfig(WorkFlow.WorkFlowConfiguration.newInstance().setTasks(tiIds)))
+                .flatMap(wff -&gt; workflowApi.updateWorkflow(tenantId, wff, wff.getId()))
+            )
+            .flatMap(wf -&gt; {
+                if (updateTimerJob) {
+                    workflowApi.getTimerJob(tenantId, wf.getId())
+                        .flatMap(tj -&gt; {
+                            if (tj.getId() == null) {
+                                config.getTimerJob()
+                                    .setFlowId(wf.getId())
+                                    .setCode(fakeNameAndCode)
+                                    .setName(fakeNameAndCode)
+                                    .setConfig(mapOf());
+                                return workflowApi.createTimerJob(tenantId, config.getTimerJob())
+                                    .map(config::setTimerJob);
+                            } else {
+                                return workflowApi.updateTimerJob(tenantId, config.getTimerJob(), tj.getId())
+                                    .map(config::setTimerJob);
+                            }
+                        });
+                }
+                return Mono.just(wf);
+            }).map(wf -&gt; config);
+    }
+</code></pre>
+
+<p>其实，我想展示的是，实际的情况要远比想象中的风骚的多。代码的可读性很低，之后的维护成本和人员可替代性都很堪忧。</p>
+
+<h3 id="调试">调试</h3>
+
+<p>在实际写的时候，你以为啪啪啪一路点下去就能实现对应的功能？并不是的，实际情况是代码经常出错的。实际出错是什么样子呢？(本来想贴一个自己项目中的错误，太麻烦了，贴了一个reactor官网的)</p>
+
+<pre><code>java.lang.IndexOutOfBoundsException: Source emitted more than one item
+	at reactor.core.publisher.MonoSingle$SingleSubscriber.onNext(MonoSingle.java:129)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.tryEmitScalar(FluxFlatMap.java:445)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.onNext(FluxFlatMap.java:379)
+	at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onNext(FluxMapFuseable.java:121)
+	at reactor.core.publisher.FluxRange$RangeSubscription.slowPath(FluxRange.java:154)
+	at reactor.core.publisher.FluxRange$RangeSubscription.request(FluxRange.java:109)
+	at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.request(FluxMapFuseable.java:162)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.onSubscribe(FluxFlatMap.java:332)
+	at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onSubscribe(FluxMapFuseable.java:90)
+	at reactor.core.publisher.FluxRange.subscribe(FluxRange.java:68)
+	at reactor.core.publisher.FluxMapFuseable.subscribe(FluxMapFuseable.java:63)
+	at reactor.core.publisher.FluxFlatMap.subscribe(FluxFlatMap.java:97)
+	at reactor.core.publisher.MonoSingle.subscribe(MonoSingle.java:58)
+	at reactor.core.publisher.Mono.subscribe(Mono.java:3096)
+	at reactor.core.publisher.Mono.subscribeWith(Mono.java:3204)
+	at reactor.core.publisher.Mono.subscribe(Mono.java:3090)
+	at reactor.core.publisher.Mono.subscribe(Mono.java:3057)
+	at reactor.core.publisher.Mono.subscribe(Mono.java:3029)
+	at reactor.guide.GuideTests.debuggingCommonStacktrace(GuideTests.java:995)
+</code></pre>
+
+<p>报错的内容中，不会出现我们写的代码，因为实际执行代码块的过程和书写顺序是不一致的。打了个断点，一步一步走下去，你会发现相关的代码块提交到了框架中，然后等待 <code>subscriber</code>去触发，真正的代码块开始执行，这才是实际的业务。然而在这种情况下，debug非常困难。更麻烦的是有的时候是框架的bug，而不是你代码的问题。调试的时候抓耳挠腮，不知道怎么搞。</p>
+
+<p>其实最核心的点是：你写过的东西，并不是在跑代码的时候就会执行，真正的执行是在 <code>subscribe</code> 的时候进行的。如果这个理解不了，就会经常出写出bug。</p>
+
+<p>当然了reactor官方也意识到了这个问题，他们提供了一些东西，能让你从堆栈中看出个所以然。不过杯水车薪罢了。</p>
+
+<h3 id="对框架的影响">对框架的影响</h3>
+
+<p><code>spring MVC</code> <code>spring webflux</code> 完全就是2个生态体系。后者由于大量使用 <code>reactor</code> 内容，操作逻辑会有一些改变，相关的对象必须要改成 <code>mono</code> 和 <code>flux</code>。</p>
+
+<p>但是呢，你能在spring源码中翻到很多类似命名的代码。其中有一部分是原来 <code>spring MVC</code> 的,另一部分是 <code>reactor</code> 专供。但麻烦的是，大部分类换汤不换药，只是把关键对象换个名字，执行逻辑基本就没啥变化，又不得不再写一遍。如 <code>HandlerMethodArgumentResolver</code> 这个接口出现了2遍，意味着所有实现这个接口的方法都要写2套。</p>
+
+<p>总的来说，如果想要上 <code>reactor</code> 这条船，很多东西都要改，大量的旧代码难以直接使用。这点对 reactor 的推广简直就是灾难性的问题，就像如果有语言要抢占c语言地位，必要支持调用c lib，要不然根本就不会有人用。reactor 一开始就与普通代码兼容不好。</p>
+
+<p>实际上，我们还碰到了一个问题就是，我们需要的一个小东西， <code>reactor</code> 版本还没有实现。最后只得自己扒 <code>spring MVC</code> 代码，抄了一个。</p>
+
+<h3 id="业务">业务</h3>
+
+<p>从普通的线性编程到 <code>reactor</code> 的方式编程，在很多业务场景下是没有必要的。因为业务设计的时候根本就没有异步的思路，用 <code>reactor</code> 的方式写只是画蛇添足。</p>
+
+<p>初期用 <code>reactor</code> 改写业务的实际感受就是难。本来按照线性写挺简单的代码。放到 <code>reactor</code> 中就怎么都不好使，调试又不方便。</p>
+
+<h3 id="书写感受">书写感受</h3>
+
+<p>有一部分代码写起来基本一样，用 <code>reactor</code> 方式写和普通方式写基本没区别。说是基本一样，实际上还是有点小差别的。很多时候经常要反转一下调用的主谓，如果不反转的话，没办法按照 reactor 的方式一路写下去。下面就是一个例子。</p>
+
+<pre><code class="language-java">//reactor
+return upsertTimerConfig(tenantId, ai, timerConfig, false)
+        .then(getWorkflow(tenantId, ai))
+        .flatMap(wf -&gt; execWorkflow(tenantId, wf.getId()));
+// 普通做法
+upsertTimerConfig(tenantId, ai, timerConfig, taskCode, workflowHost, false);
+return execWorkflow(tenantId, getWorkflow(tenantId, appInstanceId, workflowHost).getId(), workflowHost);
+</code></pre>
+
+<p>有的时候不得不一直用map、flatmap，即便我先做的事情不是map，因为我不知道还可以用什么，不知道怎么才能把reactor写的既美观又正确。</p>
+
+<p>在实际的处理过程中，更困难的是既要面对业务逻辑，又要面对同步和异步的内容，多个问题混在一起就很麻烦了。</p>
+
+<p>还有一个点是在<code>gateway</code>中，基本上没法直接把<code>mono</code>之类的代码转换成 <code>blocking</code> 的形式。尝试过<code>stof</code>中给的几个方法都会爆出问题，最后还是老老实实把所有代码改成了异步的。</p>
+
+<h2 id="我们为什么用gateway">我们为什么用gateway</h2>
+
+<p>其实我们用 gateway 之前是不会 reactor 的。也不知道换了会有这么多问题。当然我们选择 gateway 也不是没有理由的。</p>
+
+<ol>
+<li>这个服务完全解决了我们当前的业务需求，请求转发和聚合。</li>
+<li><code>spring</code> 生态下的东西，用起来方便一些，因为新项目是spring全家桶，很多东西能复用。</li>
+</ol>
+
+<h2 id="总结">总结</h2>
+
+<ol>
+<li>相比线性编程，学习成本偏高。</li>
+<li>熟悉后，会不会节省编码时间不清楚。</li>
+<li><code>non-blocking</code> 是否更高效不清楚。</li>
+<li>理论上确实更先进，但是使用场景有限。业务场景完全实现 <code>non-blocking</code> 比较困难。（需要基础搭建比较多）</li>
+<li>业务场景下，维护更困难。因为语法飘逸。</li>
+</ol>
+
+<p>其实在<code>gateway</code>中是可以完全按照同步的方式写代码的，写 <code>reactor</code> 的原因，就像是入乡随俗。既然都用<code>webflux</code>了就按照它的方式写。还能顺便测试下实际的感受。</p>
+
+<p>我本身是知道<code>non-blocking</code> 和 <code>blocking</code> 都有对应的使用场景的。并不是说，<code>non-blocking</code>绝对好，<code>blocking</code>绝对差。他们都有各自使用场景的。硬要说的话，就要看哪部分资源浪费的多，如果io等待的时间多那肯定 <code>non-blocking</code>。当然如果没啥影响，<code>blocking</code>就够了。</p>
+
+<p>如果说一个普通（员工水平平庸）的公司，还是不建议使用任何 reactor 相关的东西，按照我对普通公司的了解来看，最后的结果肯定会变成大篇幅的代码都是<code>blocking</code>的，最后一句话把对象转成<code>non-blocking</code>。除此之外，还要面对更多的其他问题，肯定要被埋怨的。</p>
+
+<p>以上评价整体比较悲观吧。其实java中的 <code>reactor</code>发展，可以参考 <code>.NET Reactive Extension</code> 前辈。我推测之后可能会在一部分领域中重用（非阻塞要求高的），之后应该不会有人用这个写业务代码，因为缺点太多了。</p>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+      
+    
+<div class="tags">
+    
+      <div class="tag">
+          
+        <a href="/tags/java.html">#java</a>
+      </div>
+    
+      <div class="tag">
+          
+        <a href="/tags/reactor.html">#reactor</a>
+      </div>
+    
+</div>
+
+    <div class="date"> 6 Oct 2019 </div>
+  </div>
+
+</footer>
+
+
+  
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:zx12_zx12@126.com"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/angrydisk" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+
+  
+
+  <div class="social-link">
+  <a href="https://blog.zhaogaz.com/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> 请自由抄袭，无版权 </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+

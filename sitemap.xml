@@ -4,18 +4,33 @@
   
   <url>
     <loc>https://blog.zhaogaz.com/</loc>
-    <lastmod>2019-10-05T21:17:10+08:00</lastmod>
+    <lastmod>2019-10-06T13:12:15+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
+    <loc>https://blog.zhaogaz.com/tags/java.html</loc>
+    <lastmod>2019-10-06T13:12:15+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.zhaogaz.com/post.html</loc>
-    <lastmod>2019-10-05T21:17:10+08:00</lastmod>
+    <lastmod>2019-10-06T13:12:15+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.zhaogaz.com/tags/reactor.html</loc>
+    <lastmod>2019-10-06T13:12:15+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.zhaogaz.com/post/2019/reactor-in-action.html</loc>
+    <lastmod>2019-10-06T13:12:15+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.zhaogaz.com/tags.html</loc>
-    <lastmod>2019-10-05T21:17:10+08:00</lastmod>
+    <lastmod>2019-10-06T13:12:15+08:00</lastmod>
   </url>
   
   <url>
@@ -76,11 +91,6 @@
   <url>
     <loc>https://blog.zhaogaz.com/tags/%E9%9D%A2%E8%AF%95.html</loc>
     <lastmod>2019-01-25T12:12:40+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.zhaogaz.com/tags/java.html</loc>
-    <lastmod>2019-01-16T15:41:32+08:00</lastmod>
   </url>
   
   <url>
