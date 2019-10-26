@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="zhaogaz" />
+<meta name="description" content="" />
+<meta name="keywords" content=" personal blog" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.58.3" />
+
+<link rel="canonical" href="https://blog.zhaogaz.com/post/2019/ldap-something.html">
+<meta property="og:title" content="LDAP一些事" />
+<meta property="og:description" content="从国内的资料文档状况来看，LDAP 这个东西很少有人用。鲜为人知倒不至于，但是很少有人知道是真的，这说明国内的企业很少用这个东西。我们这边由于" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.zhaogaz.com/post/2019/ldap-something.html" />
+<meta property="article:published_time" content="2019-10-26T23:08:52+08:00" />
+<meta property="article:modified_time" content="2019-10-26T23:08:52+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="LDAP一些事"/>
+<meta name="twitter:description" content="从国内的资料文档状况来看，LDAP 这个东西很少有人用。鲜为人知倒不至于，但是很少有人知道是真的，这说明国内的企业很少用这个东西。我们这边由于"/>
+
+
+<meta itemprop="name" content="LDAP一些事">
+<meta itemprop="description" content="从国内的资料文档状况来看，LDAP 这个东西很少有人用。鲜为人知倒不至于，但是很少有人知道是真的，这说明国内的企业很少用这个东西。我们这边由于">
+
+
+<meta itemprop="datePublished" content="2019-10-26T23:08:52&#43;08:00" />
+<meta itemprop="dateModified" content="2019-10-26T23:08:52&#43;08:00" />
+<meta itemprop="wordCount" content="2602">
+
+
+
+<meta itemprop="keywords" content="LDAP,思考,运维,," />
+
+
+<link rel="stylesheet" href="/css/layout.css" />
+
+
+<link rel="stylesheet" href="/css/default-dark.css" />
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-114396712-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/atom-one-dark-reasonable.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<title>
+
+
+     LDAP一些事 
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="https://blog.zhaogaz.com">ZhaoGaz&#39;s Blog</a>
+    </div> 
+  
+    
+    
+    <a class="nav-item" href="/post.html"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="/tags.html"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item" href="/about.html"><div class="nav-item-title">About</div></a>
+    
+
+  </nav>
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> LDAP一些事 </h1>
+    <div class="content"> 
+
+<p>从国内的资料文档状况来看，<code>LDAP</code> 这个东西很少有人用。鲜为人知倒不至于，但是很少有人知道是真的，这说明国内的企业很少用这个东西。我们这边由于公司业务的关系，学习了下 <code>LDAP</code> 的内容，顺便也了解了一些用法。</p>
+
+<p>本篇内容不会像普遍的说明文一样解释各种概念如<code>DN</code>、<code>RDN</code>、<code>DIT</code>啥的。本文更倾向于描述概念与理解。旨在新人入门的时候有大概的轮廓不至于一头雾水。当然我还会尝试解释一些东西，这对于之后理解是有帮助的。</p>
+
+<h2 id="历史背景">历史背景</h2>
+
+<p><code>LDAP</code>出现很久了，大约出现于199几年，诞生的原因就是因为某些巨头公司的电话簿目录管理不明白。当时有一个大而全的目录规范，叫做 <code>DAP</code> ，而<code>LDAP</code>是一种轻量的替代品。再后来可能由于使用比较方便，就（相对）非常流行了。现在，它的使用场景就是公司内部人员（部门）账号的管理。</p>
+
+<p><code>LDAP</code> 全名是 <code>Lightweight Directory Access Protocol</code> 他是一个协议。就像<code>TCP</code>那些东西一样，他是一堆的标准规范（rfc）。文档上面会说你要想实现这个协议应该提供什么什么功能。但是文档说的再全面，也不会覆盖所有的细节，所以不同的<code>LDAP</code>实现总会有些差异。最常见的一个<code>LDAP</code>实现就是 <code>OpenLDAP</code>，另一个就是<code>AD</code>(active directory) 。好像还有其他的实现，没印象了。</p>
+
+<p>接下来会根据LDAP怎么保存文件，怎么使用文件来讲。整体来说，就像数据库一样，软件与数据库有特定的链接方式，每种数据库实现有不同的结构，但是也有一套一样的东西——<code>SQL</code></p>
+
+<h2 id="ldap-存储结构">LDAP 存储结构</h2>
+
+<p>要使用<code>LDAP</code>的话，第一点就是要理解，他的数据和结构。<code>LDAP</code>把所有数据都搞成了一个 <code>目录树</code> （DIT），树上面有很多的<code>节点</code>（Entry），每个节点中可以有很多的<code>属性</code>（Attributes）。为了描述节点的位置，或者说为了描述哪个节点。<code>LDAP</code>中有一个概念叫做<code>DN</code>，有了<code>DN</code>就可以在<code>LDAP</code>中，就可以拿到特定的节点了。但是麻烦的是，<code>DN</code>并不是绝对不变的，它是可以配置的，可以修改的。换句话说，<code>DN</code>和<code>id</code>的还不一样。这种可以修改的特性，对<code>LDAP的实现</code>来说是非常不友好的，所以在<code>OpenLDAP</code>这种实现中，为了追踪节点，它还会给每个节点增加一个属性叫做 <code>EntryUUID</code>，就相当于数据的主键了。</p>
+
+<p>上文提到<code>Entry</code>的时候，说到了一个很多属性（Atributes）。其中节点可以相当于一个部门、一个人。属性就可以存放用户的各种信息比方说QQ号、手机号、身份证、姓名等等等。</p>
+
+<p>当然了，每个节点除了属性，还有一个东西叫做 <code>object class</code>（中文不知道是啥），这个东西会描述节点的<code>schema</code>也就是说这个节点中能有什么属性，不能有什么属性，这都是<code>object class</code>说了算的。</p>
+
+<p>上面提到的 <code>object class</code> 、<code>属性</code> 都是有标准文档规范的，而且必须用规范的那么几个。（其他的你也用不了）当然了规范也不是那么死板的，很多东西是选填的，但是有些是必填的。</p>
+
+<p>还有就是<code>LDAP</code>还可以保存用户加密过的密码。这也就是平时企业最常用的事情，把它作为账号服务器，像什么<code>Rancher</code>啊、<code>Jira</code>啊、<code>Confluence</code>啊都可以选择<code>LDAP</code>作为账号认证的方式,就是这样的。</p>
+
+<p>表示人员的 <code>Entry</code> 常用<code>inetOrgPerson</code> 、<code>person</code> 这类<code>object class</code>。当然了，部门也有部门的<code>object class</code>，但我忘了。</p>
+
+<h2 id="ldap-连接">LDAP 连接</h2>
+
+<p><code>LDAP</code> 有专门的网络交互协议，是4层的，也就是和<code>HTTP</code>是同一层。具体基于<code>TCP</code>还是<code>UDP</code>不太清楚。换句话说，想要连接到<code>LDAP</code>服务，必须要用专门的工具才行。</p>
+
+<p><code>UNIX</code>系统可以使用 <code>ldapsearch</code> 进行链接。当然了，也可以考虑装一个 <code>Apache Directory Studio</code> 的图形界面进行操作。代码类库的话就有很多选择了，可以用<code>Unboundid</code>、<code>Spring security</code>也有集成，其他语言也有类似的。</p>
+
+<p>这个协议的核心目的是访问目录的，所以这个协议 有一些操作 <code>Entry</code> 的方法（add delete modify modifyDN） 还有连接到指定LDAP服务器的方法（bind、unbind）当然了还有几种搜索方式。</p>
+
+<p>比方说如果用<code>Jira</code>配置了<code>LDAP</code>，<code>Jira</code>就会链接LDAP服务器查找特定的人，验证账号密码是否正确。</p>
+
+<p>关于查询我需要再说一下，LDAP查询有一种filter方式，可以通过特定的语法筛出想要的东西。当然了语法是什么不重要。</p>
+
+<h2 id="ldap使用">LDAP使用</h2>
+
+<p>因为<code>LDAP</code>本身就是比较灵活的目录，所以衍生出了各种不同的使用方式。</p>
+
+<p>比方说国内的使用方式就是，一个部门节点下面，挂了好多人的节点。（部门和人员混在一起）用这些节点一起构成一个树。这种使用方式直观上很清晰，但是有些场景无法解决，比方说，某某员工即在A部门也在B部门。不可能在AB部门分别挂重复的人，会出问题的。</p>
+
+<p>还有一种使用方式就是，人员是一个<code>Entry</code>下的节点，部门是另一个<code>Entry</code>下的节点。人员和部门的关系通过<code>属性</code>来处理。一个人在多个部门，一个部门有多个人的问题可以轻松解决，但是这种用法对使用者有一定的要求，不懂的人大概率不会这么用。这种使用方式是我们公司大佬的建议。</p>
+
+<h2 id="第三方使用ldap-如何配置">第三方使用LDAP，如何配置</h2>
+
+<p>其实原本我没想写这部分，但是后来想了想这部分可能会对大家有些帮助。所以这里我随便找了个网图用于解释怎么配置链接<code>LDAP</code>。图中有些配置错误，不建议模仿。</p>
+
+<p><img src="ldap-something.assets/132556_6gRa_59419.jpg" alt="132556_6gRa_59419" /></p>
+
+<ul>
+<li>服务器设置：
+
+<ul>
+<li>用户名：用户名可能是一个<code>DN</code> 就是图中的 <code>cn=用户,dc=域,dc=名称</code>，</li>
+<li>目录类型：这里指的是 LDAP实现。因为<code>Jira</code>这种老牌工具会内置很多基础配置，不用用户再配置一遍。可以选择图中通用的，也可以选择<code>OpenLDAP</code>这种</li>
+</ul></li>
+<li>LDAP模式：
+
+<ul>
+<li>基本DN：英文叫做 <code>Base DN</code> 他的含义是搜索的起点。配置了之后，就会搜索这个DN以下的节点。</li>
+<li>附加用户DN：这个位置配置的是filter，含义是筛出所有<code>人员</code>的节点</li>
+</ul></li>
+<li>用户模式设置：
+
+<ul>
+<li>用户对象类：这个配置指的是人员数据，用什么样的<code>object class</code>,我估计<code>Jira</code>会用这个作为筛选条件。</li>
+<li>其他：其他的都是提取人员对应的属性的。其中 用户唯一的ID属性 这个应该配置成 UUID之类的，不建议配置成uid。</li>
+</ul></li>
+</ul>
+
+<p>总的来说，要对接一个<code>LDAP</code>就按照解释的感觉来配置就好了。对于懂的人来说很简单，不复杂，也不会出现错误。</p>
+
+<h2 id="后记">后记</h2>
+
+<p>其实还有很多其他的细节没有说，还有很多其他的东西忘了，还有很多东西算是历史遗迹，基本不会有人用了，说不说没必要。 总的来说<code>LDAP</code>就是这么一个东西。现阶段用<code>LDAP</code>的人多半都是运维，因为要维护公司人员相关的数据。当然了，从国内的文章来看，少有人讲清楚，运维水平可见一斑。</p>
+
+<p>我们公司内部之前还培训过这个，不过忘得差不多了，真想搞明白，还是要自己用。</p>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+      
+    
+<div class="tags">
+    
+      <div class="tag">
+          
+        <a href="/tags/ldap.html">#LDAP</a>
+      </div>
+    
+      <div class="tag">
+          
+        <a href="/tags/%E6%80%9D%E8%80%83.html">#思考</a>
+      </div>
+    
+      <div class="tag">
+          
+        <a href="/tags/%E8%BF%90%E7%BB%B4.html">#运维</a>
+      </div>
+    
+      <div class="tag">
+          
+        <a href="/tags/.html">#</a>
+      </div>
+    
+</div>
+
+    <div class="date"> 26 Oct 2019 </div>
+  </div>
+
+</footer>
+
+
+  
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:zx12_zx12@126.com"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/angrydisk" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+
+  
+
+  <div class="social-link">
+  <a href="https://blog.zhaogaz.com/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> 请自由抄袭，无版权 </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+

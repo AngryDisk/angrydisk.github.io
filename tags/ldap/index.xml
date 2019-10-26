@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>LDAP on ZhaoGaz&#39;s Blog</title>
+    <link>https://blog.zhaogaz.com/tags/ldap.html</link>
+    <description>Recent content in LDAP on ZhaoGaz&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <copyright>请自由抄袭，无版权</copyright>
+    <lastBuildDate>Sat, 26 Oct 2019 23:08:52 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.zhaogaz.com/tags/ldap/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>LDAP一些事</title>
+      <link>https://blog.zhaogaz.com/post/2019/ldap-something.html</link>
+      <pubDate>Sat, 26 Oct 2019 23:08:52 +0800</pubDate>
+      
+      <guid>https://blog.zhaogaz.com/post/2019/ldap-something.html</guid>
+      <description>从国内的资料文档状况来看，LDAP 这个东西很少有人用。鲜为人知倒不至于，但是很少有人知道是真的，这说明国内的企业很少用这个东西。我们这边由于</description>
+    </item>
+    
+  </channel>
+</rss>
