@@ -7,10 +7,37 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>请自由抄袭，无版权</copyright>
-    <lastBuildDate>Sat, 26 Oct 2019 23:08:52 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 08 Nov 2019 00:25:14 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.zhaogaz.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>博客</title>
+      <link>https://blog.zhaogaz.com/tags/%E5%8D%9A%E5%AE%A2.html</link>
+      <pubDate>Fri, 08 Nov 2019 00:25:14 +0800</pubDate>
+      
+      <guid>https://blog.zhaogaz.com/tags/%E5%8D%9A%E5%AE%A2.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>日志</title>
+      <link>https://blog.zhaogaz.com/tags/%E6%97%A5%E5%BF%97.html</link>
+      <pubDate>Fri, 08 Nov 2019 00:25:14 +0800</pubDate>
+      
+      <guid>https://blog.zhaogaz.com/tags/%E6%97%A5%E5%BF%97.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>随笔</title>
+      <link>https://blog.zhaogaz.com/tags/%E9%9A%8F%E7%AC%94.html</link>
+      <pubDate>Fri, 08 Nov 2019 00:25:14 +0800</pubDate>
+      
+      <guid>https://blog.zhaogaz.com/tags/%E9%9A%8F%E7%AC%94.html</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>LDAP</title>
@@ -58,15 +85,6 @@
     </item>
     
     <item>
-      <title>日志</title>
-      <link>https://blog.zhaogaz.com/tags/%E6%97%A5%E5%BF%97.html</link>
-      <pubDate>Sat, 05 Oct 2019 21:17:10 +0800</pubDate>
-      
-      <guid>https://blog.zhaogaz.com/tags/%E6%97%A5%E5%BF%97.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>工作</title>
       <link>https://blog.zhaogaz.com/tags/%E5%B7%A5%E4%BD%9C.html</link>
       <pubDate>Sat, 05 Oct 2019 20:45:04 +0800</pubDate>
@@ -81,15 +99,6 @@
       <pubDate>Sat, 05 Oct 2019 20:45:04 +0800</pubDate>
       
       <guid>https://blog.zhaogaz.com/tags/%E6%84%9F%E6%82%9F.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>博客</title>
-      <link>https://blog.zhaogaz.com/tags/%E5%8D%9A%E5%AE%A2.html</link>
-      <pubDate>Sat, 05 Oct 2019 17:37:28 +0800</pubDate>
-      
-      <guid>https://blog.zhaogaz.com/tags/%E5%8D%9A%E5%AE%A2.html</guid>
       <description></description>
     </item>
     
@@ -180,15 +189,6 @@
       <pubDate>Tue, 04 Dec 2018 07:09:37 +0800</pubDate>
       
       <guid>https://blog.zhaogaz.com/tags/%E9%98%85%E8%AF%BB%E9%A1%BB%E7%9F%A5.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>随笔</title>
-      <link>https://blog.zhaogaz.com/tags/%E9%9A%8F%E7%AC%94.html</link>
-      <pubDate>Tue, 04 Dec 2018 07:09:37 +0800</pubDate>
-      
-      <guid>https://blog.zhaogaz.com/tags/%E9%9A%8F%E7%AC%94.html</guid>
       <description></description>
     </item>
     

@@ -4,8 +4,38 @@
   
   <url>
     <loc>https://blog.zhaogaz.com/</loc>
-    <lastmod>2019-10-26T23:08:52+08:00</lastmod>
+    <lastmod>2019-11-08T00:25:14+08:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.zhaogaz.com/post.html</loc>
+    <lastmod>2019-11-08T00:25:14+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.zhaogaz.com/tags.html</loc>
+    <lastmod>2019-11-08T00:25:14+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.zhaogaz.com/tags/%E5%8D%9A%E5%AE%A2.html</loc>
+    <lastmod>2019-11-08T00:25:14+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.zhaogaz.com/post/2019/how-i-watch-a-new-blog.html</loc>
+    <lastmod>2019-11-08T00:25:14+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.zhaogaz.com/tags/%E6%97%A5%E5%BF%97.html</loc>
+    <lastmod>2019-11-08T00:25:14+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.zhaogaz.com/tags/%E9%9A%8F%E7%AC%94.html</loc>
+    <lastmod>2019-11-08T00:25:14+08:00</lastmod>
   </url>
   
   <url>
@@ -15,16 +45,6 @@
   
   <url>
     <loc>https://blog.zhaogaz.com/post/2019/ldap-something.html</loc>
-    <lastmod>2019-10-26T23:08:52+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.zhaogaz.com/post.html</loc>
-    <lastmod>2019-10-26T23:08:52+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.zhaogaz.com/tags.html</loc>
     <lastmod>2019-10-26T23:08:52+08:00</lastmod>
   </url>
   
@@ -59,11 +79,6 @@
   </url>
   
   <url>
-    <loc>https://blog.zhaogaz.com/tags/%E6%97%A5%E5%BF%97.html</loc>
-    <lastmod>2019-10-05T21:17:10+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.zhaogaz.com/tags/%E5%B7%A5%E4%BD%9C.html</loc>
     <lastmod>2019-10-05T20:45:04+08:00</lastmod>
   </url>
@@ -76,11 +91,6 @@
   <url>
     <loc>https://blog.zhaogaz.com/post/2019/what-i-did-wrong.html</loc>
     <lastmod>2019-10-05T20:45:04+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.zhaogaz.com/tags/%E5%8D%9A%E5%AE%A2.html</loc>
-    <lastmod>2019-10-05T17:37:28+08:00</lastmod>
   </url>
   
   <url>
@@ -205,11 +215,6 @@
   
   <url>
     <loc>https://blog.zhaogaz.com/post/2018/what-i-prepare-to-do.html</loc>
-    <lastmod>2018-12-04T07:09:37+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.zhaogaz.com/tags/%E9%9A%8F%E7%AC%94.html</loc>
     <lastmod>2018-12-04T07:09:37+08:00</lastmod>
   </url>
   

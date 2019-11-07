@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>请自由抄袭，无版权</copyright>
-    <lastBuildDate>Sat, 26 Oct 2019 23:08:52 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 08 Nov 2019 00:25:14 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.zhaogaz.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>我怎么看博客</title>
+      <link>https://blog.zhaogaz.com/post/2019/how-i-watch-a-new-blog.html</link>
+      <pubDate>Fri, 08 Nov 2019 00:25:14 +0800</pubDate>
+      
+      <guid>https://blog.zhaogaz.com/post/2019/how-i-watch-a-new-blog.html</guid>
+      <description>这篇文章主要是想描述下， 我现阶段是如何看别人博客的。当然了，这是我自己做法的描述，不是指导。虽然这么说，我写出来还是希望别人看到，产生一些思</description>
+    </item>
     
     <item>
       <title>LDAP一些事</title>
