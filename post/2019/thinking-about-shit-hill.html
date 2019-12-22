@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="zhaogaz" />
+<meta name="description" content="" />
+<meta name="keywords" content=" personal blog" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.58.3" />
+
+<link rel="canonical" href="https://blog.zhaogaz.com/post/2019/thinking-about-shit-hill.html">
+<meta property="og:title" content="为什么总觉得代码是一坨屎" />
+<meta property="og:description" content="前两天在v2ex上面看到一个帖子，大概就是抱怨公司代码是屎山，回帖也很积极，大家感同身受。 我这篇文章本身就是想辱骂程序员的（虽然我本身也是）" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.zhaogaz.com/post/2019/thinking-about-shit-hill.html" />
+<meta property="article:published_time" content="2019-12-22T20:53:34+08:00" />
+<meta property="article:modified_time" content="2019-12-22T20:53:34+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="为什么总觉得代码是一坨屎"/>
+<meta name="twitter:description" content="前两天在v2ex上面看到一个帖子，大概就是抱怨公司代码是屎山，回帖也很积极，大家感同身受。 我这篇文章本身就是想辱骂程序员的（虽然我本身也是）"/>
+
+
+<meta itemprop="name" content="为什么总觉得代码是一坨屎">
+<meta itemprop="description" content="前两天在v2ex上面看到一个帖子，大概就是抱怨公司代码是屎山，回帖也很积极，大家感同身受。 我这篇文章本身就是想辱骂程序员的（虽然我本身也是）">
+
+
+<meta itemprop="datePublished" content="2019-12-22T20:53:34&#43;08:00" />
+<meta itemprop="dateModified" content="2019-12-22T20:53:34&#43;08:00" />
+<meta itemprop="wordCount" content="2740">
+
+
+
+<meta itemprop="keywords" content="思考,程序员,屎山," />
+
+
+<link rel="stylesheet" href="/css/layout.css" />
+
+
+<link rel="stylesheet" href="/css/default-dark.css" />
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-114396712-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/atom-one-dark-reasonable.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<title>
+
+
+     为什么总觉得代码是一坨屎 
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="https://blog.zhaogaz.com">ZhaoGaz&#39;s Blog</a>
+    </div> 
+  
+    
+    
+    <a class="nav-item" href="/post.html"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="/tags.html"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item" href="/about.html"><div class="nav-item-title">About</div></a>
+    
+
+  </nav>
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> 为什么总觉得代码是一坨屎 </h1>
+    <div class="content"> 
+
+<p>前两天在v2ex上面看到一个帖子，大概就是抱怨公司代码是屎山，回帖也很积极，大家感同身受。</p>
+
+<p>我这篇文章本身就是想辱骂程序员的（虽然我本身也是）。屎山不屎山最后还不是你写出来的。但是当然了，也不能全怪程序员，让代码成为屎山的原因很多。我觉得三七开，七分程序员本身问题，三分外部原因。</p>
+
+<p>所以我这里分别列出一些我觉得的原因。至于解决思路，原因能找到，思路还没有么？解决问题的思路向来都是多种多样的，只不过是成本罢了。</p>
+
+<h2 id="傻逼产品与不作为的程序员">傻逼产品与不作为的程序员</h2>
+
+<p>我们先从生产的上游的产品说起。产品因为种种原因，或者因为工作必须要做。做出了一些产品设计。有些产品是非常固执且充满想象力的。他们在设计的时候会给自己一个理由让自己相信客户对这个功能是有需求的，必须要做成这个样子，否则不好用。</p>
+
+<p>在这种设计思维的裹挟下，程序员需要对这些功能做出实现。程序员这边从实现的角度看来，基本上任何需求都能实现，但是合理与不合理是另一回事。成么叫合理不合理呢？举个例子。用锤子能敲钉子，用铁块也能敲钉子，这对于程序员来说是不一样的，但是产品能看到的结果是一样的，钉子进去了。但是对程序员来说是完全不同的方式，而且这个方式还会影响之后开发的快慢。只注重表面的东西对现在似乎没什么影响，但是会让之后的开发更困难。假如一个产品说，我不care你怎么实现，我就要这个东西。短期来看没什么毛病，但长期来看这种做法就是屎山的源头之一。这类系统开发到后期，程序员就会经常说这那做不了，产品被迫扯皮，最终来说产品还要受苦的。</p>
+
+<p>以上的点我把它叫做产品的控制力，展开说的话可以很大。失去控制力的产品只会让代码变成屎山。这是产品的第一点原罪。</p>
+
+<p>第二点原罪就很简单了，缺少成本思维。产品自己经常考虑的是：东西按照xx样子设计更好用，但是他们不常甚至不考虑的是开发的成本。这个能做要1小时，那个能做要5天，另一个也能做要10w元。不同的功能是有不同成本的。产品可不会考虑这个问题。强行压缩成本的后果就是屎山。</p>
+
+<p>第三点就是，他们设计的所谓的功能，是需要进行自我约束的，功能是有局限的。比方说一个A模块，能做的功能就是那么几个。如果想做更多的功能那么需要开更多的模块，而不是放在A模块里面。但是产品从来不会思考这一点。他们只会要求功能不停的增加，要这个要那个，从侧面触发了一坨一坨的代码。</p>
+
+<p>以上三点都是屎山的助因，就像药引子一样。程序员如果能够在适当的时机阻止这种力量，屎山是不会那么那么快形成的。但更常见的情况是，在产品提出来需求说：我不管，我就要。程序员就答应了，连一点解释的想法都没有，变相促成了屎山形成。大多数程序员都知道，如果这样做，这部分代码之后就是屎山。当然了程序员不据理力争的原因很多，有的是饭碗的原因，有的会被说能力原因，有同行的嘲笑，也有菜鸟不懂事。不管真实原因怎么样，从此之后就变成了屎山。</p>
+
+<h2 id="本身就是屎">本身就是屎</h2>
+
+<p>有一部分程序员本身就是菜，项目小的时候看起来听美丽的，自己也觉得挺好。项目一大起来，觉得自己之前写的都是屎。这说明程序员本身就是菜。这种情况，大概率是程序员缺乏设计能力导致的。这才是大部分情况。</p>
+
+<p>所以项目初期的人很关键。一旦东西庞大起来了后人的时间成本会高很多，前期基础没搭好，就会逐渐成屎山的。</p>
+
+<p>当然了后续修改的人也很重要，我见过很多设计与实现的错误，举个例子，<code>spring</code>这个东西，有很多人用糟糕的做法也能实现这些功能。用<code>spring</code>提供的插槽也能实现，有一部分程序员随便抄一下，测试一下，实现了，就结束了。这种做法增加了代码的混乱度。</p>
+
+<p>这种情况下，程序员本身就是屎，全责，没啥可说的。</p>
+
+<h2 id="偏见">偏见</h2>
+
+<p>其实程序员本身是存在偏见的。他们说的屎，可能只是代码风格不统一。只是一些非常无关紧要的东西。比方说我现在的上司，某种程度上可以说它是有强迫症的，在清闲的时候，他会去重构没有问题，也没什么毛病的代码。风格就是按照他自己熟悉的风格来。这类人是存在的。</p>
+
+<p>经常有激烈讨论的程序员会出现这些问题。偏执会让他们认为这些是屎山，实际上只是不同风格的代码。但是事实上呢，大部分都是代码写的屎，偏见是很少见的。之前有一个天池比赛，我在做准备的时候看了看阿里的<code>dubbo</code>中的一段代码，一行一个注释，这就是典型的屎。</p>
+
+<h2 id="缺少迭代">缺少迭代</h2>
+
+<p>不得不说的是：项目是需要迭代的。</p>
+
+<p>在项目第一版的时候，你可能会设计一个东西，感觉美滋滋的，等到实际运行，东西叮当乱响，四处报错。你会感觉非常难受，缺少各种类型的日志、提示、错误处理，而且经常出问题。可能会有些问题不停的出现，但是在现在的体系下没有办法解决。</p>
+
+<p>第一版东西无法应对这个问题，就需要更强的设计去解决日益增长的需求。这就需要迭代了。时间充裕的话，甚至可以实现v2，v3甚至更高的迭代。因为人们不可能总预见到之后的需求，不可能提前太长时间，当前开发的系统也无法应付更多的功能，一直打补丁只是修修补补不解决核心问题。更替迭代才能解决问题。</p>
+
+<p>什么样才算迭代呢？我这里的迭代指的是底层数据结构的变化。这种迭代带来的变化巨大，必须要大部分推到重来才能实现，这是我所说的大版本迭代。如果不更改只在原先基础上<code>patch</code>的话，项目肯定就变成屎山了。</p>
+
+<h2 id="另一点反思">另一点反思</h2>
+
+<p>虽然我们这么嘲笑屎山，但是我们换个思路考虑：</p>
+
+<p>任何事物都存在生命周期的。代码也是一样。生命周期意味着有出生，有生长，有消亡。如果再也没人动这个代码意味着这个代码已经死亡了。如果有人花钱让你维护屎山，说明这个代码还有价值。也就是说这个代码还有生存的必要，即便他如此屎山，而且千疮百孔。</p>
+
+<p>如果维护的成本远高于 维护产生的利润。那屎山的寿命可能就到此为止了。低成本干净的下一次迭代，或者是遗忘它。</p>
+
+<p>其实呢，如果有一个要求非常严格的CTO，能很好地解决大部分屎山。清晰严格的代码归功于整个团队与 leader 的严格要求与自律。这种枯燥而痛苦的严格要求，要持续很长很长时间，才能持久的让这个代码保持不那么屎山的状态。杜绝任何一条臭鱼出现。现实中确实是有这样的例子，但是极少。当然了这种强要求另一面就是比普通速度更低的产出。</p>
+
+<h2 id="总结">总结</h2>
+
+<p>我理解，屎山的形成，程序员本身占7成，外界因素占3成。外界因素中，产品经理占一半，剩下一半可能来自于各方的压力。程序员在整个过程中，从开始到结束，任何一个位置犯错都会体现在最终的成品上。真正的把一件事情做正确很难，要保证每一步都是正确的。而且要保证大方向不偏差，这对程序员整个职业生涯也是一个严重的考验。</p>
+
+<p>我现在对屎山就没啥态度，因为我第一个公司的第一个项目就是这样。平静的接受屎山现实，然后做自己应该做的事情。在糟糕的情况下不去垒屎，就算是做的最正确的事情了。</p>
+
+<p>当然了，我为了写这个文章，看了一很多人的评论，跟我设想的一样，程序员本身问题大。像什么变量名啊、方法名，方法功能之类的的问题，完全就是程序员本身的水平菜导致的。</p>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+      
+    
+<div class="tags">
+    
+      <div class="tag">
+          
+        <a href="/tags/%E6%80%9D%E8%80%83.html">#思考</a>
+      </div>
+    
+      <div class="tag">
+          
+        <a href="/tags/%E7%A8%8B%E5%BA%8F%E5%91%98.html">#程序员</a>
+      </div>
+    
+      <div class="tag">
+          
+        <a href="/tags/%E5%B1%8E%E5%B1%B1.html">#屎山</a>
+      </div>
+    
+</div>
+
+    <div class="date"> 22 Dec 2019 </div>
+  </div>
+
+</footer>
+
+
+  
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:zx12_zx12@126.com"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/angrydisk" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+
+  
+
+  <div class="social-link">
+  <a href="https://blog.zhaogaz.com/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> 请自由抄袭，无版权 </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+

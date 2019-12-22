@@ -4,18 +4,38 @@
   
   <url>
     <loc>https://blog.zhaogaz.com/</loc>
-    <lastmod>2019-11-08T00:25:14+08:00</lastmod>
+    <lastmod>2019-12-22T20:53:34+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.zhaogaz.com/post.html</loc>
-    <lastmod>2019-11-08T00:25:14+08:00</lastmod>
+    <lastmod>2019-12-22T20:53:34+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.zhaogaz.com/tags.html</loc>
-    <lastmod>2019-11-08T00:25:14+08:00</lastmod>
+    <lastmod>2019-12-22T20:53:34+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.zhaogaz.com/post/2019/thinking-about-shit-hill.html</loc>
+    <lastmod>2019-12-22T20:53:34+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.zhaogaz.com/tags/%E5%B1%8E%E5%B1%B1.html</loc>
+    <lastmod>2019-12-22T20:53:34+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.zhaogaz.com/tags/%E6%80%9D%E8%80%83.html</loc>
+    <lastmod>2019-12-22T20:53:34+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.zhaogaz.com/tags/%E7%A8%8B%E5%BA%8F%E5%91%98.html</loc>
+    <lastmod>2019-12-22T20:53:34+08:00</lastmod>
   </url>
   
   <url>
@@ -45,11 +65,6 @@
   
   <url>
     <loc>https://blog.zhaogaz.com/post/2019/ldap-something.html</loc>
-    <lastmod>2019-10-26T23:08:52+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.zhaogaz.com/tags/%E6%80%9D%E8%80%83.html</loc>
     <lastmod>2019-10-26T23:08:52+08:00</lastmod>
   </url>
   
