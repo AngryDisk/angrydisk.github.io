@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>请自由抄袭，无版权</copyright>
-    <lastBuildDate>Sun, 22 Dec 2019 20:53:34 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 22 Dec 2019 22:35:30 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.zhaogaz.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>如何学习一个程序框架</title>
+      <link>https://blog.zhaogaz.com/post/2019/how-to-learn-framework.html</link>
+      <pubDate>Sun, 22 Dec 2019 22:35:30 +0800</pubDate>
+      
+      <guid>https://blog.zhaogaz.com/post/2019/how-to-learn-framework.html</guid>
+      <description>其实关于学习的方法论，我是没有教育别人的想法的。因为十几年学习生涯过来，让我知道，每个人有每个人的学习技巧。学习技巧可以分享给别人，至于别人</description>
+    </item>
     
     <item>
       <title>为什么总觉得代码是一坨屎</title>

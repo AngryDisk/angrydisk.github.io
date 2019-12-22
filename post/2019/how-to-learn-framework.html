@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="zhaogaz" />
+<meta name="description" content="" />
+<meta name="keywords" content=" personal blog" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.58.3" />
+
+<link rel="canonical" href="https://blog.zhaogaz.com/post/2019/how-to-learn-framework.html">
+<meta property="og:title" content="如何学习一个程序框架" />
+<meta property="og:description" content="其实关于学习的方法论，我是没有教育别人的想法的。因为十几年学习生涯过来，让我知道，每个人有每个人的学习技巧。学习技巧可以分享给别人，至于别人" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.zhaogaz.com/post/2019/how-to-learn-framework.html" />
+<meta property="article:published_time" content="2019-12-22T22:35:30+08:00" />
+<meta property="article:modified_time" content="2019-12-22T22:35:30+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="如何学习一个程序框架"/>
+<meta name="twitter:description" content="其实关于学习的方法论，我是没有教育别人的想法的。因为十几年学习生涯过来，让我知道，每个人有每个人的学习技巧。学习技巧可以分享给别人，至于别人"/>
+
+
+<meta itemprop="name" content="如何学习一个程序框架">
+<meta itemprop="description" content="其实关于学习的方法论，我是没有教育别人的想法的。因为十几年学习生涯过来，让我知道，每个人有每个人的学习技巧。学习技巧可以分享给别人，至于别人">
+
+
+<meta itemprop="datePublished" content="2019-12-22T22:35:30&#43;08:00" />
+<meta itemprop="dateModified" content="2019-12-22T22:35:30&#43;08:00" />
+<meta itemprop="wordCount" content="2420">
+
+
+
+<meta itemprop="keywords" content="学习,框架," />
+
+
+<link rel="stylesheet" href="/css/layout.css" />
+
+
+<link rel="stylesheet" href="/css/default-dark.css" />
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-114396712-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/atom-one-dark-reasonable.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<title>
+
+
+     如何学习一个程序框架 
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="https://blog.zhaogaz.com">ZhaoGaz&#39;s Blog</a>
+    </div> 
+  
+    
+    
+    <a class="nav-item" href="/post.html"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="/tags.html"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item" href="/about.html"><div class="nav-item-title">About</div></a>
+    
+
+  </nav>
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> 如何学习一个程序框架 </h1>
+    <div class="content"> 
+
+<p>其实关于学习的方法论，我是没有教育别人的想法的。因为十几年学习生涯过来，让我知道，每个人有每个人的学习技巧。学习技巧可以分享给别人，至于别人怎么做，那是别人的事情，我没有啥想法。</p>
+
+<p>我个人的话，有些时候觉得学习吃力，就会去找别人是怎么做的，去模仿，去实验，最后找出适合自己的方法。这篇文章的目的就在于分享我是如何学习一个编程框架的。以下内容就是我在学习过程中，总结的一套自己的方法。</p>
+
+<h1 id="了解框架诞生原因">了解框架诞生原因</h1>
+
+<p>一般一个框架出现，不是无目的的。他们是伴随着解决某些问题的思考出现的。</p>
+
+<ul>
+<li>问题有可能是某某某东西不好用，然后这批人想了想办法，造了个东西去解决这些问题。</li>
+<li>有可能是xxx根本就没有比较合适的解决方案，然后就做了一个。</li>
+<li>或者是什么其他的原因。</li>
+</ul>
+
+<p>了解诞生原因有什么用呢？这里可以做一个类比，诞生原因就相当于主干，所有外围的功能相当于树枝，树枝都是围绕着树干生长的。如果树枝对树干没有益处，多半会被砍掉。大概就是这么个感觉。</p>
+
+<p>诞生原因这个点，对于后续学习整个框架抽象来说，又非常重要的意义。抽象设计就是为了解决当前问题的。而问题又是框架诞生的原因。</p>
+
+<h1 id="了解框架的抽象">了解框架的抽象</h1>
+
+<p>第二步，其实就是了解框架的抽象。所谓的抽象就是，这个框架定义了多少名词，这些名词之间有什么关系，有什么影响。x做了啥，y会被影响做啥，尤其引发的其他变化等等等。</p>
+
+<p>这种程序设计的抽象，经常不被人重视。很多程序员会无视这些东西，然后就开始翻源码。我觉得翻源码是及其低效的。</p>
+
+<p>因为代码的设计，会在这个抽象的基础上进行派生。比方说<code>netty</code>就有几个核心的概念，分别是<code>channel</code>、<code>channelhandler</code> 这些概念不理解，代码是很难看懂的。</p>
+
+<hr />
+
+<p>我仔细想了一下，一般的框架学习到这一步就为止了。 因为到这步就足够了，继续学习细节，只会忘掉。看看对应的代码，然后就忘了。这是非常正常的。但是大部分时候，我并不是单纯的学习框架，而是在深度使用，目的是要解决问题的。所以还有后续的内容。</p>
+
+<p>我在学习框架的过程，本身是惰性的。我不会平白无故的学，一般都是公司用上了，出了某些问题，或者是有某些需求，然后再去仔细看的。所以接下来的问题就是，怎么才能继续确定下一步做什么。</p>
+
+<p>因为真正的学习使用，时间是非常紧张的。不会像学校一样，给你几个月的时间，上课，复习，还要写作业，去用这些手段巩固学的东西。真实场景就是这个东西不常用，很快就会忘掉。而且框架出的总比学得快。</p>
+
+<h1 id="确定问题并找到解决办法">确定问题并找到解决办法</h1>
+
+<p>了解了框架的抽象，基本上就知道了我要的东西在这里怎么变化了。按照这个思路，就开始深度阅读相关的文档。看官方说明、WIKI、demo。看看别人想做一样的事情应该怎么处理。比方说github搜一下关键字啊 。</p>
+
+<p>按照这个思路，基本上能确定个八九不离十。但是呢，解决办法不总是会出现。</p>
+
+<p>为了解决问题，极少数详细的文档可能会说明怎么回事，如果想实现xx，做yy就行了。但是，大部分文档都不会这样的，这些文档的书写视角是代码作者，而不是学习的人，文档会省略大部分我想要知道的细节。</p>
+
+<p>最常见的情况是，我需要的细节被提到了一下，但是讲解的并不仔细。我想要的细节没有被说清楚。在这种情况下，就没什么好办法，只能测试+翻源码了。</p>
+
+<h1 id="不要做什么">不要做什么</h1>
+
+<p>其实我一直想写这篇文章是因为我看到了很多，我觉得非常失败的学习教程。正确的方式本身是很简单的，错误的做法却各有各的错误。</p>
+
+<h2 id="上来就一堆demo代码">上来就一堆demo代码。</h2>
+
+<p>这是我最反感的一种做法，然而很多人却认为这是干货。一般来说，如果要学框架的话，要说逻辑的，要讲抽象的。这一个module的抽象是啥，这个部分做了什么。然后才是具体的细节代码。</p>
+
+<p>上来就一堆demo代码，我觉得有点蠢。因为时间可是非常宝贵的，写这种东西就像始终在上小学一样，始终是个小学生。</p>
+
+<h2 id="简单demo然后就翻源码">简单demo然后就翻源码</h2>
+
+<p>这也是我曾经走到的误区之一。源码就是一堆代码而已，没多么神圣。源码有好有坏，而且值得学习的源码是少数。</p>
+
+<p>再有一点，这种学习方式效率不高。我理解中，效率最高的方式应该是这样：我要做xxx东西的一个设计，但是找不到相似的例子可以抄。后来发现xxx位置有一个差不多的东西，看看别人的设计是怎么做的。其中棘手的问题应该怎么处理。这种学习方式相比直接看源码来说更为高效。</p>
+
+<p>这种翻源码的方式是非常傻逼的，每当自己学完了之后，会有一种充实的感觉，但实际上无法实践出任何价值。高级鸡汤而已。</p>
+
+<h2 id="这个框架能干这个事-就先用了">这个框架能干这个事，就先用了</h2>
+
+<p>这个的意思是：钳子的主业是夹东西的，但是也能敲钉子。然后就有人大肆宣传说：钳子也可以敲钉子。</p>
+
+<p>这是我比较反感的事情之一。确实可以这么做，但是不合适，因为钳子的设计目的不是为了敲钉子。长期使用下来只会带来麻烦，当然了，我不喜欢承担这样的后果，所以我尽量选择恰当的东西做恰当的事情。</p>
+
+<p>我们公司前一阵子用了<code>flowable</code> 框架，把它当作定时器用，生产环境跑了几个月就顶不住了。但是呢，最初demo的时候看起来也挺好的。</p>
+
+<h2 id="抄来抄去的雷同文档">抄来抄去的雷同文档</h2>
+
+<p>很多spring教程和官网quick start的基本一致，也没添加什么东西，这是因为作者也没深入使用过。一旦我需要细节的时候，这些雷同的第三方文档一点用也顶不上。还是要靠官网的细节文档。</p>
+
+<h2 id="不要只学习-不实战">不要只学习 不实战</h2>
+
+<p>这一点使我个人的一些建议。这个建议的原因是这样的，平时自学的时候，觉得学的挺好的，一考试觉得啥也不会。我把这个叫做虚假的学习。这个过程是一个人非常容易出现的错误。</p>
+
+<p>另外一点就是提前学习性价比低。因为实际需求总比自己花了大时间写的更骚，学的那点东西都不顶用。</p>
+
+<p>总的来说，自学的话，没有环境，没有需求，啥啥都没有，学起来真的比较迷茫，所以实际干活的时候学更合适一点。</p>
+
+<p>所以，那种自学的人写出来的文章，我就觉得非常水。这类文章只是给作者自high用的。</p>
+
+<h2 id="总结">总结</h2>
+
+<p>以上是我觉得比较高效的学习技巧。网络上有很多人看似很努力，实际效果很糟糕，这才是最可笑的地方。但是这些人又意识不到。</p>
+
+<p>真正的学习技巧是非常朴素的，没啥花里胡哨的东西。识别错误与垃圾文章也是一个能力。这对学习也是非常有帮助的。</p>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+      
+    
+<div class="tags">
+    
+      <div class="tag">
+          
+        <a href="/tags/%E5%AD%A6%E4%B9%A0.html">#学习</a>
+      </div>
+    
+      <div class="tag">
+          
+        <a href="/tags/%E6%A1%86%E6%9E%B6.html">#框架</a>
+      </div>
+    
+</div>
+
+    <div class="date"> 22 Dec 2019 </div>
+  </div>
+
+</footer>
+
+
+  
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:zx12_zx12@126.com"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/angrydisk" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+
+  
+
+  <div class="social-link">
+  <a href="https://blog.zhaogaz.com/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> 请自由抄袭，无版权 </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+
