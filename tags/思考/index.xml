@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>请自由抄袭，无版权</copyright>
-    <lastBuildDate>Sun, 22 Dec 2019 20:53:34 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 28 Jan 2020 21:25:15 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.zhaogaz.com/tags/%E6%80%9D%E8%80%83/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>我对AI的一点思考</title>
+      <link>https://blog.zhaogaz.com/post/2020/thinking-in-ai.html</link>
+      <pubDate>Tue, 28 Jan 2020 21:25:15 +0800</pubDate>
+      
+      <guid>https://blog.zhaogaz.com/post/2020/thinking-in-ai.html</guid>
+      <description>很久之前看到一个tweet，说的是什么内容呢，她说的东西就是：机器模拟人工神经元，能够在智力水平上甩人类几十条街。 我当时扑哧就笑了，现实是不</description>
+    </item>
     
     <item>
       <title>为什么总觉得代码是一坨屎</title>

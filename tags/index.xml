@@ -7,10 +7,37 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>请自由抄袭，无版权</copyright>
-    <lastBuildDate>Sun, 22 Dec 2019 22:35:30 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 28 Jan 2020 21:25:15 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.zhaogaz.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>AI</title>
+      <link>https://blog.zhaogaz.com/tags/ai.html</link>
+      <pubDate>Tue, 28 Jan 2020 21:25:15 +0800</pubDate>
+      
+      <guid>https://blog.zhaogaz.com/tags/ai.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>思考</title>
+      <link>https://blog.zhaogaz.com/tags/%E6%80%9D%E8%80%83.html</link>
+      <pubDate>Tue, 28 Jan 2020 21:25:15 +0800</pubDate>
+      
+      <guid>https://blog.zhaogaz.com/tags/%E6%80%9D%E8%80%83.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>机器学习</title>
+      <link>https://blog.zhaogaz.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0.html</link>
+      <pubDate>Tue, 28 Jan 2020 21:25:15 +0800</pubDate>
+      
+      <guid>https://blog.zhaogaz.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0.html</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>学习</title>
@@ -36,15 +63,6 @@
       <pubDate>Sun, 22 Dec 2019 20:53:34 +0800</pubDate>
       
       <guid>https://blog.zhaogaz.com/tags/%E5%B1%8E%E5%B1%B1.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>思考</title>
-      <link>https://blog.zhaogaz.com/tags/%E6%80%9D%E8%80%83.html</link>
-      <pubDate>Sun, 22 Dec 2019 20:53:34 +0800</pubDate>
-      
-      <guid>https://blog.zhaogaz.com/tags/%E6%80%9D%E8%80%83.html</guid>
       <description></description>
     </item>
     

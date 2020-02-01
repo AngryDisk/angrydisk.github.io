@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>机器学习 on ZhaoGaz&#39;s Blog</title>
+    <link>https://blog.zhaogaz.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0.html</link>
+    <description>Recent content in 机器学习 on ZhaoGaz&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <copyright>请自由抄袭，无版权</copyright>
+    <lastBuildDate>Tue, 28 Jan 2020 21:25:15 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.zhaogaz.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>我对AI的一点思考</title>
+      <link>https://blog.zhaogaz.com/post/2020/thinking-in-ai.html</link>
+      <pubDate>Tue, 28 Jan 2020 21:25:15 +0800</pubDate>
+      
+      <guid>https://blog.zhaogaz.com/post/2020/thinking-in-ai.html</guid>
+      <description>很久之前看到一个tweet，说的是什么内容呢，她说的东西就是：机器模拟人工神经元，能够在智力水平上甩人类几十条街。 我当时扑哧就笑了，现实是不</description>
+    </item>
+    
+  </channel>
+</rss>

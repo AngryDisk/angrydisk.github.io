@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="zhaogaz" />
+<meta name="description" content="" />
+<meta name="keywords" content=" personal blog" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.58.3" />
+
+<link rel="canonical" href="https://blog.zhaogaz.com/post/2020/thinking-in-ai.html">
+<meta property="og:title" content="我对AI的一点思考" />
+<meta property="og:description" content="很久之前看到一个tweet，说的是什么内容呢，她说的东西就是：机器模拟人工神经元，能够在智力水平上甩人类几十条街。 我当时扑哧就笑了，现实是不" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.zhaogaz.com/post/2020/thinking-in-ai.html" />
+<meta property="article:published_time" content="2020-01-28T21:25:15+08:00" />
+<meta property="article:modified_time" content="2020-01-28T21:25:15+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="我对AI的一点思考"/>
+<meta name="twitter:description" content="很久之前看到一个tweet，说的是什么内容呢，她说的东西就是：机器模拟人工神经元，能够在智力水平上甩人类几十条街。 我当时扑哧就笑了，现实是不"/>
+
+
+<meta itemprop="name" content="我对AI的一点思考">
+<meta itemprop="description" content="很久之前看到一个tweet，说的是什么内容呢，她说的东西就是：机器模拟人工神经元，能够在智力水平上甩人类几十条街。 我当时扑哧就笑了，现实是不">
+
+
+<meta itemprop="datePublished" content="2020-01-28T21:25:15&#43;08:00" />
+<meta itemprop="dateModified" content="2020-01-28T21:25:15&#43;08:00" />
+<meta itemprop="wordCount" content="2353">
+
+
+
+<meta itemprop="keywords" content="思考,AI,机器学习," />
+
+
+<link rel="stylesheet" href="/css/layout.css" />
+
+
+<link rel="stylesheet" href="/css/default-dark.css" />
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-114396712-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/atom-one-dark-reasonable.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<title>
+
+
+     我对AI的一点思考 
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="https://blog.zhaogaz.com">ZhaoGaz&#39;s Blog</a>
+    </div> 
+  
+    
+    
+    <a class="nav-item" href="/post.html"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="/tags.html"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item" href="/about.html"><div class="nav-item-title">About</div></a>
+    
+
+  </nav>
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> 我对AI的一点思考 </h1>
+    <div class="content"> 
+
+<p>很久之前看到一个tweet，说的是什么内容呢，她说的东西就是：机器模拟人工神经元，能够在智力水平上甩人类几十条街。</p>
+
+<p>我当时扑哧就笑了，现实是不可能的。不要从技术角度说，光看落地的项目，也能知道个七七八八（这些项目在官网上都会写）。你要说现在不可能不代表之后不可能，我话就撂这，之后也是不可能的，万事万物都是有极限的，就像人类一样也是有极限的，现在马拉松2h完成，未来的某一天一个半小时完成马拉松可能吗？不可能的。想让tweet内容成立，做梦去吧，梦里啥都有。</p>
+
+<h2 id="编程的本质">编程的本质</h2>
+
+<p>为了说明为什么不可能，这里还要从编程的本质说起。从程序员角度说明编程是什么。</p>
+
+<p>程序本身能做的事情就是计算。这里说的计算，就是那些所谓的加减乘除法（实际还有与、或、非、异或等等），这些东西是最基础的运算。但是呢，在科学家不断的推演下，这些基础运算实现的功能越来越强大，运算也变得越来越复杂。再加上信息技术的进步，运算能力也在同步上升，使得硬件能够适应更多的计算内容。无论这些东西变得多么庞大，但是它的本质是个计算，这是计算机相关的基础。</p>
+
+<p>在计算工具已经有的基础上，我们可以用这些计算的功能实现抽象设计。什么意思呢，假如我们要做一个银行系统，我们可以设计一个 bank，设计一个person，然后再处理它们之间的逻辑。这就是所谓的抽象设计。即便它本质只是个计算，但是程序员们仍然能用这些实现抽象设计。人们常看的网站、玩的游戏、收发的email都是抽象设计的实现。AI也是如此。</p>
+
+<h2 id="ai是什么">AI是什么</h2>
+
+<p>AI这个抽象能做什么呢？，人们把概率、统计、图象处理等等代码都给AI弄好，然后给这个AI灌数据。灌数据有什么用呢？这些数据经过AI后，最终会生成一个模型。这些模型在代码中就相当于函数，一种动态的函数。给函数一个图象，它就会吐出相关的计算结果。对应到实际的例子，有的是识别图片上有什么东西，有的是翻译单词。有的回答对错，有的能下棋。以上就是所谓的AI的实现。</p>
+
+<p>AI相关的程序，大量使用概率运算的东西。像什么呢？excel 能够根据给出的数据，画出拟合的曲线，这就相当于模型生成好了，接下来，人们用这个曲线来推测其他值的结果。</p>
+
+<p>所谓的AI就是已有的数据，生成公式，然后通过这个公式进行运算。编程的本质就是运算。甭管你知不知道里面的if else 各种处理逻辑，AI会用这套东西给你算出点什么，给一个结果。</p>
+
+<p>其实呢，从某种程度讲，AI甚至能根据彩票历史的中奖结果，预测之后的彩票是怎么中奖的。只不过也没人相信罢了。</p>
+
+<h2 id="为什么ai不行">为什么AI不行</h2>
+
+<p>我们上面说到，程序在编写的时候，实际上是抽象设计的过程。但是程序员在实现AI程序的过程中，完全都是使用概率，这里面可一点也没有对思维方式的抽象。再一点，也没有哪个程序员实现对思维的抽象。换句话说，按照这种方式设计出来的AI完全是不会思考的，它直会算概率。（神经元和思考完全不是一回事，神经元也不是思考的抽象）</p>
+
+<p>只会算概率会带来什么样的后果呢，公式能做什么，AI就能做什么。但概率能做的事情是非常有限的，因此我认为AI能做的事情是非常有限的，因为他就是一个程序。只会做固定规则的事情。程序不会有创造力，不会有思考能力。</p>
+
+<p>所谓的思考能力指的是什么呢？前一阵子有个新闻，特斯拉的自动导航撞上了前面的车，前面是什么样的车呢？前面是一个轿运车，一种专门拉轿车的货车。为什么装呢？因为特斯拉等红灯觉得前面车距离有些远，实际上这个车在前面的轿运车上。有思考能力的人是不会出现这个问题的。思考到底是什么，谁也没弄明白，但是人们都知道会思考的人不会这样做。</p>
+
+<p>网络上之前有说AI画画啥的，那种看似创造力的东西，其实也都是固定规则生成出来的。只不过AI的规则更难以捉摸罢了。</p>
+
+<p>只会固定规则能做成事情么？不能，因为真正的智能是需要思考的，智能不是按照固定的规则，套路做事。规则和套路只是机器人，不存在智能。</p>
+
+<h2 id="现有的ai产品">现有的AI产品</h2>
+
+<p>看看这些打着AI旗号的 创业公司，他们都做了什么？仔细分析都是图片识别。如：一大张图里面找出哪几个位置大概率是人脸。基本都是这样的，因为AI这种东西也是有规则的，只不过相比普通的编程，规则更难以捉摸罢了 ，AI说到底就是个机器人，一直在做脏活累活罢了，哪有什么智能。</p>
+
+<p>目前所有的AI都是，有一个算一个，图象识别人脸，图象识别 车辆，道路，行人，图像识别布料。根本就没有思考。没有思考是不可能出现真正的智能的。</p>
+
+<h2 id="我理解ai能做什么">我理解AI能做什么？</h2>
+
+<p>我理解AI能做的事情，应该满足以下的条件</p>
+
+<ul>
+<li>事情有一定规则，但是这个规则用程序不好直接实现（如监控上的识别，因为监控的图片不会巨大变动，人的大小也不会变动明显，非常适合训练后的AI）</li>
+<li>机械重复劳动，并且较为简单，变化有限（从目前实际情况来看，自动驾驶效果也并不好，很多场景无法处理）</li>
+</ul>
+
+<p>目前我知道的还有熊猫吃短信用的是什么AI，基本上也是满足上述规则。下棋的那个AI也只是概率。没有智能，但是给人的感受像是智能，它能实现是因为象棋，围棋是有规则的。</p>
+
+<p>事实上满足以上条件的场景很多，在很简单的情况下用不上人工智能，在很复杂的场景下，人工智能也不好使。这才是最尴尬的。</p>
+
+<h2 id="总结">总结</h2>
+
+<p>我总是对这类抱有奇怪期望的人 有一些烦感，因为这些人天天做梦。梦想着中彩票，梦想着AI强大了什么都可以不做。梦里啥都有，别做梦了。不可能的。</p>
+
+<p>其实这个背后是有一个编程思想的，程序能做的事情是有限的。做开发相关的人，一天天总想着弄个什么都能干的东西，实际上这也是不可能的。程序需要约束才能实现。</p>
+
+<p>这里再顺便说下为什么人们总是对AI抱有各种各样的美好愿景。主要还是那些媒体工作者和其背后的人。如果没有吸引人眼球的报道，新闻也没人看，没有传播，没有流量，那就什么都没有，所以他们会尽可能的让看的人有幻想。有识之士对这个本身是有客观评价的，但是这种人看到也不会怎么样，因为利益相关。</p>
+
+<p>以上就是我对AI的一点思考。</p>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+      
+    
+<div class="tags">
+    
+      <div class="tag">
+          
+        <a href="/tags/%E6%80%9D%E8%80%83.html">#思考</a>
+      </div>
+    
+      <div class="tag">
+          
+        <a href="/tags/ai.html">#AI</a>
+      </div>
+    
+      <div class="tag">
+          
+        <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0.html">#机器学习</a>
+      </div>
+    
+</div>
+
+    <div class="date"> 28 Jan 2020 </div>
+  </div>
+
+</footer>
+
+
+  
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:zx12_zx12@126.com"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/angrydisk" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+
+  
+
+  <div class="social-link">
+  <a href="https://blog.zhaogaz.com/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> 请自由抄袭，无版权 </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+
